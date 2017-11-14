@@ -34,6 +34,7 @@ import { DutiesListingComponent } from './components/duties-listing/duties-listi
 import { UcaListingComponent } from './components/uca-listing/uca-listing.component';
 import { UcaDetailComponent } from './components/uca-detail/uca-detail.component';
 import { DutyDetailComponent } from './components/duty-detail/duty-detail.component';
+import { RegisterAsAdminComponent } from './components/register-as-admin/register-as-admin.component';
 
 
 
@@ -83,6 +84,7 @@ const appRoutes: Routes = [
     UcaListingComponent,
     UcaDetailComponent,
     DutyDetailComponent,
+    RegisterAsAdminComponent,
  
   ],
   imports: [
