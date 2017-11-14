@@ -20,7 +20,13 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { HomeComponent } from './components/home/home.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { HeaderComponent } from './components/header/header.component';
-import { ViewProfileComponent } from './components/oco/view-profile/view-profile.component';
+import { RegisterComponent } from './components/register/register.component';
+import { MyProfileComponent } from './components/my-profile/my-profile.component';
+import { PaymentsListingComponent } from './components/payments-listing/payments-listing.component';
+import { PaymentDetailComponent } from './components/payment-detail/payment-detail.component';
+import { LicenceDetailComponent } from './components/licence-detail/licence-detail.component';
+import { ApplicationsListingComponent } from './components/applications-listing/applications-listing.component';
+import { LicencesListingComponent } from './components/licences-listing/licences-listing.component';
 
 
 
@@ -30,9 +36,11 @@ const appRoutes: Routes = [
     // { path: '', component: ProfileComponent, },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterExciseTraderComponent },
+    { path: 'me', component: MyProfileComponent },
      { path: 'forgot-password', component: ForgotPasswordComponent },
      { path: 'new-form-41', component: NewForm41Component },
-    
+     { path: 'licences', component: LicencesListingComponent },
+    { path: 'payments', component: PaymentsListingComponent },
 
   
 ]
@@ -53,7 +61,13 @@ const appRoutes: Routes = [
     HomeComponent,
     UserProfileComponent,
     HeaderComponent,
-    ViewProfileComponent,
+    RegisterComponent,
+    MyProfileComponent,
+    PaymentsListingComponent,
+    PaymentDetailComponent,
+    LicenceDetailComponent,
+    ApplicationsListingComponent,
+    LicencesListingComponent,
  
   ],
   imports: [
