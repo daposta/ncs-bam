@@ -15,7 +15,6 @@ import { NewPaymentComponent } from './components/new-payment/new-payment.compon
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { RegisterExciseTraderComponent } from './components/register-excise-trader/register-excise-trader.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
@@ -43,7 +42,7 @@ const appRoutes: Routes = [
   
     // { path: '', component: ProfileComponent, },
     { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterExciseTraderComponent },
+    { path: 'register', component: RegisterComponent },
     { path: 'me', component: MyProfileComponent },
      { path: 'forgot-password', component: ForgotPasswordComponent },
      { path: 'new-form-41', component: NewForm41Component },
@@ -60,13 +59,11 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-  
     NewForm41Component,
     NewPaymentComponent,
     SidebarComponent,
     NavComponent,
     FooterComponent,
-    RegisterExciseTraderComponent,
     ForgotPasswordComponent,
     HomeComponent,
     UserProfileComponent,
