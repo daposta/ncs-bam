@@ -43,7 +43,7 @@ const appRoutes: Routes = [
     // { path: '', component: ProfileComponent, },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'me', component: MyProfileComponent },
+    { path: 'user-profile', component: MyProfileComponent },
      { path: 'forgot-password', component: ForgotPasswordComponent },
      { path: 'new-form-41', component: NewForm41Component },
      { path: 'licences', component: LicencesListingComponent },
