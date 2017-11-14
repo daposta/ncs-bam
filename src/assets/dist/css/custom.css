@@ -1,12 +1,12 @@
 ﻿.register-body{
     background-size:cover;
     background-image: url("../img/img-1.jpg");
-    height:630px;
+    height:650px;
 }
 .register-cover
 {
     background-size:cover;
     background: rgba(0, 0, 0, 0.2);
-      height:650px;
+      height:670px;
       margin:-15px;
 }
