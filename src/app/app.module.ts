@@ -26,6 +26,14 @@ import { PaymentDetailComponent } from './components/payment-detail/payment-deta
 import { LicenceDetailComponent } from './components/licence-detail/licence-detail.component';
 import { ApplicationsListingComponent } from './components/applications-listing/applications-listing.component';
 import { LicencesListingComponent } from './components/licences-listing/licences-listing.component';
+import { EntrysOfPremiseListingComponent } from './components/entrys-of-premise-listing/entrys-of-premise-listing.component';
+import { EntrysOfPremiseDetailComponent } from './components/entrys-of-premise-detail/entrys-of-premise-detail.component';
+import { ExciseTraderDetailComponent } from './components/excise-trader-detail/excise-trader-detail.component';
+import { ExciseTradersListingComponent } from './components/excise-traders-listing/excise-traders-listing.component';
+import { DutiesListingComponent } from './components/duties-listing/duties-listing.component';
+import { UcaListingComponent } from './components/uca-listing/uca-listing.component';
+import { UcaDetailComponent } from './components/uca-detail/uca-detail.component';
+import { DutyDetailComponent } from './components/duty-detail/duty-detail.component';
 
 
 
@@ -40,6 +48,8 @@ const appRoutes: Routes = [
      { path: 'new-form-41', component: NewForm41Component },
      { path: 'licences', component: LicencesListingComponent },
     { path: 'payments', component: PaymentsListingComponent },
+    { path: 'duties', component: DutiesListingComponent },
+     { path: 'ucas', component: UcaListingComponent },
 
   
 ]
@@ -65,6 +75,14 @@ const appRoutes: Routes = [
     LicenceDetailComponent,
     ApplicationsListingComponent,
     LicencesListingComponent,
+    EntrysOfPremiseListingComponent,
+    EntrysOfPremiseDetailComponent,
+    ExciseTraderDetailComponent,
+    ExciseTradersListingComponent,
+    DutiesListingComponent,
+    UcaListingComponent,
+    UcaDetailComponent,
+    DutyDetailComponent,
  
   ],
   imports: [
