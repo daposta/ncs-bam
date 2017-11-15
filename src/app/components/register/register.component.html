@@ -15,49 +15,50 @@
 
             <form (ngSubmit)="registerForm.form.valid &&  register()"  #registerForm="ngForm" novalidate>
                 <div class="form-group has-feedback">
-                    <input type="text" class="form-control" placeholder="First Name" [(ngModel)]="newUser.firstname" name="firstname" #firstname="ngModel" required>
+                    <input type="text" class="form-control" placeholder="First Name" [(ngModel)]="newUser.FirstName" name="FirstName" #FirstName="ngModel" required>
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
 
-                    <div *ngIf="registerForm.submitted && !firstname.valid" class="alert alert-danger">
+                    <div *ngIf="registerForm.submitted && !FirstName.valid" class="alert alert-danger">
                     <strong>Oh snap!</strong> First Name is required</div>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="newUser.lastname" name="lastname" #lastname="ngModel" required>
+                    <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="newUser.LastName" name="LastName" #LastName="ngModel" required>
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
 
-                     <div *ngIf="registerForm.submitted && !lastname.valid" class="alert alert-danger">
+                     <div *ngIf="registerForm.submitted && !LastName.valid" class="alert alert-danger">
                     <strong>Oh snap!</strong> Last Name is required</div>
                 </div>
 
                 <div class="form-group has-feedback">
-                    <input type="email" class="form-control" placeholder="Email" [(ngModel)]="newUser.email" name="email" #email="ngModel" required>
+                    <input type="email" class="form-control" placeholder="Email" [(ngModel)]="newUser.Email" name="email" #Email="ngModel" required>
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 
-                      <div *ngIf="registerForm.submitted && !email.valid" class="alert alert-danger">
+                      <div *ngIf="registerForm.submitted && !Email.valid" class="alert alert-danger">
                     Email is required</div>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="text" class="form-control" placeholder="Phone" [(ngModel)]="newUser.phone" name="phone" #phone="ngModel" required>
+                    <input type="text" class="form-control" placeholder="Phone" [(ngModel)]="newUser.Phone" name="Phone" #Phone="ngModel" required>
                     <span class="glyphicon glyphicon-phone form-control-feedback"></span>
 
-                      <div *ngIf="registerForm.submitted && !phone.valid" class="alert alert-danger">
+                      <div *ngIf="registerForm.submitted && !Phone.valid" class="alert alert-danger">
                     Phone is required</div>
 
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="Password" [(ngModel)]="newUser.password" name="password" #password="ngModel" required>
+                    <input type="password" class="form-control" placeholder="Password" [(ngModel)]="newUser.Password" name="Password" #Password="ngModel" required>
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 
-                      <div *ngIf="registerForm.submitted && !password.valid" class="alert alert-danger">
+                      <div *ngIf="registerForm.submitted && !Password.valid" class="alert alert-danger">
                      Password is required</div>
                 </div>
-                <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="Retype password" [(ngModel)]="newUser.confirmPassword" name="confirmPassword" #confirmPassword="ngModel" required>
+              <!--   <div class="form-group has-feedback">
+                    <input type="password" class="form-control" placeholder="Retype password" [(ngModel)]="newUser.ConfirmPassword" name="ConfirmPassword" #ConfirmPassword="ngModel" required>
 
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                      <div *ngIf="registerForm.submitted && !confirmPassword.valid" class="alert alert-danger">
+
+                      <div *ngIf="registerForm.submitted && !ConfirmPassword.valid" class="alert alert-danger">
                     Confirm Password is required</div>
-                </div>
+                </div> -->
                 <div class="row">
                     <div class="col-xs-8">
                     
