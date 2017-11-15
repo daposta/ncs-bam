@@ -1,3 +1,112 @@
-<p>
-  register-as-admin works!
-</p>
+
+<div class="col-md-6 register-body-admin">
+    <div class="register-cover-admin">
+
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="register-box">
+        <div class="register-logo">
+            <a href="#"><img src="assets/dist/img/logo.png" /></a>
+        </div>
+
+        <div class="register-box-body">
+            <p class="login-box-msg">Register a new Admin account</p>
+
+            <form (ngSubmit)="registerForm.form.valid &&  register()" #registerForm="ngForm" novalidate>
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" placeholder="First Name" [(ngModel)]="newUser.FirstName" name="FirstName" #FirstName="ngModel" required>
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
+                    <div *ngIf="registerForm.submitted && !FirstName.valid" class="alert alert-danger">
+                        <strong>Oh snap!</strong> First Name is required
+                    </div>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="newUser.LastName" name="LastName" #LastName="ngModel" required>
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
+                    <div *ngIf="registerForm.submitted && !LastName.valid" class="alert alert-danger">
+                        <strong>Oh snap!</strong> Last Name is required
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <input type="email" class="form-control" placeholder="Email" [(ngModel)]="newUser.Email" name="email" #Email="ngModel" required>
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+
+                    <div *ngIf="registerForm.submitted && !Email.valid" class="alert alert-danger">
+                        Email is required
+                    </div>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" placeholder="Phone" [(ngModel)]="newUser.Phone" name="Phone" #Phone="ngModel" required>
+                    <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+
+                    <div *ngIf="registerForm.submitted && !Phone.valid" class="alert alert-danger">
+                        Phone is required
+                    </div>
+
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" placeholder="Password" [(ngModel)]="newUser.Password" name="Password" #Password="ngModel" required>
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+
+                    <div *ngIf="registerForm.submitted && !Password.valid" class="alert alert-danger">
+                        Password is required
+                    </div>
+                </div>
+                <div class="form-group has-feedback">
+                    <select class="form-control" required>
+                        <option value="">Select Role</option>
+                        <option value="CAC">CAC</option>
+                    </select>
+                
+
+                    <!--<div *ngIf="registerForm.submitted && !Password.valid" class="alert alert-danger">
+                        Password is required
+                    </div>-->
+                </div>
+                <div class="form-group has-feedback">
+                    <select class="form-control" required>
+                        <option value="">Select Zone</option>
+                        <option value="Zone A">Zone A</option>
+                    </select>
+
+
+                    <!--<div *ngIf="registerForm.submitted && !Password.valid" class="alert alert-danger">
+            Password is required
+        </div>-->
+                </div>
+
+                <!--   <div class="form-group has-feedback">
+                      <input type="password" class="form-control" placeholder="Retype password" [(ngModel)]="newUser.ConfirmPassword" name="ConfirmPassword" #ConfirmPassword="ngModel" required>
+
+                      <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+
+                        <div *ngIf="registerForm.submitted && !ConfirmPassword.valid" class="alert alert-danger">
+                      Confirm Password is required</div>
+                  </div> -->
+                <div class="row">
+                    <div class="col-xs-8">
+
+                        <label>
+                            <input type="checkbox"> I agree to the <a href="#">terms</a>
+                        </label>
+
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+
+
+            <a href="/login" class="text-center">I already have a membership</a><br />
+            <a href="/register" class="text-center">Register as Excise Trader</a>
+        </div>
+        <!-- /.form-box -->
+    </div>
+</div>
