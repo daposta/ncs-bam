@@ -51,6 +51,7 @@ const appRoutes: Routes = [
     { path: 'payments', component: PaymentsListingComponent },
     { path: 'duties', component: DutiesListingComponent },
      { path: 'ucas', component: UcaListingComponent },
+      { path: 'applications', component: ApplicationsListingComponent },
 
   
 ]

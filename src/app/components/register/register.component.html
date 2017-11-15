@@ -13,31 +13,50 @@
         <div class="register-box-body">
             <p class="login-box-msg">Register a new excise account</p>
 
-            <form action="">
+            <form (ngSubmit)="registerForm.form.valid &&  register()"  #registerForm="ngForm" novalidate>
                 <div class="form-group has-feedback">
-                    <input type="text" class="form-control" placeholder="First Name">
+                    <input type="text" class="form-control" placeholder="First Name" [(ngModel)]="newUser.firstname" name="firstname" #firstname="ngModel" required>
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
+                    <div *ngIf="registerForm.submitted && !firstname.valid" class="alert alert-danger">
+                    <strong>Oh snap!</strong> First Name is required</div>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="text" class="form-control" placeholder="Last Name">
+                    <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="newUser.lastname" name="lastname" #lastname="ngModel" required>
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
+                     <div *ngIf="registerForm.submitted && !lastname.valid" class="alert alert-danger">
+                    <strong>Oh snap!</strong> Last Name is required</div>
                 </div>
 
                 <div class="form-group has-feedback">
-                    <input type="email" class="form-control" placeholder="Email">
+                    <input type="email" class="form-control" placeholder="Email" [(ngModel)]="newUser.email" name="email" #email="ngModel" required>
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+
+                      <div *ngIf="registerForm.submitted && !email.valid" class="alert alert-danger">
+                    Email is required</div>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="email" class="form-control" placeholder="Phone">
+                    <input type="text" class="form-control" placeholder="Phone" [(ngModel)]="newUser.phone" name="phone" #phone="ngModel" required>
                     <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+
+                      <div *ngIf="registerForm.submitted && !phone.valid" class="alert alert-danger">
+                    Phone is required</div>
+
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" class="form-control" placeholder="Password" [(ngModel)]="newUser.password" name="password" #password="ngModel" required>
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+
+                      <div *ngIf="registerForm.submitted && !password.valid" class="alert alert-danger">
+                     Password is required</div>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="Retype password">
+                    <input type="password" class="form-control" placeholder="Retype password" [(ngModel)]="newUser.confirmPassword" name="confirmPassword" #confirmPassword="ngModel" required>
+
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                      <div *ngIf="registerForm.submitted && !confirmPassword.valid" class="alert alert-danger">
+                    Confirm Password is required</div>
                 </div>
                 <div class="row">
                     <div class="col-xs-8">

@@ -1,3 +1,91 @@
-<p>
-  licences-listing works!
-</p>
+<div class="wrapper">
+    <app-header></app-header>
+
+    <app-sidebar></app-sidebar>
+
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Manage Licenses
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Organizational profile</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="row">
+           
+           <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">You have 2 licenses.</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <!-- form start -->
+                        <!-- Table row -->
+                        <div class="row">
+                            <div class="col-xs-12 table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            
+                                            <th>License No.</th>
+                                            <th>Location</th>
+                                            <th>Issue Date</th>
+                                            <th>Expiry Date</th>
+                                            <th>Approved By</th>
+                                           <th>Stage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#92991AA</td>
+                                            <td>Obajana Plant</td>
+                                            <td>Oct 3 2016</td>
+                                            <td>Dec 3 2017</td>
+                                            <td>Col Hammed Ali</td>
+                                            <td><span class="badge bg-green">Production</span></td>
+                                            <td><a href="/NCS/exercisetrader/view-license.html">View License</a></td>
+                                            <td><a href="/NCS/exercisetrader/revised-form.html">Apply for Expansion</a></td>
+                                        </tr>
+                                        <tr>
+
+                                            <td>#92991AA</td>
+                                            <td>Lekki / Epe Plant</td>
+                                            <td>Oct 3 2016</td>
+                                            <td>Dec 3 2017</td>
+                                            <td>Col Hammed Ali</td>
+                                            <td><span class="badge bg-red">Completed</span></td>
+                                            <td><a href="/NCS/exercisetrader/view-license.html">View License</a></td>
+                                            <td><a href="/NCS/exercisetrader/renew-form.html">Renew License</a></td>
+                                            <td><a href="/NCS/exercisetrader/revised-form.html">Apply for Expansion</a></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+
+
+                </div>
+        </div>
+        <!-- /.row -->
+
+    </section>
+    <!-- /.content -->
+</div>
+
+
+
+    <app-footer></app-footer>
+</div>
