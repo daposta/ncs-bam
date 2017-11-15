@@ -22,25 +22,28 @@ export class RegisterComponent implements OnInit {
    }
 
   ngOnInit() {
-    console.log('skrraaaa');
-    this.fetchUsers();
+   
+   // this.fetchUsers();
 
   }
 
   register(){
-    if(!localStorage.getItem('uid')){
-       this.newUser.UserId ="219";
+    console.log('papapa');
+    console.log(localStorage);
+    console.log(localStorage.getItem('uid'));
+    if(!localStorage.getItem('uid') ||localStorage.getItem('uid')=="NaN"){
+       this.newUser.UserId ="230";
      }else{
-       this.newUser.UserID = localStorage.getItem('uid');
+       this.newUser.UserId = localStorage.getItem('uid');
      }
-     console.log(this.newUser.UserID);
+     console.log(this.newUser.UserId);
    
 
     let formData = new FormData();
     formData.append('FirstName', this.newUser['FirstName']);
     formData.append('LastName', this.newUser['LastName']);
     formData.append('Phone', this.newUser['Phone']);
-    formData.append('Email' ,this.newUser['FirstName']);
+    formData.append('Email' ,this.newUser['Email']);
     formData.append('Password', this.newUser['Password']);
     formData.append('UserId' , this.newUser['UserId']);
     // formData.append('UserId', '911');
@@ -49,8 +52,9 @@ export class RegisterComponent implements OnInit {
     //   formData.append('FirstName', 'Leke');
     //   formData.append('LastName', 'Alao');
     //   formData.append('Password', 'errytr-=ouokj');
-    console.log(formData);
-    localStorage.setItem('uid',  this.newUser.UserId+1 )
+    let newID = Number(this.newUser.UserId) + 1;
+    console.log('newid>>>' + newID);
+    localStorage.setItem('uid', newID.toString() );
     //this.newUser['ConfirmPassword'] = '';
     this.userSrv.register(formData);
   }

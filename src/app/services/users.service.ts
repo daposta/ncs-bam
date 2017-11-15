@@ -12,6 +12,7 @@ export class UsersService {
 	evil : any;
   // private loginUrl = this.globals.LOGIN_URL; 
   private usersUrl = "https://129.144.154.136/ords/pdb1/ncs/system/users/";
+  private userEmailUrl = "https://129.144.154.136/ords/pdb1/ncs/system/user/email/";
   constructor(private http: Http, private router:Router,) { }
 
   login(data: FormData){
@@ -78,7 +79,7 @@ export class UsersService {
 					
 				},
 				success: function(data) { 
-					console.log("=====Sent successfully to the database========");
+					//console.log("=====Sent successfully to the database========");
 					window.location.href= '/login';
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
@@ -88,6 +89,19 @@ export class UsersService {
 		
 
 	};
+
+	findUserByEmail(email:String){
+		let headers = new Headers();
+   		 headers.append('Content-Type','application/json');
+   		 headers.append('Allow-Cross-Origin','*');
+		   return this.http.get(this.userEmailUrl +email,  {headers: headers})
+		              .toPromise()
+		              .then(response => response.json())
+		              .catch(this.handleError);
+	}
+
+
+	
 
 
 
