@@ -41,10 +41,10 @@ import { RegisterAsAdminComponent } from './components/register-as-admin/registe
 
 const appRoutes: Routes = [
   
-    // { path: '', component: ProfileComponent, },
+     { path: '', component: MyProfileComponent, },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'user-profile', component: MyProfileComponent },
+    // { path: 'user-profile', component: MyProfileComponent },
      { path: 'forgot-password', component: ForgotPasswordComponent },
      { path: 'new-form-41', component: NewForm41Component },
      { path: 'licences', component: LicencesListingComponent },
