@@ -15,7 +15,7 @@ export class Form41sService {
 		private _vcr: ViewContainerRef,) { }
 
 
-  fetch(){
+  fetchForm41(){
   		 //let v = this.page_header();
 		   let headers = new Headers();
    		 headers.append('Content-Type','application/json');

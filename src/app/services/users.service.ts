@@ -86,7 +86,7 @@ export class UsersService {
 				},
 				success: function(data) { 
 					//console.log("=====Sent successfully to the database========");
-				this.toastr.success("Success", 'Registration Successful');
+				//this.toastr.success("Success", 'Registration Successful');
 
 					window.location.href= '/login';
 				},

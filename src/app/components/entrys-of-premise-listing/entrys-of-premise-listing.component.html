@@ -68,11 +68,11 @@
                                     </thead>
                                     <tbody>
 
-                                        <tr>
+                                        <tr  *ngFor="let entry of forms;let i = index ">
 
                                             <td><a href="/entrys-of-premise/detail">NCS32992992</a></td>
-                                            <td>British American Tobacco</td>
-                                            <td>we are building a 200sqm factory for the production of cig...</td>
+                                            <td>{{entry.name}}</td>
+                                            <td>{{entry.description}}</td>
                                             <td>13 Oluyole Ibadan</td>
                                             <td>To carry out a cigerette business</td>
                                             <td><span class="badge bg-blue">Completed</span></td>
