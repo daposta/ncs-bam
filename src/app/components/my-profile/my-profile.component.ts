@@ -11,7 +11,9 @@ export class MyProfileComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  	this.user = JSON.parse(localStorage.getItem('user'));
+  	if(localStorage.getItem('user')){
+  		this.user = JSON.parse(localStorage.getItem('user'));
+  	}
   	
 
   }
