@@ -11,12 +11,22 @@ import { Form41sService} from '../../services/form41s.service';
 export class NewForm41Component implements OnInit {
 
   Form41: any= {};
-  constructor(private form41: Form41sService) { }
+  constructor(private form41Srv: Form41sService) { }
 
   ngOnInit() {
   }
 
   save(){
+
+
+    let formData = new FormData();
+   formData.append('name', this.Form41['name']);
+   formData.append('name', this.Form41['address']);
+   formData.append('name', this.Form41['purpose']);
+   formData.append('name', this.Form41['description']);
+  
+    
+    this.form41Srv.save(formData);
 
   }
 
