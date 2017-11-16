@@ -5,4 +5,16 @@ export class LicencesService {
 
   constructor() { }
 
+  fetchLicences(){
+
+  };
+
+  saveLicence(){
+
+  }
+
+  licenceDetail(){
+  	
+  }
+
 }
