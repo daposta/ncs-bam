@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
     if(!localStorage.getItem('userid') ||localStorage.getItem('userid')=="NaN"){
        this.newUser.UserId ="230";
      }else{
-       this.newUser.UserId = localStorage.getItem('uid');
+       this.newUser.UserId = localStorage.getItem('userid');
      }
      
     let formData = new FormData();
@@ -50,6 +50,7 @@ export class RegisterComponent implements OnInit {
     //   formData.append('Password', 'errytr-=ouokj');
     let newID = Number(this.newUser.UserId) + 1;
     localStorage.setItem('uid', newID.toString() );
+    console.log();
     //this.newUser['ConfirmPassword'] = '';
     this.userSrv.register(formData);
   }

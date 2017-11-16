@@ -27,8 +27,9 @@ export class LoginComponent implements OnInit {
   		if(result.items.length > 0){
   			if(result.items[0].password === this.user.password){
          
-  				localStorage.setItem('user', result.items[0]);
+  				localStorage.setItem('user', JSON.stringify(result.items[0]));
             localStorage.setItem('userid', result.items[0].userid);
+            
            
            let msg = 'Login successful';
           this.toastr.success("Success", msg);
@@ -40,8 +41,7 @@ export class LoginComponent implements OnInit {
   			}
 
   		}else{
-  			console.log('User with email does not exists');
-        let msg = 'User with email does not exists'
+  			 let msg = 'User with email does not exists'
         this.toastr.error("Error", msg);
   		}
   		
