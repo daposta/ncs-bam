@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payments-listing.component.css']
 })
 export class PaymentsListingComponent implements OnInit {
-
+  payments: any[];
+ 	error: any;
+ 	search: string ="" ;
   constructor() { }
 
   ngOnInit() {
