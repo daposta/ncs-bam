@@ -20,12 +20,16 @@ export class RegisterAsAdminComponent implements OnInit {
   	private userSrv : UsersService) { }
 
   ngOnInit() {
+  	this.fetchRoles();
+  	this.fetchZones();
+    this.newUser.role = -1;
+    this.newUser.zone = -1;
   }
 
 
   fetchRoles(){
   	this.rolesSrv.fetchRoles()
-  	.then(response => this.roles = response.items)
+  	.then(response => {this.roles = response.items})
   	.catch(err => this.error = err);
   };
 
