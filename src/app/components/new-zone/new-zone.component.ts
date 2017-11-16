@@ -19,14 +19,13 @@ export class NewZoneComponent implements OnInit {
 
  saveZone(){
 
-    //let formData = new FormData();
-    //formData.append('ZoneName', this.zone['zonename']);
-
-   let j = this.slugify("zonal head of states");
-   console.log(j);
+   let slug = this.slugify(this.zone['name']);
+    let formData = new FormData();
+   formData.append('name', this.zone['name']);
+   formData.append('slogName', slug);
     
     
-    //this.zoneSrv.saveZone(formData);
+    this.zoneSrv.saveZone(formData);
 
 
  }

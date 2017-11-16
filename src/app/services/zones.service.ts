@@ -47,7 +47,7 @@ export class ZonesService {
 				},
 				success: function(data) { 
 					//console.log("=====Sent successfully to the database========");
-					window.location.href= '/login';
+					window.location.href= '/zones';
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
 					console.log("=====uploading system error ========");
