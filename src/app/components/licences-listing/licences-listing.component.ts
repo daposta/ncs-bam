@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LicencesService} from '../../services/licences.service';
 
 @Component({
   selector: 'app-licences-listing',

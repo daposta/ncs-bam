@@ -57,36 +57,31 @@
                     </div>
                 </div>
                 <div class="form-group has-feedback">
-                    <select class="form-control" required>
-                        <option value="">Select Role</option>
-                        <option value="CAC">CAC</option>
+                    <select class="form-control" [(ngModel)]="newUser.role" name="role" required>
+                        <option [value]="-1" [disabled]="true" [selected]="true">Select Role</option>
+                       <option *ngFor="let role of roles" [value]="role.idrole">{{role.rolename}}</option>
                     </select>
+                    <div *ngIf="registerForm.submitted && !role.valid" class="alert alert-danger">
+                        zone is required
+                    </div>
                 
 
-                    <!--<div *ngIf="registerForm.submitted && !Password.valid" class="alert alert-danger">
-                        Password is required
-                    </div>-->
+                  
                 </div>
                 <div class="form-group has-feedback">
-                    <select class="form-control" required>
-                        <option value="">Select Zone</option>
-                        <option value="Zone A">Zone A</option>
+                    <select class="form-control" [(ngModel)]="newUser.zone" name="zone" required #zone="ngModel">
+                        <option  [value]="-1" [disabled]="true" [selected]="true">Select Zone</option>
+                        <option *ngFor="let zone of zones" [value]="zone.idzone">{{zone.zonename}}</option>
                     </select>
 
+                    <div *ngIf="registerForm.submitted && !zone.valid" class="alert alert-danger">
+                        Zone is required
+                    </div>
 
-                    <!--<div *ngIf="registerForm.submitted && !Password.valid" class="alert alert-danger">
-            Password is required
-        </div>-->
+
+                    
                 </div>
 
-                <!--   <div class="form-group has-feedback">
-                      <input type="password" class="form-control" placeholder="Retype password" [(ngModel)]="newUser.ConfirmPassword" name="ConfirmPassword" #ConfirmPassword="ngModel" required>
-
-                      <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-
-                        <div *ngIf="registerForm.submitted && !ConfirmPassword.valid" class="alert alert-danger">
-                      Confirm Password is required</div>
-                  </div> -->
                 <div class="row">
                     <div class="col-xs-8">
 
@@ -97,7 +92,7 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+                        <button type="submit" class="btn btn-success btn-block btn-flat">Register</button>
                     </div>
                     <!-- /.col -->
                 </div>

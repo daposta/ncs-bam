@@ -28,17 +28,13 @@ export class RegisterComponent implements OnInit {
   }
 
   register(){
-    console.log('papapa');
-    console.log(localStorage);
-    console.log(localStorage.getItem('uid'));
+   
     if(!localStorage.getItem('uid') ||localStorage.getItem('uid')=="NaN"){
        this.newUser.UserId ="230";
      }else{
        this.newUser.UserId = localStorage.getItem('uid');
      }
-     console.log(this.newUser.UserId);
-   
-
+     
     let formData = new FormData();
     formData.append('FirstName', this.newUser['FirstName']);
     formData.append('LastName', this.newUser['LastName']);
@@ -53,17 +49,16 @@ export class RegisterComponent implements OnInit {
     //   formData.append('LastName', 'Alao');
     //   formData.append('Password', 'errytr-=ouokj');
     let newID = Number(this.newUser.UserId) + 1;
-    console.log('newid>>>' + newID);
     localStorage.setItem('uid', newID.toString() );
     //this.newUser['ConfirmPassword'] = '';
     this.userSrv.register(formData);
   }
 
 
-  fetchUsers(){
-    this.userSrv.fetchUsers()
-            .then(res => this.users = res)
-            .catch(error => this.error = error);
-  }
+  // fetchUsers(){
+  //   this.userSrv.fetchUsers()
+  //           .then(res => this.users = res)
+  //           .catch(error => this.error = error);
+  // }
 
 }

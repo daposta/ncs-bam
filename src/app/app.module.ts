@@ -37,6 +37,7 @@ import { DutyDetailComponent } from './components/duty-detail/duty-detail.compon
 import { RegisterAsAdminComponent } from './components/register-as-admin/register-as-admin.component';
 import { ZonesListingComponent } from './components/zones-listing/zones-listing.component';
 import { NewZoneComponent } from './components/new-zone/new-zone.component';
+import { NewForm41UploadsComponent } from './components/new-form-41-uploads/new-form-41-uploads.component';
 
 
 
@@ -49,6 +50,7 @@ const appRoutes: Routes = [
      { path: 'register-as-admin', component: RegisterAsAdminComponent },
      { path: 'forgot-password', component: ForgotPasswordComponent },
      { path: 'new-form-41', component: NewForm41Component },
+      { path: 'new-form-41-uploads', component: NewForm41UploadsComponent },
      { path: 'licences', component: LicencesListingComponent },
     { path: 'payments', component: PaymentsListingComponent },
     { path: 'duties', component: DutiesListingComponent },
@@ -92,6 +94,7 @@ const appRoutes: Routes = [
     RegisterAsAdminComponent,
     ZonesListingComponent,
     NewZoneComponent,
+    NewForm41UploadsComponent,
  
   ],
   imports: [
