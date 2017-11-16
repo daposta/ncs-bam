@@ -35,6 +35,8 @@ import { UcaListingComponent } from './components/uca-listing/uca-listing.compon
 import { UcaDetailComponent } from './components/uca-detail/uca-detail.component';
 import { DutyDetailComponent } from './components/duty-detail/duty-detail.component';
 import { RegisterAsAdminComponent } from './components/register-as-admin/register-as-admin.component';
+import { ZonesListingComponent } from './components/zones-listing/zones-listing.component';
+import { NewZoneComponent } from './components/new-zone/new-zone.component';
 
 
 
@@ -52,6 +54,8 @@ const appRoutes: Routes = [
     { path: 'duties', component: DutiesListingComponent },
      { path: 'ucas', component: UcaListingComponent },
       { path: 'applications', component: ApplicationsListingComponent },
+      { path: 'zones', component: ZonesListingComponent },
+      { path: 'new-zone', component: NewZoneComponent },
 
   
 ]
@@ -86,6 +90,8 @@ const appRoutes: Routes = [
     UcaDetailComponent,
     DutyDetailComponent,
     RegisterAsAdminComponent,
+    ZonesListingComponent,
+    NewZoneComponent,
  
   ],
   imports: [

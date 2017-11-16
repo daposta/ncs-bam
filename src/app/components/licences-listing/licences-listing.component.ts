@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LicencesListingComponent implements OnInit {
 
+  licences: any[];
+ 	error: any;
+ 	search: string ="" ;
   constructor() { }
 
   ngOnInit() {
