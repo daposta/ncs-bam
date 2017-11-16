@@ -10,6 +10,7 @@ export class MyProfileComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  	console.log(localStorage.getItem('userid'));
   }
 
 }

@@ -79,21 +79,21 @@
                             <div class="box-body">
 
                                 <span><strong>Name</strong></span><br />
-                                <input type="text" class="form-control" placeholder="Name of business" [(ngModel)]="Form41.name" name="name" #name="ngModel" required>
+                                <input type="text" class="form-control" placeholder="Name of business" [(ngModel)]="f41.name" name="name" #name="ngModel" required>
 
                                 <div *ngIf="Form41.submitted && !name.valid" class="alert alert-danger">
                     <strong>Oh snap!</strong>  Name is required</div>
 
                                <br />
                                 <span><strong>Registered Address</strong></span>
-                                <input type="text" class="form-control" placeholder="Enter your address"  [(ngModel)]="Form41.address" name="address" #address="ngModel" required>
+                                <input type="text" class="form-control" placeholder="Enter your address"  [(ngModel)]="f41.address" name="address" #address="ngModel" required>
 
                                  <div *ngIf="Form41.submitted && !address.valid" class="alert alert-danger">
                     <strong>Oh snap!</strong> Address is required</div>
                                 <br />
 
                                 <span><strong>Describe your business</strong></span>
-                                <textarea class="form-control" placeholder="Describe your business" rows="3"  [(ngModel)]="Form41.description" name="description" #description="ngModel" required=""></textarea>
+                                <textarea class="form-control" placeholder="Describe your business" rows="3"  [(ngModel)]="f41.description" name="description" #description="ngModel" required=""></textarea>
 
                                  <div *ngIf="Form41.submitted && !description.valid" class="alert alert-danger">
                     <strong>Oh snap!</strong> Description of Business is required</div>
@@ -101,7 +101,7 @@
                                 <br />
                                 <div>
                                     <span><strong>Purpose of business</strong></span>
-                                    <textarea class="form-control" placeholder="Purpose of business" rows="3"  [(ngModel)]="Form41.purpose" name="purpose" #purpose="ngModel" required></textarea>
+                                    <textarea class="form-control" placeholder="Purpose of business" rows="3"  [(ngModel)]="f41.purpose" name="purpose" #purpose="ngModel" required></textarea>
                                      
                                      <div *ngIf="Form41.submitted && !purpose.valid" class="alert alert-danger">
                     <strong>Oh snap!</strong> Purpose of Business is required</div>

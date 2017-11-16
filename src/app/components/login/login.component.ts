@@ -22,17 +22,19 @@ export class LoginComponent implements OnInit {
 
   	this.userSrv.findUserByEmail(this.user['email'])
   	.then(result => {
-  		
+  		localStorage.clear();
   		if(result.items.length > 0){
   			if(result.items[0].password === this.user.password){
-  				localStorage.setItem('user', this.user);
+         
+  				localStorage.setItem('user', result.items[0]);
+            localStorage.setItem('userid', result.items[0].userid);
+           
            let msg = 'Login successful';
           this.toastr.success("Success", msg);
   				window.location.href = '/';
   			}
   			else{
-  				console.log('No user with matching credentials');
-          let msg = 'No user with matching credentials';
+  				let msg = 'No user with matching credentials';
           this.toastr.error("Error", 'You are on right track.');
   			}
 
