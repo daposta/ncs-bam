@@ -22,7 +22,8 @@ export class LoginComponent implements OnInit {
 
   	this.userSrv.findUserByEmail(this.user['email'])
   	.then(result => {
-  		localStorage.clear();
+  		localStorage.removeItem('user');
+      localStorage.removeItem('userid');
   		if(result.items.length > 0){
   			if(result.items[0].password === this.user.password){
          

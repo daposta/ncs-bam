@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
 
   register(){
    
-    if(!localStorage.getItem('uid') ||localStorage.getItem('uid')=="NaN"){
+    if(!localStorage.getItem('userid') ||localStorage.getItem('userid')=="NaN"){
        this.newUser.UserId ="230";
      }else{
        this.newUser.UserId = localStorage.getItem('uid');

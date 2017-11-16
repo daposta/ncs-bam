@@ -85,10 +85,10 @@ export class UsersService {
 					
 				},
 				success: function(data) { 
-					//console.log("=====Sent successfully to the database========");
-				this.toastr.success("Success", 'Registration Successful');
+					console.log("=====Sent successfully to the database========");
+				//this.toastr.success("Success", 'Registration Successful');
 
-					//window.location.href= '/login';
+					window.location.href= '/login';
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
 					console.log("=====uploading system error ========");
