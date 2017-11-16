@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , ViewContainerRef} from '@angular/core';
 import { UsersService} from '../../services/users.service';
 import { RolesService} from '../../services/roles.service';
 import { ZonesService} from '../../services/zones.service';
+//import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'app-register-as-admin',
@@ -17,13 +18,16 @@ export class RegisterAsAdminComponent implements OnInit {
   zones: any[];
 
   constructor(private rolesSrv : RolesService, private zonesSrv : ZonesService, 
-  	private userSrv : UsersService) { }
+  	private userSrv : UsersService, ) { 
+   // this.toastr.setRootViewContainerRef(_vcr);
+  }
 
   ngOnInit() {
   	this.fetchRoles();
   	this.fetchZones();
     this.newUser.role = -1;
     this.newUser.zone = -1;
+    //this.toastr.success("Success", 'You are on right track.');
   }
 
 

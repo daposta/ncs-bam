@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ViewContainerRef } from '@angular/core';
 
 import { Http, Headers, RequestOptions, URLSearchParams } from '@angular/http';
 import {Router} from '@angular/router';
@@ -6,6 +6,7 @@ import {Router} from '@angular/router';
 // import {BodyOutputType} from 'angular2-toaster';
 import 'rxjs/add/operator/toPromise';
 declare var $: any;
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Injectable()
 export class UsersService {
@@ -13,7 +14,11 @@ export class UsersService {
   // private loginUrl = this.globals.LOGIN_URL; 
   private usersUrl = "https://129.144.154.136/ords/pdb1/ncs/system/users/";
   private userEmailUrl = "https://129.144.154.136/ords/pdb1/ncs/system/user/email/";
-  constructor(private http: Http, private router:Router,) { }
+  constructor(private http: Http, private router:Router, private toastr: ToastsManager, 
+		private _vcr: ViewContainerRef,) {
+		this.toastr.setRootViewContainerRef(_vcr);
+
+	 }
 
   login(data: FormData){
 		
@@ -33,6 +38,7 @@ export class UsersService {
 				},
 				success: function(data) { 
 					console.log("=====Sent successfully to the database========");
+				//	this.toastr.success("Success", 'Login Successful');
 					window.location.href= '/login';
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
@@ -80,6 +86,8 @@ export class UsersService {
 				},
 				success: function(data) { 
 					//console.log("=====Sent successfully to the database========");
+				this.toastr.success("Success", 'Registration Successful');
+
 					window.location.href= '/login';
 				},
 				error: function(jqXHR, textStatus, errorThrown) {

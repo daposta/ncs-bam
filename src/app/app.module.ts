@@ -5,6 +5,7 @@ import {HttpModule,  Http } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule }   from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ToastModule } from 'ng2-toastr/ng2-toastr';
 
 
 
@@ -51,6 +52,7 @@ const appRoutes: Routes = [
      { path: 'forgot-password', component: ForgotPasswordComponent },
      { path: 'new-form-41', component: NewForm41Component },
       { path: 'new-form-41-uploads', component: NewForm41UploadsComponent },
+       { path: 'entrys-of-premise', component: EntrysOfPremiseListingComponent },
      { path: 'licences', component: LicencesListingComponent },
     { path: 'payments', component: PaymentsListingComponent },
     { path: 'duties', component: DutiesListingComponent },
@@ -58,6 +60,7 @@ const appRoutes: Routes = [
       { path: 'applications', component: ApplicationsListingComponent },
       { path: 'zones', component: ZonesListingComponent },
       { path: 'new-zone', component: NewZoneComponent },
+       { path: 'excise-traders', component: ExciseTradersListingComponent },
 
   
 ]
@@ -99,7 +102,9 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule, HttpModule, FormsModule,BrowserAnimationsModule,
-      RouterModule.forRoot(appRoutes, {})
+      RouterModule.forRoot(appRoutes, {}),
+      ToastModule.forRoot()
+
 
   ],
   providers: [],
