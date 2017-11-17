@@ -26,14 +26,16 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
    
-   // this.fetchUsers();
+   // let t = len(this.fetchUsers());
+   // let last:any = t.slice(-1)[0];
 
   }
 
   register(){
    
     if(!localStorage.getItem('userid') ||localStorage.getItem('userid')=="NaN"){
-       this.newUser.UserId ="230";
+      // this.newUser.UserId ="1000";
+      this.newUser.UserId = this.makeid();
      }else{
        this.newUser.UserId = localStorage.getItem('userid');
      }
@@ -45,19 +47,12 @@ export class RegisterComponent implements OnInit {
     formData.append('Email' ,this.newUser['Email']);
     formData.append('Password', this.newUser['Password']);
     formData.append('UserId' , this.newUser['UserId']);
-    // formData.append('UserId', '911');
-    //   formData.append('Email', 'leke@me.com');
-    //   formData.append('Phone', '07066655543');
-    //   formData.append('FirstName', 'Leke');
-    //   formData.append('LastName', 'Alao');
-    //   formData.append('Password', 'errytr-=ouokj');
+   
     let newID = Number(this.newUser.UserId) + 1;
     localStorage.setItem('uid', newID.toString() );
-
     let  usersUrl = "https://129.144.154.136/ords/pdb1/ncs/system/users/";
     let toastr = this.toastr;
-    console.log(formData);
-
+    
      $.ajax ( {
         type: 'POST',
         url: usersUrl,
@@ -86,10 +81,20 @@ export class RegisterComponent implements OnInit {
     
   }
 
+   makeid() {
+      var text = "";
+      var possible = "0123456789";
+
+      for (var i = 0; i < 4; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+      return text;
+  }
+
 
   // fetchUsers(){
   //   this.userSrv.fetchUsers()
-  //           .then(res => this.users = res)
+  //           .then(res => this.users = res.items)
   //           .catch(error => this.error = error);
   // }
 
