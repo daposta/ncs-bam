@@ -39,6 +39,9 @@ import { RegisterAsAdminComponent } from './components/register-as-admin/registe
 import { ZonesListingComponent } from './components/zones-listing/zones-listing.component';
 import { NewZoneComponent } from './components/new-zone/new-zone.component';
 import { NewForm41UploadsComponent } from './components/new-form-41-uploads/new-form-41-uploads.component';
+import { RegistersListingComponent } from './components/registers-listing/registers-listing.component';
+import { RegisterDetailComponent } from './components/register-detail/register-detail.component';
+import { NewRegisterComponent } from './components/new-register/new-register.component';
 
 
 
@@ -54,14 +57,16 @@ const appRoutes: Routes = [
       { path: 'new-form-41-uploads', component: NewForm41UploadsComponent },
        { path: 'entrys-of-premise', component: EntrysOfPremiseListingComponent },
        { path: 'entrys-of-premise/:id', component: EntrysOfPremiseDetailComponent },
-     { path: 'licences', component: LicencesListingComponent },
+     { path: 'manage-licences', component: LicencesListingComponent },
     { path: 'payments', component: PaymentsListingComponent },
     { path: 'duties', component: DutiesListingComponent },
-     { path: 'ucas', component: UcaListingComponent },
+     { path: 'manage-ucas', component: UcaListingComponent },
       { path: 'applications', component: ApplicationsListingComponent },
       { path: 'zones', component: ZonesListingComponent },
       { path: 'new-zone', component: NewZoneComponent },
        { path: 'excise-traders', component: ExciseTradersListingComponent },
+
+       { path: 'manage-registers', component: RegistersListingComponent },
 
   
 ]
@@ -99,6 +104,9 @@ const appRoutes: Routes = [
     ZonesListingComponent,
     NewZoneComponent,
     NewForm41UploadsComponent,
+    RegistersListingComponent,
+    RegisterDetailComponent,
+    NewRegisterComponent,
  
   ],
   imports: [
