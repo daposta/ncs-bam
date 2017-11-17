@@ -17,4 +17,12 @@ export class HeaderComponent implements OnInit {
     document.body.classList.add("sidebar-mini");
   }
 
+  logout(){
+  	if(localStorage.getItem('userid')){
+  		localStorage.removeItem('userid');
+  		localStorage.removeItem('user');
+  		window.location.href = '/login';
+  	}
+  }
+
 }
