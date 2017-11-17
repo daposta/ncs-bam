@@ -42,6 +42,8 @@ import { NewForm41UploadsComponent } from './components/new-form-41-uploads/new-
 import { RegistersListingComponent } from './components/registers-listing/registers-listing.component';
 import { RegisterDetailComponent } from './components/register-detail/register-detail.component';
 import { NewRegisterComponent } from './components/new-register/new-register.component';
+import { NewAssignmentComponent } from './components/new-assignment/new-assignment.component';
+import { AssignmentsListingComponent } from './components/assignments-listing/assignments-listing.component';
 
 
 
@@ -67,6 +69,10 @@ const appRoutes: Routes = [
        { path: 'excise-traders', component: ExciseTradersListingComponent },
 
        { path: 'manage-registers', component: RegistersListingComponent },
+
+        { path: 'manage-assignments', component: AssignmentsListingComponent },
+       { path: 'new-assignment', component: NewAssignmentComponent },
+
 
   
 ]
@@ -107,6 +113,8 @@ const appRoutes: Routes = [
     RegistersListingComponent,
     RegisterDetailComponent,
     NewRegisterComponent,
+    NewAssignmentComponent,
+    AssignmentsListingComponent,
  
   ],
   imports: [
