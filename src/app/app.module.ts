@@ -67,11 +67,11 @@ const appRoutes: Routes = [
        { path: 'entrys-of-premise/:id', component: EntrysOfPremiseDetailComponent },
      { path: 'manage-licences', component: LicencesListingComponent,canActivate: [AuthGuard]  },
     { path: 'payments', component: PaymentsListingComponent, canActivate: [AuthGuard]  },
-    { path: 'duties', component: DutiesListingComponent },
-     { path: 'manage-ucas', component: UcaListingComponent },
-      { path: 'applications', component: ApplicationsListingComponent },
+    { path: 'duties', component: DutiesListingComponent,canActivate: [AuthGuard] },
+     { path: 'manage-ucas', component: UcaListingComponent, canActivate: [AuthGuard] },
+      { path: 'applications', component: ApplicationsListingComponent, canActivate: [AuthGuard] },
       { path: 'zones', component: ZonesListingComponent },
-      { path: 'new-zone', component: NewZoneComponent },
+      { path: 'new-zone', component: NewZoneComponent ,canActivate: [AuthGuard]},
        { path: 'excise-traders', component: ExciseTradersListingComponent , canActivate: [AuthGuard] },
 
        
