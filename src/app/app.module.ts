@@ -53,7 +53,7 @@ const appRoutes: Routes = [
      { path: 'new-form-41', component: NewForm41Component },
       { path: 'new-form-41-uploads', component: NewForm41UploadsComponent },
        { path: 'entrys-of-premise', component: EntrysOfPremiseListingComponent },
-       { path: 'entrys-of-premise/detail', component: EntrysOfPremiseDetailComponent },
+       { path: 'entrys-of-premise/:id', component: EntrysOfPremiseDetailComponent },
      { path: 'licences', component: LicencesListingComponent },
     { path: 'payments', component: PaymentsListingComponent },
     { path: 'duties', component: DutiesListingComponent },

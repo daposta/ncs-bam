@@ -27,32 +27,22 @@ export class Form41sService {
   };
 
 
+  findForm41ByID(pk: any){
+      let headers = new Headers();
+   		 headers.append('Content-Type','application/json');
+   		 headers.append('Allow-Cross-Origin','*');
+
+     return this.http.get(this.form41sUrl + pk , {headers: headers})
+              .toPromise()
+              .then(response => response.json())
+              .catch(this.handleError);
+  };
+
+
    save(data: FormData){
 
-   	console.log(data);
+   	
 
-   		 $.ajax ( {
-				type: 'POST',
-				url: this.form41sUrl,
-				enctype: ' multipart/form-data',
-				data: data,
-				cache: false,
-				processData: false,
-				contentType: false,
-				crossDomain: true,
-				xhrFields: { withCredentials: true },
-				beforeSend: function (xhr) { 
-					console.log('setting credentials.......');
-					
-				},
-				success: function(data) { 
-					console.log("=====Sent successfully to the database========");
-					window.location.href= '/entrys-of-premise';
-				},
-				error: function(jqXHR, textStatus, errorThrown) {
-					console.log("=====uploading system error ========");
-				}
-			} );
 
   };
 

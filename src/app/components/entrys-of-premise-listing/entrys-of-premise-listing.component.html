@@ -70,12 +70,13 @@
 
                                         <tr  *ngFor="let entry of forms;let i = index ">
 
-                                            <td><a href="/entrys-of-premise/detail">{{entry.formref}}</a></td>
+                                            <td><a href="/entrys-of-premise/{{entry.idform}}">{{entry.formref}}</a></td>
                                             <td>{{entry.cname}}</td>
                                             <td>{{entry.descriptionofbusiness}}</td>
+                                            <td>{{entry.registeredaddress}}</td>
                                             <td>{{entry.purposeofbusiness}}</td>
-                                            <td>To carry out a cigerette business</td>
-                                            <td><span class="badge bg-blue">Completed</span></td>
+                                            
+                                            <td><span class="badge bg-blue">{{entry.status}}</span></td>
                                      
                
                                         </tr>

@@ -1,5 +1,6 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 declare var $: any;
 
 import { UsersService} from '../../services/users.service';
@@ -18,7 +19,9 @@ export class RegisterComponent implements OnInit {
   users: any[];
   //formData: FormData;
 
-  constructor(private userSrv: UsersService) {
+  constructor(private userSrv: UsersService,private toastr: ToastsManager, 
+  private _vcr: ViewContainerRef,) {
+      this.toastr.setRootViewContainerRef(_vcr);
    }
 
   ngOnInit() {
@@ -50,9 +53,37 @@ export class RegisterComponent implements OnInit {
     //   formData.append('Password', 'errytr-=ouokj');
     let newID = Number(this.newUser.UserId) + 1;
     localStorage.setItem('uid', newID.toString() );
-    console.log();
-    //this.newUser['ConfirmPassword'] = '';
-    this.userSrv.register(formData);
+
+    let  usersUrl = "https://129.144.154.136/ords/pdb1/ncs/system/users/";
+    let toastr = this.toastr;
+    console.log(formData);
+
+     $.ajax ( {
+        type: 'POST',
+        url: usersUrl,
+        enctype: ' multipart/form-data',
+        data: formData,
+        cache: false,
+        processData: false,
+        contentType: false,
+        crossDomain: true,
+        xhrFields: { withCredentials: true },
+        beforeSend: function (xhr) { 
+          console.log('setting credentials.......');
+          
+        },
+        success: function(data) { 
+          console.log("=====Sent successfully to the database========");
+
+          toastr.success("Success", 'Registration Successful');
+
+          window.location.href= '/login';
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.log("=====uploading system error ========");
+        }
+      } );
+    
   }
 
 

@@ -8,7 +8,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Form #NCS32992992 Details
+                Form #{{entry_of_premise.formref}}  Details
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -28,16 +28,16 @@
                         </div>
                         <div class="box-body">
                             <span><strong>Company</strong></span><br />
-                            <input type="text" class="form-control" placeholder="British American Tobacco" disabled>
+                            <input type="text" class="form-control" value="{{entry_of_premise.cname}}" disabled>
                             <br />
                             <span><strong>Address</strong></span><br />
-                            <input type="text" class="form-control" placeholder="2 olumegbon Str Ikoyi" disabled>
+                            <input type="text" class="form-control" value="{{entry_of_premise.registeredaddress}}" disabled>
                             <br />
                             <span><strong>Description</strong></span><br />
-                            <textarea class="form-control" placeholder="Tobacco Business" rows="2" disabled></textarea>
+                            <textarea class="form-control"  value="{{entry_of_premise.descriptionofbusiness}}" rows="2" disabled></textarea>
                             <br />
                             <span><strong>Purpose of Business</strong></span><br />
-                            <textarea class="form-control" placeholder="To carry out the business of tobacco" rows="2" disabled></textarea>
+                            <textarea class="form-control"  value="{{entry_of_premise.purposeofbusiness}}" rows="2" disabled></textarea>
                             
                         </div>
                       

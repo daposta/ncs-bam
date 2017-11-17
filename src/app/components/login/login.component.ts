@@ -13,7 +13,9 @@ export class LoginComponent implements OnInit {
 
   user: any= {};
   constructor(private userSrv: UsersService,  private toastr: ToastsManager, 
-    private _vcr: ViewContainerRef,) { }
+    private _vcr: ViewContainerRef,) { 
+      this.toastr.setRootViewContainerRef(_vcr);
+ }
 
   ngOnInit() {
   }

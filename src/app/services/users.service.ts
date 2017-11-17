@@ -15,42 +15,12 @@ export class UsersService {
   private usersUrl = "https://129.144.154.136/ords/pdb1/ncs/system/users/";
   private userEmailUrl = "https://129.144.154.136/ords/pdb1/ncs/system/user/email/";
   constructor(private http: Http, private router:Router, private toastr: ToastsManager, 
-		private _vcr: ViewContainerRef) {
-		this.toastr.setRootViewContainerRef(_vcr);
-		//this.toastr.success("Success", 'Registration Successful');
+		private vRef: ViewContainerRef) {
+		
 
 	 }
 
- //  login(data: FormData){
-		
- //   		 $.ajax ( {
-	// 			type: 'POST',
-	// 			url: this.usersUrl,
-	// 			enctype: ' multipart/form-data',
-	// 			data: data,
-	// 			cache: false,
-	// 			processData: false,
-	// 			contentType: false,
-	// 			crossDomain: true,
-	// 			xhrFields: { withCredentials: true },
-	// 			beforeSend: function (xhr) { 
-	// 				console.log('setting credentials.......');
-					
-	// 			},
-	// 			success: function(data) { 
-	// 				console.log("=====Sent successfully to the database========");
-	// 			//	this.toastr.success("Success", 'Login Successful');
-	// 				window.location.href= '/login';
-	// 			},
-	// 			error: function(jqXHR, textStatus, errorThrown) {
-	// 				console.log("=====uploading system error ========");
-	// 			}
-	// 		} );
-		
-		
-
-		
-	// };
+ 
 
 
 	fetchUsers(){
@@ -69,34 +39,6 @@ export class UsersService {
 
 	register(data: FormData){
 		
-   		
-
-   		 $.ajax ( {
-				type: 'POST',
-				url: this.usersUrl,
-				enctype: ' multipart/form-data',
-				data: data,
-				cache: false,
-				processData: false,
-				contentType: false,
-				crossDomain: true,
-				xhrFields: { withCredentials: true },
-				beforeSend: function (xhr) { 
-					console.log('setting credentials.......');
-					
-				},
-				success: function(data) { 
-					console.log("=====Sent successfully to the database========");
-				//this.toastr.success("Success", 'Registration Successful');
-
-					window.location.href= '/login';
-				},
-				error: function(jqXHR, textStatus, errorThrown) {
-					console.log("=====uploading system error ========");
-				}
-			} );
-		
-
 	};
 
 	findUserByEmail(email:String){
