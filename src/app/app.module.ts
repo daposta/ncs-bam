@@ -54,6 +54,7 @@ import { AssignmentsListingComponent } from './components/assignments-listing/as
 import { CacEntrysOfPremiseComponent } from './components/cac/cac-entrys-of-premise/cac-entrys-of-premise.component';
 import { CacAssignmentsListingComponent } from './components/cac/cac-assignments-listing/cac-assignments-listing.component';
 import { CacNewAssignmentComponent } from './components/cac/cac-new-assignment/cac-new-assignment.component';
+import { CacEntryOfPremiseDetailComponent } from './components/cac/cac-entry-of-premise-detail/cac-entry-of-premise-detail.component';
 
 
 
@@ -83,7 +84,8 @@ const appRoutes: Routes = [
        //CAC routes
        //{ path: 'cac/manage-registers', component: RegistersListingComponent, canActivate: [AuthGuard]  },
        { path: 'cac/entrys-of-premise', component: CacEntrysOfPremiseComponent ,canActivate: [AuthGuard] },
-     
+        {path: 'cac/entrys-of-premise/:id', component: CacEntryOfPremiseDetailComponent },
+
         { path: 'cac/manage-assignments', component: CacAssignmentsListingComponent,canActivate: [AuthGuard]  },
        { path: 'cac/new-assignment', component: CacNewAssignmentComponent, canActivate: [AuthGuard]  },
 
@@ -132,6 +134,7 @@ const appRoutes: Routes = [
     CacEntrysOfPremiseComponent,
     CacAssignmentsListingComponent,
     CacNewAssignmentComponent,
+    CacEntryOfPremiseDetailComponent,
  
   ],
   imports: [
