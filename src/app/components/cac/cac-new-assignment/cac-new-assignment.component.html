@@ -31,14 +31,18 @@
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
+<<<<<<< HEAD
                         <form>
+=======
+                        <form (ngSubmit)="assignmentForm.form.valid &&  save()" #Form41="ngForm" novalidate>
+>>>>>>> e85c3c049d0d1e63533c030966ee2c738552ca10
                             <div class="box-body">
 
                                 <span><strong>Select Officer</strong></span><br />
-                              <select class="form-control">
-                                  <option value="Select Officer">Select Officer</option>
-                                  <option value="R. J. Musah">R. J. Musah</option>
-                              </select>
+                              <select class="form-control" [(ngModel)]="assignment.user" name="user" required>
+                        <option [value]="-1" [disabled]="true" [selected]="true">Select Offier</option>
+                           <option *ngFor="let user of users" [value]="user.userid">{{user.firstname + ' ' + user.lastname}}</option>
+                        </select>
 
                                 <br />
                                 <span><strong>Select Inspection Type</strong></span><br />
@@ -49,7 +53,7 @@
                                 </select>
                                 <br />
                                 <span><strong>Enter Instruction</strong></span>
-                               <textarea class="form-control" rows="3" placeholder="Enter Instruction"></textarea>
+                               <textarea class="form-control" rows="3" placeholder="Enter Instruction" [(ngModel)]="assignment.instruction" name="instruction" ></textarea>
                                 <br />
 
                                 <span><strong>Choose Due Date</strong></span>

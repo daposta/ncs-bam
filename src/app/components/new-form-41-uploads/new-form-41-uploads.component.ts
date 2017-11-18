@@ -53,6 +53,8 @@ export class NewForm41UploadsComponent implements OnInit {
     let mediaCloudUrl = "https://documents-gse00012792.documents.us2.oraclecloud.com/documents/embed/link/LFD1EAD995E07744D370B0840CA5E537F54010EF7DE2/folder/FAA47EB8BEE8F06ADF84880D0CA5E537F54010EF7DE2/_NigeriaCustom/";
     let form41AttachementsUrl = mediaCloudUrl + 'form41/';
 
+
+
       $.ajax ( {
         type: 'POST',
         url: form41AttachementsUrl,
