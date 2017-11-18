@@ -32,6 +32,8 @@
                         <!-- /.box-header -->
                         <!-- form start -->
                         <form (ngSubmit)="assignmentForm.form.valid &&  saveAssignment()" #assignmentForm="ngForm" novalidate>
+
+
                             <div class="box-body">
 
                                 <span><strong>Select Officer</strong></span><br />
@@ -40,6 +42,13 @@
                            <option *ngFor="let user of users" [value]="user.userid">{{user.firstname + ' ' + user.lastname}}</option>
                         </select>
 
+                                <br />
+                                <span><strong>Select Inspection Type</strong></span><br />
+                                <select class="form-control">
+                                    <option value="">Select Inspection Type</option>
+                                    <option value="Select Officer">Form Inspection</option>
+                                    <option value="R. J. Musah">Site Inspection</option>
+                                </select>
                                 <br />
                                 <span><strong>Enter Instruction</strong></span>
                                <textarea class="form-control" rows="3" placeholder="Enter Instruction" [(ngModel)]="assignment.instruction" name="instruction" #name="ngModel" ></textarea>
