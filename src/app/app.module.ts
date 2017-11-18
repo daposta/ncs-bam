@@ -57,6 +57,10 @@ import { CacNewAssignmentComponent } from './components/cac/cac-new-assignment/c
 import { CacEntryOfPremiseDetailComponent } from './components/cac/cac-entry-of-premise-detail/cac-entry-of-premise-detail.component';
 import { OcoManageApplicationsComponent } from './components/oco/oco-manage-applications/oco-manage-applications.component';
 import { OcoApplicationDetailComponent } from './components/oco/oco-application-detail/oco-application-detail.component';
+import { DcgManageApplicationsComponent } from './components/dcg/dcg-manage-applications/dcg-manage-applications.component';
+import { HqManageApplicationsComponent } from './components/hq/hq-manage-applications/hq-manage-applications.component';
+import { DcgApplicationDetailComponent } from './components/dcg/dcg-application-detail/dcg-application-detail.component';
+import { HqApplicationDetailComponent } from './components/hq/hq-application-detail/hq-application-detail.component';
 
 
 
@@ -89,11 +93,19 @@ const appRoutes: Routes = [
         {path: 'cac/entrys-of-premise/:id', component: CacEntryOfPremiseDetailComponent },
 
         { path: 'cac/manage-assignments', component: CacAssignmentsListingComponent,canActivate: [AuthGuard]  },
-       { path: 'cac/new-assignment', component: CacNewAssignmentComponent, canActivate: [AuthGuard]  },
+       { path: 'cac/new-assignment/:formId', component: CacNewAssignmentComponent, canActivate: [AuthGuard]  },
 
        //OCO routes
-       { path: 'oco/manage-applications', component: OcoManageApplicationsComponent ,canActivate: [AuthGuard] },
-        {path: 'oco/manage-applications/:id', component: OcoApplicationDetailComponent },
+       { path: 'oco/manage-applications', component: OcoManageApplicationsComponent , canActivate: [AuthGuard] },
+        {path: 'oco/manage-applications/:id', component: OcoApplicationDetailComponent, canActivate: [AuthGuard] },
+
+          //DCG routes
+       { path: 'dcg/manage-applications', component: DcgManageApplicationsComponent ,canActivate: [AuthGuard] },
+        {path: 'dcg/manage-applications/:id', component: DcgApplicationDetailComponent ,canActivate: [AuthGuard]},
+
+          //HQ routes
+       { path: 'hq/manage-applications', component: HqManageApplicationsComponent ,canActivate: [AuthGuard] },
+        {path: 'hq/manage-applications/:id', component: HqApplicationDetailComponent,canActivate: [AuthGuard] },
 
   
 ]
@@ -142,6 +154,10 @@ const appRoutes: Routes = [
     CacEntryOfPremiseDetailComponent,
     OcoManageApplicationsComponent,
     OcoApplicationDetailComponent,
+    DcgManageApplicationsComponent,
+    HqManageApplicationsComponent,
+    DcgApplicationDetailComponent,
+    HqApplicationDetailComponent,
  
   ],
   imports: [
