@@ -31,7 +31,7 @@
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form (ngSubmit)="Form41.form.valid &&  save()" #Form41="ngForm" novalidate>
+                        <form>
                             <div class="box-body">
 
                                 <span><strong>Select Officer</strong></span><br />
@@ -40,6 +40,13 @@
                                   <option value="R. J. Musah">R. J. Musah</option>
                               </select>
 
+                                <br />
+                                <span><strong>Select Inspection Type</strong></span><br />
+                                <select class="form-control">
+                                    <option value="">Select Inspection Type</option>
+                                    <option value="Select Officer">Form Inspection</option>
+                                    <option value="R. J. Musah">Site Inspection</option>
+                                </select>
                                 <br />
                                 <span><strong>Enter Instruction</strong></span>
                                <textarea class="form-control" rows="3" placeholder="Enter Instruction"></textarea>
