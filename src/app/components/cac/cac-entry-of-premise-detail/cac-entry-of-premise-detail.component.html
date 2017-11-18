@@ -49,6 +49,25 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
+                            <h5 class="box-title"><strong>Form Files</strong></h5>
+                        </div>
+                        <div class="box-body">
+                          
+                            <div class="timeline-body">
+                                <img src="http://placehold.it/150x100" alt="..." class="margin">
+                                <img src="http://placehold.it/150x100" alt="..." class="margin">
+                                <img src="http://placehold.it/150x100" alt="..." class="margin">
+                                <img src="http://placehold.it/150x100" alt="..." class="margin">
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-6 height500">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
                             <h5 class="box-title"><strong>Onsite Custom Officer Inspection</strong></h5>
                         </div>
                         <div class="box-body">
@@ -61,7 +80,7 @@
                             <input type="text" class="form-control" value="I carried out an overkill inspection on BAT" disabled>
                             <br />
                             <span><strong>Date of Inspection</strong></span><br />
-                            <textarea class="form-control" value="Nov 3 2017" rows="2" disabled></textarea>
+                            <input class="form-control" value="Nov 3 2017" rows="2" disabled />
                           
                         </div>
                     </div>
@@ -75,33 +94,25 @@
                             <h5 class="box-title"><strong>Customs Area Comptroller Details</strong></h5>
                         </div>
                         <div class="box-body">
-                            <span><strong>Inspected By</strong></span><br />
-                            <input type="text" class="form-control" placeholder="Dapo Lawore" disabled>
+                          
+                            <span><strong>Status</strong></span><br />
+                            <select class="form-control">
+                                <option>Select Status</option>
+                                <option>Provisional Approval</option>
+                                <option>Rejected</option>
+                            </select>
                             <br />
-                            <span><strong>Date of Inspection</strong></span><br />
-                            <input type="text" class="form-control" placeholder="15 Nov 2017" disabled>
+                            <span><strong>Comment</strong></span><br />
+                            <textarea class="form-control" rows="3"></textarea>
                             <br />
-                            <span><strong>Details of Inspection</strong></span><br />
-                            <textarea class="form-control" placeholder="I made an inpection on the document and we could tell that what was uploaded matches the site information" rows="3" disabled></textarea>
-
+                       
+                            <input class="btn btn-success" onclick="confirm('Are you sure you want to take action?')" value="Submit" />
                         </div>
                     </div>
 
 
                 </div>
-                <div class="col-md-6 height500">
-                    <!-- general form elements -->
-                    <div class="box box-primary">
-                        <div class="box-header with-border">
-                            <h5 class="box-title"><strong>License Details</strong></h5>
-                        </div>
-                        <div class="box-body">
-                            <h3 class="text-center">No license yet.</h3>
-                        </div>
-                    </div>
-
-
-                </div>
+          
                 <!-- /.col -->
             </div>
             <!-- /.row -->
