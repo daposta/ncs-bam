@@ -55,6 +55,8 @@ import { CacEntrysOfPremiseComponent } from './components/cac/cac-entrys-of-prem
 import { CacAssignmentsListingComponent } from './components/cac/cac-assignments-listing/cac-assignments-listing.component';
 import { CacNewAssignmentComponent } from './components/cac/cac-new-assignment/cac-new-assignment.component';
 import { CacEntryOfPremiseDetailComponent } from './components/cac/cac-entry-of-premise-detail/cac-entry-of-premise-detail.component';
+import { OcoManageApplicationsComponent } from './components/oco/oco-manage-applications/oco-manage-applications.component';
+import { OcoApplicationDetailComponent } from './components/oco/oco-application-detail/oco-application-detail.component';
 
 
 
@@ -89,6 +91,9 @@ const appRoutes: Routes = [
         { path: 'cac/manage-assignments', component: CacAssignmentsListingComponent,canActivate: [AuthGuard]  },
        { path: 'cac/new-assignment', component: CacNewAssignmentComponent, canActivate: [AuthGuard]  },
 
+       //OCO routes
+       { path: 'oco/manage-applications', component: OcoManageApplicationsComponent ,canActivate: [AuthGuard] },
+        {path: 'oco/manage-applications/:id', component: OcoApplicationDetailComponent },
 
   
 ]
@@ -135,6 +140,8 @@ const appRoutes: Routes = [
     CacAssignmentsListingComponent,
     CacNewAssignmentComponent,
     CacEntryOfPremiseDetailComponent,
+    OcoManageApplicationsComponent,
+    OcoApplicationDetailComponent,
  
   ],
   imports: [

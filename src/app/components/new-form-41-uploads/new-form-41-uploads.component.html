@@ -75,24 +75,34 @@
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form action="/NCS/exercisetrader/payment.html">
+                        <form (ngSubmit)="Form41Attachment.form.valid &&  upload()"  #Form41Attachment="ngForm" novalidate>
                             <div class="box-body">
                                 <span><strong>Title</strong></span><br />
-                                <input type="text" class="form-control" placeholder="Title of upload">
+                                <input type="text" class="form-control" placeholder="Title of upload" required [(ngModel)]="attachment.title" name="title" #title="ngModel">
+
+                                 <div *ngIf="Form41Attachment.submitted && !description.valid" class="alert alert-danger">
+                    <strong>Oh snap!</strong> Document title is required</div>
 
                                 <br />
                                 <span><strong>Description</strong></span>
-                                <input type="text" class="form-control" placeholder="Enter your description">
+                                <input type="text" class="form-control" placeholder="Enter your description" required [(ngModel)]="attachment.description" name="description" #description="ngModel">
+
+                                 <div *ngIf="Form41Attachment.submitted && !description.valid" class="alert alert-danger">
+                    <strong>Oh snap!</strong> Document description is required</div>
 
                                 <br />
                                <span><strong>Upload File</strong></span>
-                                <input type="file" class="form-control" />
+                                <input type="file" class="form-control"   [(ngModel)]="attachment.doc" name="doc" #doc="ngModel" (change)="addDocument($event)" accept=".jpg, .pdf" />
+
+                                <!--  <div *ngIf="Form41Attachment.submitted && !doc.valid" class="alert alert-danger">
+                    <strong>Oh snap!</strong> Document is required</div> -->
                                
                             </div>
                             <!-- /.box-body -->
 
                             <div class="box-footer">
-                                <button type="submit" class="btn btn-default">Add More</button>  <button type="submit" class="btn btn-success">Upload</button>
+                                <!-- <button type="submit" class="btn btn-default">Add More</button> -->
+                                  <button type="submit" class="btn btn-success">Upload</button>
                             </div>
                         </form>
                     </div>

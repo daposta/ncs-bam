@@ -19,7 +19,7 @@ export class NewForm41Component implements OnInit {
    }
 
   ngOnInit() {
-  	console.log( localStorage.getItem('uid'));
+  
   	
   };
 
