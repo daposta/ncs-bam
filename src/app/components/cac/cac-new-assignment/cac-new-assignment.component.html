@@ -31,13 +31,18 @@
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
+<<<<<<< HEAD
 
                         <form>
+=======
+                        <form (ngSubmit)="assignmentForm.form.valid &&  saveAssignment()" #assignmentForm="ngForm" novalidate>
+
+>>>>>>> 604c8d118387d9cbba4f14467fea0c8cc9d9bb58
 
                             <div class="box-body">
 
                                 <span><strong>Select Officer</strong></span><br />
-                              <select class="form-control" [(ngModel)]="assignment.user" name="user" required>
+                              <select class="form-control" [(ngModel)]="assignment.user" name="user" #user="ngModel" required>
                         <option [value]="-1" [disabled]="true" [selected]="true">Select Offier</option>
                            <option *ngFor="let user of users" [value]="user.userid">{{user.firstname + ' ' + user.lastname}}</option>
                         </select>
@@ -51,11 +56,11 @@
                                 </select>
                                 <br />
                                 <span><strong>Enter Instruction</strong></span>
-                               <textarea class="form-control" rows="3" placeholder="Enter Instruction" [(ngModel)]="assignment.instruction" name="instruction" ></textarea>
+                               <textarea class="form-control" rows="3" placeholder="Enter Instruction" [(ngModel)]="assignment.instruction" name="instruction" #name="ngModel" ></textarea>
                                 <br />
 
                                 <span><strong>Choose Due Date</strong></span>
-                                <input type="date" class="form-control" />
+                                <input type="date" class="form-control"  [(ngModel)]="assignment.dueDate" name="dueDate" #dueDate="ngModel" />
 
                               
                                 <br />
