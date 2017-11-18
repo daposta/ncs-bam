@@ -11,6 +11,11 @@ import {
   AuthGuardService as AuthGuard 
 } from './auth/auth-guard.service';
 
+
+import { 
+  NoAuthGuardService as NoAuthGuard 
+} from './auth/no-auth-guard.service';
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { NewForm41Component } from './components/new-form-41/new-form-41.component';
@@ -46,10 +51,10 @@ import { RegisterDetailComponent } from './components/register-detail/register-d
 import { NewRegisterComponent } from './components/new-register/new-register.component';
 import { NewAssignmentComponent } from './components/new-assignment/new-assignment.component';
 import { AssignmentsListingComponent } from './components/assignments-listing/assignments-listing.component';
-import { EntrysOfPremiseComponent } from './components/cac/entrys-of-premise/entrys-of-premise.component';
 import { CacEntrysOfPremiseComponent } from './components/cac/cac-entrys-of-premise/cac-entrys-of-premise.component';
 import { CacAssignmentsListingComponent } from './components/cac/cac-assignments-listing/cac-assignments-listing.component';
 import { CacNewAssignmentComponent } from './components/cac/cac-new-assignment/cac-new-assignment.component';
+import { CacEntryOfPremiseDetailComponent } from './components/cac/cac-entry-of-premise-detail/cac-entry-of-premise-detail.component';
 
 
 
@@ -57,8 +62,8 @@ import { CacNewAssignmentComponent } from './components/cac/cac-new-assignment/c
 const appRoutes: Routes = [
   
      { path: '', component: MyProfileComponent, canActivate: [AuthGuard] },
-    { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent },
+    { path: 'login', component: LoginComponent , canActivate: [NoAuthGuard]},
+    { path: 'register', component: RegisterComponent, canActivate: [NoAuthGuard] },
      { path: 'register-as-admin', component: RegisterAsAdminComponent, canActivate: [AuthGuard]  },
      { path: 'forgot-password', component: ForgotPasswordComponent },
      { path: 'new-form-41', component: NewForm41Component, canActivate: [AuthGuard]  },
@@ -67,11 +72,11 @@ const appRoutes: Routes = [
        { path: 'entrys-of-premise/:id', component: EntrysOfPremiseDetailComponent },
      { path: 'manage-licences', component: LicencesListingComponent,canActivate: [AuthGuard]  },
     { path: 'payments', component: PaymentsListingComponent, canActivate: [AuthGuard]  },
-    { path: 'duties', component: DutiesListingComponent },
-     { path: 'manage-ucas', component: UcaListingComponent },
-      { path: 'applications', component: ApplicationsListingComponent },
+    { path: 'duties', component: DutiesListingComponent,canActivate: [AuthGuard] },
+     { path: 'manage-ucas', component: UcaListingComponent, canActivate: [AuthGuard] },
+      { path: 'applications', component: ApplicationsListingComponent, canActivate: [AuthGuard] },
       { path: 'zones', component: ZonesListingComponent },
-      { path: 'new-zone', component: NewZoneComponent },
+      { path: 'new-zone', component: NewZoneComponent ,canActivate: [AuthGuard]},
        { path: 'excise-traders', component: ExciseTradersListingComponent , canActivate: [AuthGuard] },
 
        
@@ -79,7 +84,8 @@ const appRoutes: Routes = [
        //CAC routes
        //{ path: 'cac/manage-registers', component: RegistersListingComponent, canActivate: [AuthGuard]  },
        { path: 'cac/entrys-of-premise', component: CacEntrysOfPremiseComponent ,canActivate: [AuthGuard] },
-     
+        {path: 'cac/entrys-of-premise/:id', component: CacEntryOfPremiseDetailComponent },
+
         { path: 'cac/manage-assignments', component: CacAssignmentsListingComponent,canActivate: [AuthGuard]  },
        { path: 'cac/new-assignment', component: CacNewAssignmentComponent, canActivate: [AuthGuard]  },
 
@@ -125,10 +131,10 @@ const appRoutes: Routes = [
     NewRegisterComponent,
     NewAssignmentComponent,
     AssignmentsListingComponent,
-    EntrysOfPremiseComponent,
     CacEntrysOfPremiseComponent,
     CacAssignmentsListingComponent,
     CacNewAssignmentComponent,
+    CacEntryOfPremiseDetailComponent,
  
   ],
   imports: [
@@ -138,7 +144,7 @@ const appRoutes: Routes = [
 
 
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, NoAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
