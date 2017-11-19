@@ -1,40 +1,48 @@
 import { Component, OnInit } from '@angular/core';
+import { RoleAccessService } from '../../services/role-access.service';
+import { RolesService} from '../../services/roles.service';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.css'],
+  providers : [RolesService, RoleAccessService]
 })
 export class SidebarComponent implements OnInit {
 
-	menuList:any;
-  selected:any;
-  constructor() { 
+   roleAccess: any= {};
+   error: any;  
+     roles: any[];
+    roleID: any;
+
+  constructor( private rolesSrv : RolesService, private accessSrv: RoleAccessService) { 
   }
 
   ngOnInit() {
+	 this.fetchUserRoleAccess();
+	 this.fetchRoles();
+  }
 
-  	this.menuList = [{
-		"name": "Angular",
-		"subMenu": ["Anguler 1", "Angular 2"]
-		}, {
-			"name": "Javascript",
-			"subMenu": ["Jquery", "Ajax"]
-		}, {
-			"name": "Bootstrap",
-			"subMenu": ["BootStrap 2", "BootStrap 3"]
-		}]
-		          
-		  
-		 
-	  }
 
-	  select(item:any){
-		     this.selected = (this.selected === item ? null : item);
-		  };
+  fetchUserRoleAccess(){
+     this.accessSrv.findAccessByUserID(localStorage.getItem('userid')).
+    then(response=> {
+      this.roleAccess = response.items[0];
+     
+       localStorage.setItem('userRoleId', this.roleAccess['idrole'])
+       //this.roleID = this
 
-		  isActive(item:any){
-		    return this.selected === item;
-		  };
+    })
+    .catch(err => this.error = err )
+  };
+
+
+   fetchRoles(){
+    this.rolesSrv.fetchRoles()
+    .then(response => {this.roles = response.items})
+    .catch(err => this.error = err);
+  };
+
+	  
 
 }

@@ -37,7 +37,7 @@
             </li>
 
 
-            <li class="treeview">
+            <li class="treeview" *ngIf="roleAccess?.idrole===2">
                 <a href="#">
                     <i class="fa fa-circle-thin"></i>
                     <span>Onsite Custom Officer</span>
@@ -52,7 +52,7 @@
             </li>
 
 
-            <li class="treeview">
+            <li class="treeview" *ngIf="roleAccess?.idrole===3">
                 <a href="#">
                     <i class="fa fa-circle-thin"></i>
                     <span>Custom Area Comptroller</span>
@@ -66,7 +66,7 @@
                 </ul>
             </li>
 
-            <li class="treeview">
+            <li class="treeview" *ngIf="roleAccess?.idrole===3">
                 <a href="#">
                     <i class="fa fa-circle-thin"></i>
                     <span>HQ Team</span>
@@ -80,7 +80,7 @@
                 </ul>
             </li>
 
-            <li class="treeview">
+            <li class="treeview" *ngIf="roleAccess?.idrole==='4'">
                 <a href="#">
                     <i class="fa fa-circle-thin"></i>
                     <span>Deputy Comptroller General</span>
