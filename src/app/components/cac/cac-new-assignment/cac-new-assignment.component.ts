@@ -33,62 +33,61 @@ export class CacNewAssignmentComponent implements OnInit {
 
   getFormID(){
   	 this.route.params.subscribe(params => {
-      this.formID = params['id']; // --> Name must match wanted parameter
+      this.formID = params['formId']; // --> Name must match wanted parameter
+
     });
   }
 
   saveAssignment(){
-  	console.log('saving...');
-
-    let formData = new FormData();
+  	let formData = new FormData();
     let userId = localStorage.getItem('userid');
     let AssignmentRef = this.makeRef();
    
     this.assignment['userid'] = userId;
     this.assignment['idForm'] = this.formID;
      this.assignment['AssignmentRef'] = AssignmentRef;
-     this.assignment['dateCreated'] = new Date().getDate() + ' 00:00:00';
-      this.assignment['dd'] = new Date(this.assignment['DueDate']); //+ ' 00:00:00';
-    this.assignment['status'] = 'Pending';
+     this.assignment['dateCreated'] = new Date().getFullYear() +'-' + new Date().getMonth() + '-' 
+     + new Date().getDate()+ ' 00:00:00';
+
+       this.assignment['dd'] = this.assignment['dueDate']  + ' 00:00:00';
+    this.assignment['status'] = 'Inspection';
    formData.append('idForm',  this.assignment['idForm'] );
-   formData.append('idPrincipal',this.assignment['userid']);
+   formData.append('idPrincipal',this.assignment['user']);
    formData.append('AssignmentRef', this.assignment['AssignmentRef']);
    formData.append('Description', this.assignment['description']);
-   formData.append('DateCreated', this.assignment['description']);
+   formData.append('DateCreated', this.assignment['dateCreated']);
     formData.append('DueDate', this.assignment['dd']);
-    formData.append('DueDate', this.assignment['purpose']);
-    formData.append('status', this.assignment['status'] );
+    formData.append('Status', this.assignment['status'] );
 
     console.log(this.assignment);
 
     let toastr = this.toastr;
-  
-  	 // this.form41Srv.save(formData);
-    let form41sUrl = "https://129.144.154.136/ords/pdb1/ncs/system/assignment/";
 
-      //   $.ajax ( {
-      //   type: 'POST',
-      //   url: form41sUrl,
-      //   enctype: ' multipart/form-data',
-      //   data: formData,
-      //   cache: false,
-      //   processData: false,
-      //   contentType: false,
-      //   crossDomain: true,
-      //   xhrFields: { withCredentials: true },
-      //   beforeSend: function (xhr) { 
-      //     console.log('setting credentials.......');
+    let assignmentsUrl = "https://129.144.154.136/ords/pdb1/ncs/system/assignment/";
+
+        $.ajax ( {
+        type: 'POST',
+        url: assignmentsUrl,
+        enctype: ' multipart/form-data',
+        data: formData,
+        cache: false,
+        processData: false,
+        contentType: false,
+        crossDomain: true,
+        xhrFields: { withCredentials: true },
+        beforeSend: function (xhr) { 
+          console.log('setting credentials.......');
           
-      //   },
-      //   success: function(data) { 
-      //     console.log("=====Sent successfully to the database========");
-      //     toastr.success("Success", 'Form 41 saved successfully');
-      //     window.location.href= '/entrys-of-premise';
-      //   },
-      //   error: function(jqXHR, textStatus, errorThrown) {
-      //     console.log("=====uploading system error ========");
-      //   }
-      // } );
+        },
+        success: function(data) { 
+          console.log("=====Sent successfully to the database========");
+          toastr.success("Success", 'Assignment saved successfully');
+          window.location.href= '/cac/manage-assignments';
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.log("=====uploading system error ========");
+        }
+      } );
 
   }
 
