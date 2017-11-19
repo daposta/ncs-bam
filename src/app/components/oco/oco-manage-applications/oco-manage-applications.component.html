@@ -89,9 +89,7 @@
                             <div class="mailbox-controls">
 
                                 <!-- Check all button -->
-                                <a href="/new-form-41" class="btn btn-primary btn-sm checkbox-toggle">
-                                    Request Entry of Permit
-                                </a>
+                               
                                 <!--<div class="btn-group">
                                     <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
                                     <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
@@ -128,17 +126,17 @@
                                     </thead>
                                     <tbody>
 
-                                        <tr>
+                                       <tr  *ngFor="let entry of applications;let i = index ">
 
-                                            <td><a href="/oco/manage-applications/NCS293922">ddld</a></td>
-                                            <td>dd</td>
-                                            <td>dd</td>
-                                            <td>dd</td>
-                                            <td>dd</td>
-
-                                            <td><span class="badge bg-blue">ss</span></td>
-
-
+                                            <td><a href="/oco/manage-applications/{{entry.idform}}">{{entry.formref}}</a></td>
+                                            <td>{{entry.cname}}</td>
+                                            <td>{{entry.descriptionofbusiness}}</td>
+                                            <td>{{entry.registeredaddress}}</td>
+                                            <td>{{entry.purposeofbusiness}}</td>
+                                            
+                                            <td><span class="badge bg-blue">{{entry.status}}</span></td>
+                                     
+               
                                         </tr>
 
                                     </tbody>

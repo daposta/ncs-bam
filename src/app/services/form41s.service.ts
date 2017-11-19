@@ -1,8 +1,7 @@
-import { Injectable , ViewContainerRef} from '@angular/core';
+import { Injectable  } from '@angular/core';
 import { Http, Headers, RequestOptions, URLSearchParams } from '@angular/http';
 import {Router} from '@angular/router';
 import 'rxjs/add/operator/toPromise';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 declare var $: any;
 
 @Injectable()
@@ -11,8 +10,7 @@ export class Form41sService {
 
   private form41sUrl = "https://129.144.154.136/ords/pdb1/ncs/system/form41/";
 
-  constructor(private http: Http, private router:Router, private toastr: ToastsManager, 
-		private _vcr: ViewContainerRef,) { }
+  constructor(private http: Http, private router:Router) { }
 
 
   fetchForm41(){
