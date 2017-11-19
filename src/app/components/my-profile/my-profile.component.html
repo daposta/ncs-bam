@@ -72,7 +72,7 @@
                         <li class="active"><a href="#info" data-toggle="tab"><i class="fa fa-user"></i> Personal Information</a></li>
                         <li><a href="#organization" data-toggle="tab"><i class="fa fa-university"></i> Organizational Info</a></li>
                         <li><a href="#settings" data-toggle="tab"><i class="fa fa-cog"></i> Account Settings</a></li>
-                        
+                        <li><a href="#signature" data-toggle="tab"><i class="fa fa-cog"></i> Digital Signature</a></li> 
                     </ul>
                     <div class="tab-content">
 
@@ -192,6 +192,31 @@
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
                                         <button type="submit" class="btn btn-success">Update</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane" id="signature">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="inputName" class="col-sm-2 control-label">FullName</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="inputName" placeholder="Deji Soetan or D. Soetan">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName" class="col-sm-2 control-label">Pin Signature</label>
+
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="inputName" placeholder="Enter 4-digits to secure your signature">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" onclick="confirm('You should not forget your pin. Click Ok to create signture.')" class="btn btn-success">Create Signature</button>
                                     </div>
                                 </div>
                             </form>

@@ -70,7 +70,7 @@ const appRoutes: Routes = [
      { path: '', component: MyProfileComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent , canActivate: [NoAuthGuard]},
     { path: 'register', component: RegisterComponent, canActivate: [NoAuthGuard] },
-     { path: 'register-as-admin', component: RegisterAsAdminComponent, canActivate: [AuthGuard]  },
+     { path: 'register-as-admin', component: RegisterAsAdminComponent },
      { path: 'forgot-password', component: ForgotPasswordComponent },
      { path: 'new-form-41', component: NewForm41Component, canActivate: [AuthGuard]  },
       { path: 'new-form-41-uploads', component: NewForm41UploadsComponent },
