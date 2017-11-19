@@ -54,7 +54,7 @@ export class CacNewAssignmentComponent implements OnInit {
    formData.append('idForm',  this.assignment['idForm'] );
    formData.append('idPrincipal',this.assignment['user']);
    formData.append('AssignmentRef', this.assignment['AssignmentRef']);
-   formData.append('Description', this.assignment['description']);
+   formData.append('Description', this.assignment['instruction']);
    formData.append('DateCreated', this.assignment['dateCreated']);
     formData.append('DueDate', this.assignment['dd']);
     formData.append('Status', this.assignment['status'] );
