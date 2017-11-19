@@ -17,7 +17,7 @@ export class CacNewAssignmentComponent implements OnInit {
   assignment: Object= {};
   formID :any;
   constructor(private route: ActivatedRoute, private userSrv: UsersService, private toastr: ToastsManager, 
-  private _vcr: ViewContainerRef,) { 
+  private _vcr: ViewContainerRef) { 
    this.toastr.setRootViewContainerRef(_vcr);
  }
 
