@@ -1,3 +1,183 @@
-<p>
-  dcg-application-detail works!
-</p>
+
+<div class="wrapper">
+    <app-header></app-header>
+
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Form #{{entry_of_premise.formref}}  Details
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Form Details</li>
+            </ol>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+          <div class="row">
+                <!-- /.col -->
+                <div class="col-md-6 height500">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h5 class="box-title"><strong>Form Information</strong></h5>
+                        </div>
+                        <div class="box-body">
+                            <span><strong>Company</strong></span><br />
+                            <input type="text" class="form-control" value="{{entry_of_premise.cname}}" disabled>
+                            <br />
+                            <span><strong>Address</strong></span><br />
+                            <input type="text" class="form-control" value="{{entry_of_premise.registeredaddress}}" disabled>
+                            <br />
+                            <span><strong>Description</strong></span><br />
+                            <textarea class="form-control" value="{{entry_of_premise.descriptionofbusiness}}" rows="2" disabled></textarea>
+                            <br />
+                            <span><strong>Purpose of Business</strong></span><br />
+                            <textarea class="form-control" value="{{entry_of_premise.purposeofbusiness}}" rows="2" disabled></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="col-md-6 height500">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h5 class="box-title"><strong>Form Files</strong></h5>
+                        </div>
+                        <div class="box-body">
+
+                        
+                            <div class="timeline-body">
+                                <img src="http://placehold.it/150x100" alt="..." class="margin">
+                                <img src="http://placehold.it/150x100" alt="..." class="margin">
+                                <img src="http://placehold.it/150x100" alt="..." class="margin">
+                                <img src="http://placehold.it/150x100" alt="..." class="margin">
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            <div class="col-md-6 height500">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h5 class="box-title"><strong>Onsite Custom Officer Inspection</strong></h5>
+                    </div>
+                    <div class="box-body">
+
+                        <h5 class="text-center"><a href="/cac/new-assignment/{{entry_of_premise.formref}}">Click here to assign.</a></h5><br />
+
+
+                        <div class="col-md-6">
+
+                            <div class="box box-primary direct-chat direct-chat-primary">
+                                <div class="box-header with-border">
+                                    <h5><strong>Form Inspection</strong></h5>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <span><strong>Assigned to</strong></span><br />
+                                    <input type="text" class="form-control" placeholder="R.J. musah">
+                                    <br />
+                                    <span><strong>Date of Inspection</strong></span><br />
+                                    <input type="date" class="form-control" placeholder="3rd Nov 2017">
+                                    <br />
+                                    <span><strong>Details of Inspection</strong></span><br />
+                                    <textarea class="form-control" placeholder="Enter inspection" rows="3"></textarea>
+                                </div>
+
+                                <!-- /.box-footer-->
+                            </div>
+                            <!--/.direct-chat -->
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="box box-primary direct-chat direct-chat-primary">
+                                <div class="box-header with-border">
+                                    <h5><strong>Site Inspection</strong></h5>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <span><strong>Assigned to</strong></span><br />
+                                    <input type="text" class="form-control" placeholder="R.J. musah">
+                                    <br />
+                                    <span><strong>Date of Inspection</strong></span><br />
+                                    <input type="date" class="form-control" placeholder="3rd Nov 2017">
+                                    <br />
+                                    <span><strong>Details of Inspection</strong></span><br />
+                                    <textarea class="form-control" placeholder="Enter inspection" rows="3"></textarea>
+                                </div>
+
+                                <!-- /.box-footer-->
+                            </div>
+                            <!--/.direct-chat -->
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-6 height500">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h5 class="box-title"><strong>Customs Area Comptroller Details</strong></h5>
+                    </div>
+                    <div class="box-body">
+
+                        <span><strong>Status</strong></span><br />
+                        <input type="text" disabled class="form-control" placeholder="Provisional Approval" />
+                        <br />
+                        <span><strong>Comment</strong></span><br />
+                        <textarea class="form-control" rows="3" disabled>I approve</textarea>
+                        <br />
+
+
+                    </div>
+                </div>
+            </div>
+           <div class="col-md-6 height500">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h5 class="box-title"><strong>Deputy Comptroller General</strong></h5>
+                    </div>
+                    <div class="box-body">
+
+                        <span><strong>Status</strong></span><br />
+                        <select class="form-control">
+                            <option>Select Status</option>
+                            <option>Approve License</option>
+                            <option>Rejected</option>
+                        </select>
+                        <br />
+                        <span><strong>Comment</strong></span><br />
+                        <textarea class="form-control" rows="3"></textarea>
+                        <br />
+
+                        <input class="btn btn-success" onclick="confirm('Are you sure you want to take action?')" value="Submit" />
+                    </div>
+                </div>
+
+            </div>
+
+                <!-- /.col -->
+         
+            <!-- /.row -->
+              </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+</div>
+
+<app-footer></app-footer>
+
