@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
   			}
   			else{
   				let msg = 'No user with matching credentials';
-          this.toastr.error("Error", 'You are on right track.');
+          this.toastr.error("Error", msg);
   			}
 
   		}else{
