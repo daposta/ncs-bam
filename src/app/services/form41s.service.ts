@@ -37,6 +37,18 @@ export class Form41sService {
   };
 
 
+  findForm41ByUserID(userID: any){
+      let headers = new Headers();
+        headers.append('Content-Type','application/json');
+        headers.append('Allow-Cross-Origin','*');
+
+     return this.http.get(this.form41sUrl + 'user/' + userID , {headers: headers})
+              .toPromise()
+              .then(response => response.json())
+              .catch(this.handleError);
+  };
+
+
    save(data: FormData){
 
    	
