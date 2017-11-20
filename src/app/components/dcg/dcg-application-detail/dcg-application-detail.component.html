@@ -8,7 +8,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Form #{{application.formref}}  Details
+                Form #{{entry_of_premise.formref}}  Details
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -17,7 +17,8 @@
         </section>
         <!-- Main content -->
         <section class="content">
-          <div class="row">
+            <div class="row">
+
                 <!-- /.col -->
                 <div class="col-md-6 height500">
                     <!-- general form elements -->
@@ -27,16 +28,16 @@
                         </div>
                         <div class="box-body">
                             <span><strong>Company</strong></span><br />
-                            <input type="text" class="form-control" value="{{application.cname}}" disabled>
+                            <input type="text" class="form-control" value="{{entry_of_premise.cname}}" disabled>
                             <br />
                             <span><strong>Address</strong></span><br />
-                            <input type="text" class="form-control" value="{{application.registeredaddress}}" disabled>
+                            <input type="text" class="form-control" value="{{entry_of_premise.registeredaddress}}" disabled>
                             <br />
                             <span><strong>Description</strong></span><br />
-                            <textarea class="form-control" value="{{application.descriptionofbusiness}}" rows="2" disabled></textarea>
+                            <textarea class="form-control" value="{{entry_of_premise.descriptionofbusiness}}" rows="2" disabled></textarea>
                             <br />
                             <span><strong>Purpose of Business</strong></span><br />
-                            <textarea class="form-control" value="{{application.purposeofbusiness}}" rows="2" disabled></textarea>
+                            <textarea class="form-control" value="{{entry_of_premise.purposeofbusiness}}" rows="2" disabled></textarea>
 
                         </div>
 
@@ -52,7 +53,8 @@
                         </div>
                         <div class="box-body">
 
-                        
+
+
                             <div class="timeline-body">
                                 <img src="http://placehold.it/150x100" alt="..." class="margin">
                                 <img src="http://placehold.it/150x100" alt="..." class="margin">
@@ -64,115 +66,139 @@
 
 
                 </div>
-            <div class="col-md-6 height500">
-                <!-- general form elements -->
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        <h5 class="box-title"><strong>Onsite Custom Officer Inspection</strong></h5>
-                    </div>
-                    <div class="box-body">
-
-                        <h5 class="text-center"><a href="/cac/new-assignment/{{application.formref}}">Click here to assign.</a></h5><br />
-
-
-                        <div class="col-md-6">
-
-                            <div class="box box-primary direct-chat direct-chat-primary">
-                                <div class="box-header with-border">
-                                    <h5><strong>Form Inspection</strong></h5>
-                                </div>
-                                <!-- /.box-header -->
-                                <div class="box-body">
-                                    <span><strong>Assigned to</strong></span><br />
-                                    <input type="text" class="form-control" placeholder="R.J. musah">
-                                    <br />
-                                    <span><strong>Date of Inspection</strong></span><br />
-                                    <input type="date" class="form-control" placeholder="3rd Nov 2017">
-                                    <br />
-                                    <span><strong>Details of Inspection</strong></span><br />
-                                    <textarea class="form-control" placeholder="Enter inspection" rows="3"></textarea>
-                                </div>
-
-                                <!-- /.box-footer-->
-                            </div>
-                            <!--/.direct-chat -->
+                <div class="col-md-12 height500">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h5 class="box-title"><strong>Form Dashboard</strong></h5>
                         </div>
-                        <div class="col-md-6">
+                        <div class="box-body">
+                            <div class="col-md-12">
 
-                            <div class="box box-primary direct-chat direct-chat-primary">
-                                <div class="box-header with-border">
-                                    <h5><strong>Site Inspection</strong></h5>
+                                <div class="box box-warning direct-chat direct-chat-primary">
+                                    <div class="box-header with-border">
+                                        <h5><strong>Excise Trader's Board</strong></h5>
+                                    </div>
+                                    <!-- /.box-header -->
+                                    <div class="box-body">
+                                        <table class="table">
+                                            <tr><td><h5>Form Status: <span class="badge bg-blue">Completed</span></h5></td><td><h5>Site Status: <span class="badge bg-blue">Construction Completed</span></h5></td><td><h5>License Status: <span class="badge bg-blue">Not Issued</span></h5></td></tr>
+                                        </table>
+
+                                    </div>
+
+
+
+                                    <!-- /.box-footer-->
                                 </div>
-                                <!-- /.box-header -->
-                                <div class="box-body">
-                                    <span><strong>Assigned to</strong></span><br />
-                                    <input type="text" class="form-control" placeholder="R.J. musah">
+                                <div class="box box-info direct-chat direct-chat-primary">
+                                    <div class="box-header with-border">
+                                        <h5><strong>Onsite Customs Officer's Board</strong></h5>
+                                    </div>
+                                    <!-- /.box-header -->
+                                    <div class="box-body">
+
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th>Inspection Ref</th>
+                                                <th>Inspection Type</th>
+                                                <th>Assigned <br />By</th>
+                                                <th>Assigned To</th>
+                                                <th>Date Inspected</th>
+                                                <th>Due Date</th>
+                                                <th>Comment</th>
+                                                <th>Status</th>
+                                            </tr>
+                                            <tr>
+                                                <td>#NCS0388288</td>
+                                                <td>Form Inspection</td>
+                                                <td>Shola Mohammed</td>
+                                                <td>R. J. Musah</td>
+                                                <td>Nov 4 2017</td>
+                                                <td>Nov 5 2017</td>
+                                                <td>We inspected all the loopsholes in the factory</td>
+                                                <td><span class="badge bg-blue">Completed</span></td>
+                                                <td><a data-toggle="modal" data-target="#oco-modal" href="/assignment/view">View Report</a></td>
+
+                                            </tr>
+                                        </table>
+                                        <!--  Modal for viewing OCO's report on assignment-->
+                                        <!--<div class="example-modal">
+                                            <div class="modal fade modal-primary" id="oco-modal">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">Close</span>
+                                                            </button>
+                                                            <h4 class="modal-title">Primary Modal</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>One fine body…</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-outline">Save changes</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>-->
+                                    </div>
+
                                     <br />
-                                    <span><strong>Date of Inspection</strong></span><br />
-                                    <input type="date" class="form-control" placeholder="3rd Nov 2017">
-                                    <br />
-                                    <span><strong>Details of Inspection</strong></span><br />
-                                    <textarea class="form-control" placeholder="Enter inspection" rows="3"></textarea>
+                                    <!-- /.box-footer-->
                                 </div>
 
-                                <!-- /.box-footer-->
+                                <div class="box box-success direct-chat direct-chat-primary">
+                                    <div class="box-header with-border">
+                                        <h5><strong>Customs Area Comptroller's Board</strong></h5>
+                                    </div>
+                                   
+                                    <!-- /.box-header -->
+                                    <div class="box-body">
+                                        <!--   If form status is Provisional Approval - Show this-->
+                                        <table class="table table-striped">
+                                            <tr><td><h5>CAC Status: <span class="badge bg-blue">Provisional Approval</span></h5></td><td><h5>Comment: <span class="badge bg-blue">COmment comment commentdnmcdaidnnsnn icnnn</span></h5></td></tr>
+                                        </table>
+                                        <!-- else-->
+                                  
+                                    </div>
+                                    <br />
+                                    <!-- /.box-footer-->
+                                </div>
+
+                                <div class="box box-default direct-chat direct-chat-primary">
+                                    <div class="box-header with-border">
+                                        <h5><strong>Deputy Comptroller General's Board</strong></h5>
+                                    </div>
+                                    <!-- /.box-header -->
+                                    <a href="/cac/new-assignment/{{entry_of_premise.idform}}" class="btn btn-primary">Create Inspection</a><a href="" class="btn btn-primary">Approve License</a>
+<br />
+                                    
+                                    <div class="box-body">
+                                        <table class="table table-striped">
+                                            <tr><td><h5>DCG License: <span class="badge bg-blue">Not Issued</span></h5></td></tr>
+                                        </table>
+                                    </div>
+
+
+                                    <!-- /.box-footer-->
+                                </div><!--/.direct-chat -->
                             </div>
-                            <!--/.direct-chat -->
+
                         </div>
-
                     </div>
+
+
                 </div>
-
-
-            </div>
-            <div class="col-md-6 height500">
-                <!-- general form elements -->
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        <h5 class="box-title"><strong>Customs Area Comptroller Details</strong></h5>
-                    </div>
-                    <div class="box-body">
-
-                        <span><strong>Status</strong></span><br />
-                        <input type="text" disabled class="form-control" placeholder="Provisional Approval" />
-                        <br />
-                        <span><strong>Comment</strong></span><br />
-                        <textarea class="form-control" rows="3" disabled>I approve</textarea>
-                        <br />
-
-
-                    </div>
-                </div>
-            </div>
-           <div class="col-md-6 height500">
-                <!-- general form elements -->
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        <h5 class="box-title"><strong>Deputy Comptroller General</strong></h5>
-                    </div>
-                    <div class="box-body">
-
-                        <span><strong>Status</strong></span><br />
-                        <select class="form-control">
-                            <option>Select Status</option>
-                            <option>Approve License</option>
-                            <option>Rejected</option>
-                        </select>
-                        <br />
-                        <span><strong>Comment</strong></span><br />
-                        <textarea class="form-control" rows="3"></textarea>
-                        <br />
-
-                        <input class="btn btn-success" onclick="confirm('Are you sure you want to take action?')" value="Submit" />
-                    </div>
-                </div>
-
-            </div>
 
                 <!-- /.col -->
-         
+            </div>
             <!-- /.row -->
-              </div>
         </section>
         <!-- /.content -->
     </div>
