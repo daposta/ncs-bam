@@ -65,6 +65,7 @@ import { OcoAssignmentDetailComponent } from './components/oco/oco-assignment-de
 import { DcgPaymentsListingComponent } from './components/oco/dcg-payments-listing/dcg-payments-listing.component';
 import { ProvisionalReportComponent } from './components/provisional-report/provisional-report.component';
 import { PaymentInvoiceComponent } from './components/payment-invoice/payment-invoice.component';
+import { ProvisionalApprovalComponent } from './components/provisional-approval/provisional-approval.component';
 
 
 
@@ -175,6 +176,7 @@ const appRoutes: Routes = [
     DcgPaymentsListingComponent,
     ProvisionalReportComponent,
     PaymentInvoiceComponent,
+    ProvisionalApprovalComponent,
  
   ],
   imports: [
