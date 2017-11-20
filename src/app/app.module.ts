@@ -94,6 +94,8 @@ const appRoutes: Routes = [
         { path: 'provisional-report', component: ProvisionalReportComponent ,canActivate: [AuthGuard]},
       { path: 'payment-invoice', component: PaymentInvoiceComponent ,canActivate: [AuthGuard]},
 
+       { path: 'provisional-approval', component: ProvisionalApprovalComponent ,canActivate: [AuthGuard]},
+
 
        
 
