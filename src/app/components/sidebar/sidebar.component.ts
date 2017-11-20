@@ -9,7 +9,7 @@ import { RolesService} from '../../services/roles.service';
   providers : [RolesService, RoleAccessService]
 })
 export class SidebarComponent implements OnInit {
-
+   user: any= {};
    roleAccess: any= {};
    error: any;  
      roles: any[];
@@ -19,6 +19,10 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit() {
+    let tempUser =  localStorage.getItem('user');
+    if(tempUser){
+      this.user = JSON.parse(tempUser);
+    }
 	 this.fetchUserRoleAccess();
 	 this.fetchRoles();
   }
