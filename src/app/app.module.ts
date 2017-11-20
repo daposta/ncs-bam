@@ -64,6 +64,7 @@ import { HqApplicationDetailComponent } from './components/hq/hq-application-det
 import { OcoAssignmentDetailComponent } from './components/oco/oco-assignment-detail/oco-assignment-detail.component';
 import { DcgPaymentsListingComponent } from './components/oco/dcg-payments-listing/dcg-payments-listing.component';
 import { ProvisionalReportComponent } from './components/provisional-report/provisional-report.component';
+import { PaymentInvoiceComponent } from './components/payment-invoice/payment-invoice.component';
 
 
 
@@ -90,7 +91,7 @@ const appRoutes: Routes = [
         { path: 'new-payment', component: NewPaymentComponent ,canActivate: [AuthGuard]},
        { path: 'manage-payments', component: PaymentsListingComponent , canActivate: [AuthGuard] },
         { path: 'provisional-report', component: ProvisionalReportComponent ,canActivate: [AuthGuard]},
-
+      { path: 'payment-invoice', component: PaymentInvoiceComponent ,canActivate: [AuthGuard]},
 
 
        
@@ -173,6 +174,7 @@ const appRoutes: Routes = [
     OcoAssignmentDetailComponent,
     DcgPaymentsListingComponent,
     ProvisionalReportComponent,
+    PaymentInvoiceComponent,
  
   ],
   imports: [

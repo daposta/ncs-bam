@@ -20,7 +20,9 @@ export class CacEntryOfPremiseDetailComponent implements OnInit {
   approval: Object= {};
  	error: any;	
   constructor(private form41Srv: Form41sService, private route: ActivatedRoute,
-    private toastr: ToastsManager, private _vcr: ViewContainerRef) { }
+    private toastr: ToastsManager, private _vcr: ViewContainerRef) { 
+    this.toastr.setRootViewContainerRef(_vcr);
+  }
 
   ngOnInit() {
   	this.getDetail()
@@ -43,6 +45,7 @@ export class CacEntryOfPremiseDetailComponent implements OnInit {
      let formApprovalUrl = 'https://129.144.154.136/ords/pdb1/ncs/system/form41/';
       let toastr = this.toastr; 
      console.log(this.approval);
+     console.log(this.entry_of_premise);
      
 
     $.ajax ( {
@@ -53,7 +56,7 @@ export class CacEntryOfPremiseDetailComponent implements OnInit {
             headers: { 'idForm': this.entry_of_premise['idForm'],
              'comments':  this.approval['comment'],
              'status': this.approval['report'],
-              'cname': this.entry_of_premise['cname'],
+              'cname': this.entry_of_premise['cname'] + '- Nigeria',
                'registeredaddress':  this.entry_of_premise['registeredaddress'],
               'purposeofbusiness':  this.entry_of_premise['purposeofbusiness'],
                'descriptionofbusiness':  this.entry_of_premise['descriptionofbusiness'],
