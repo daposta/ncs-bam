@@ -61,6 +61,7 @@ import { DcgManageApplicationsComponent } from './components/dcg/dcg-manage-appl
 import { HqManageApplicationsComponent } from './components/hq/hq-manage-applications/hq-manage-applications.component';
 import { DcgApplicationDetailComponent } from './components/dcg/dcg-application-detail/dcg-application-detail.component';
 import { HqApplicationDetailComponent } from './components/hq/hq-application-detail/hq-application-detail.component';
+import { OcoAssignmentDetailComponent } from './components/oco/oco-assignment-detail/oco-assignment-detail.component';
 
 
 
@@ -158,6 +159,7 @@ const appRoutes: Routes = [
     HqManageApplicationsComponent,
     DcgApplicationDetailComponent,
     HqApplicationDetailComponent,
+    OcoAssignmentDetailComponent,
  
   ],
   imports: [
