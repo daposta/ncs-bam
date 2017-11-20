@@ -167,17 +167,17 @@
                                         </table>
                                        <!-- else-->
                                         <!--Show this-->
-                                        <form>
+                                        <form (ngSubmit)="approvalForm.form.valid &&  saveApproval()" #approvalForm="ngForm" novalidate>
                                             <table class="table table-striped">
                                                 <tr>
                                                     <td>
-                                                        <select class="form-control" >
-                                                            <option>Provisional Approval</option>
-                                                            <option>Reject</option>
+                                                        <select class="form-control" [(ngModel)]="approval.instruction" name="report" #report="ngModel">
+                                                            <option value="Provisional Approval">Provisional Approval</option>
+                                                            <option value="Rejected">Reject</option>
                                                         </select>
                                                     </td>
                                                     <td>
-                                                        <textarea class="form-control" rows="4" placeholder="Enter comment"></textarea>
+                                                        <textarea class="form-control" rows="4" placeholder="Enter comment" [(ngModel)]="approval.comment" name="comment" #comment="ngModel"></textarea>
                                                     </td>
 
                                                     <td>
