@@ -62,6 +62,8 @@ import { HqManageApplicationsComponent } from './components/hq/hq-manage-applica
 import { DcgApplicationDetailComponent } from './components/dcg/dcg-application-detail/dcg-application-detail.component';
 import { HqApplicationDetailComponent } from './components/hq/hq-application-detail/hq-application-detail.component';
 import { OcoAssignmentDetailComponent } from './components/oco/oco-assignment-detail/oco-assignment-detail.component';
+import { DcgPaymentsListingComponent } from './components/oco/dcg-payments-listing/dcg-payments-listing.component';
+import { ProvisionalReportComponent } from './components/provisional-report/provisional-report.component';
 
 
 
@@ -87,6 +89,7 @@ const appRoutes: Routes = [
        { path: 'excise-traders', component: ExciseTradersListingComponent , canActivate: [AuthGuard] },
         { path: 'new-payment', component: NewPaymentComponent ,canActivate: [AuthGuard]},
        { path: 'manage-payments', component: PaymentsListingComponent , canActivate: [AuthGuard] },
+        { path: 'provisional-report', component: ProvisionalReportComponent ,canActivate: [AuthGuard]},
 
 
 
@@ -110,7 +113,8 @@ const appRoutes: Routes = [
           //DCG routes
        { path: 'dcg/manage-applications', component: DcgManageApplicationsComponent ,canActivate: [AuthGuard] },
         {path: 'dcg/manage-applications/:id', component: DcgApplicationDetailComponent ,canActivate: [AuthGuard]},
-
+        { path: 'dcg/manage-payments', component: DcgPaymentsListingComponent ,canActivate: [AuthGuard] },
+       
           //HQ routes
        { path: 'hq/manage-applications', component: HqManageApplicationsComponent ,canActivate: [AuthGuard] },
         {path: 'hq/manage-applications/:id', component: HqApplicationDetailComponent,canActivate: [AuthGuard] },
@@ -167,6 +171,8 @@ const appRoutes: Routes = [
     DcgApplicationDetailComponent,
     HqApplicationDetailComponent,
     OcoAssignmentDetailComponent,
+    DcgPaymentsListingComponent,
+    ProvisionalReportComponent,
  
   ],
   imports: [
