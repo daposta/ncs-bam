@@ -56,7 +56,7 @@ export class CacEntryOfPremiseDetailComponent implements OnInit {
             headers: { 'idForm': this.entry_of_premise['idForm'],
              'comments':  this.entry_of_premise['comments'],
              'status': this.entry_of_premise['status'],
-              'cname': this.entry_of_premise['cname'] + '- Nigeria',
+              'cname': this.entry_of_premise['cname'] ,
                'registeredaddress':  this.entry_of_premise['registeredaddress'],
               'purposeofbusiness':  this.entry_of_premise['purposeofbusiness'],
                'descriptionofbusiness':  this.entry_of_premise['descriptionofbusiness'],
