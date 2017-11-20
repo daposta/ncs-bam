@@ -8,7 +8,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Form #{{entry_of_premise.formref}}  Details
+                Form #{{entry_of_premise?.formref}}  Details
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -28,15 +28,16 @@
                         </div>
                         <div class="box-body">
                             <span><strong>Company</strong></span><br />
-                            <input type="text" class="form-control" value="{{entry_of_premise.cname}}" disabled>
+                            <input type="text" class="form-control" value="{{entry_of_premise?.cname}}" disabled>
                             <br />
                             <span><strong>Address</strong></span><br />
-                            <input type="text" class="form-control" value="{{entry_of_premise.registeredaddress}}" disabled>
+                            <input type="text" class="form-control" value="{{entry_of_premise?.registeredaddress}}" disabled>
                             <br />
                             <span><strong>Description</strong></span><br />
-                            <textarea class="form-control" value="{{entry_of_premise.descriptionofbusiness}}" rows="2" disabled></textarea>
+                            <textarea class="form-control" value="{{entry_of_premise?.descriptionofbusiness}}" rows="2" disabled></textarea>
                             <br />
                             <span><strong>Purpose of Business</strong></span><br />
+<<<<<<< HEAD
                             <textarea class="form-control" value="{{entry_of_premise.purposeofbusiness}}" rows="2" disabled></textarea>
                             <br />
                             <span><strong>Estimate cost of building</strong></span><br />
@@ -47,6 +48,9 @@
                             <br />
                             <span><strong>Kind of goods to be produced</strong></span><br />
                             <textarea class="form-control" value="{{entry_of_premise.purposeofbusiness}}" rows="2" disabled></textarea>
+=======
+                            <textarea class="form-control" value="{{entry_of_premise?.purposeofbusiness}}" rows="2" disabled></textarea>
+>>>>>>> 77ba3662773a7df3baf7f2d387e6850f6f4e4eb8
 
                         </div>
 
@@ -185,7 +189,7 @@
                                         <h5><strong>Deputy Comptroller General's Board</strong></h5>
                                     </div>
                                     <!-- /.box-header -->
-                                    <a href="/cac/new-assignment/{{entry_of_premise.idform}}" class="btn btn-primary">Create Inspection</a><a href="" class="btn btn-primary">Approve License</a>
+                                    <a href="/cac/new-assignment/{{entry_of_premise?.idform}}" class="btn btn-primary">Create Inspection</a><a href="" class="btn btn-primary">Approve License</a>
 <br />
                                     
                                     <div class="box-body">

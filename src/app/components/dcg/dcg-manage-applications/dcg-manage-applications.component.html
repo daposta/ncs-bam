@@ -130,7 +130,7 @@
 
                                         <tr  *ngFor="let entry of applications;let i = index ">
 
-                                            <td><a href="/dcg/manage-applications/{{entry.idform}}">{{entry.formref}}</a></td>
+                                            <td><a href="/dcg/manage-applications/{{entry?.idform}}">{{entry?.formref}}</a></td>
                                             <td>{{entry.cname}}</td>
                                             <td>{{entry.descriptionofbusiness}}</td>
                                             <td>{{entry.registeredaddress}}</td>

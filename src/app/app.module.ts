@@ -85,6 +85,10 @@ const appRoutes: Routes = [
       { path: 'zones', component: ZonesListingComponent },
       { path: 'new-zone', component: NewZoneComponent ,canActivate: [AuthGuard]},
        { path: 'excise-traders', component: ExciseTradersListingComponent , canActivate: [AuthGuard] },
+        { path: 'new-payment', component: NewPaymentComponent ,canActivate: [AuthGuard]},
+       { path: 'manage-payments', component: PaymentsListingComponent , canActivate: [AuthGuard] },
+
+
 
        
 
