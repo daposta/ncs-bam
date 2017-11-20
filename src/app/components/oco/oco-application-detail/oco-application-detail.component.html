@@ -64,88 +64,128 @@
 
 
                 </div>
-                <div class="col-md-6 height500">
+                <div class="col-md-12 height500">
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h5 class="box-title"><strong>Onsite Custom Officer Inspection</strong></h5>
+                            <h5 class="box-title"><strong>Form Dashboard</strong></h5>
                         </div>
                         <div class="box-body">
-                            <div class="col-md-6">
-                     
-                                <div class="box box-primary direct-chat direct-chat-primary">
+                            <div class="col-md-12">
+
+                                <div class="box box-warning direct-chat direct-chat-primary">
                                     <div class="box-header with-border">
-                                        <h5><strong>Submit an inspection</strong></h5>
+                                        <h5><strong>Your Board</strong></h5>
                                     </div>
                                     <!-- /.box-header -->
-                                    <div class="box-body">
-                                       
-                                        <span><strong>Status</strong></span><br />
-                                        <select class="form-control">
-                                            <option>Completed</option>
-                                            <option>Rejected</option>
-                                        </select>
-                                        <br />
-                                        <span><strong>Enter Comment</strong></span><br />
-                                        <textarea class="form-control" placeholder="Enter inspection" rows="3"></textarea>
-                                        <br />
-                                        <button type="submit" class="btn btn-success">Submit</button>
-                                    </div>
-                                  
-                                    <!-- /.box-footer-->
-                                </div>
-                                <!--/.direct-chat -->
-                            </div>
-                            <div class="col-md-6">
 
-                                <div class="box box-primary direct-chat direct-chat-primary">
-                                    <div class="box-header with-border">
-                                        <h5><strong>Site Inspection</strong></h5>
-                                    </div>
-                                    <!-- /.box-header -->
-                                    <div class="box-body">
-                                        <span><strong>Assigned to</strong></span><br />
-                                        <input type="text" class="form-control" placeholder="R.J. musah">
-                                        <br />
-                                        <span><strong>Date of Inspection</strong></span><br />
-                                        <input type="date" class="form-control" placeholder="3rd Nov 2017">
-                                        <br />
-                                        <span><strong>Details of Inspection</strong></span><br />
-                                        <textarea class="form-control" placeholder="Enter inspection" rows="3"></textarea>
 
-                                    </div>
+                                    <button class="btn btn-success">Provisional Approval</button>
+
+                                    <!-- (only visible when status is Provisional Approval )-->
+                                    <button class="btn btn-primary">Mark Construction Completed</button>
+
+
 
                                     <!-- /.box-footer-->
                                 </div>
-                                <!--/.direct-chat -->
+                                <div class="box box-info direct-chat direct-chat-primary">
+                                    <div class="box-header with-border">
+                                        <h5><strong>Onsite Customs Officer's Board</strong></h5>
+                                    </div>
+                                    <!-- /.box-header -->
+                                    <div class="box-body">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th>Inspection Ref</th>
+                                                <th>Inspection Type</th>
+                                                <th>Inspected By</th>
+                                                <th>Date Inspected</th>
+                                                <th>Comment</th>
+                                                <th>Inspection Status</th>
+                                            </tr>
+                                            <tr>
+                                                <td>#NCS0388288</td>
+                                                <td>Form Inspection</td>
+                                                <td>R. J. Musah</td>
+                                                <td>Nov 4 2017</td>
+                                                <td>We inspected all the loopsholes in the factory</td>
+                                                <td><span class="badge bg-blue">Completed</span></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                    <!-- /.box-footer-->
+                                </div>
+
+                                <div class="box box-success direct-chat direct-chat-primary">
+                                    <div class="box-header with-border">
+                                        <h5><strong>Customs Area Comptroller's Board</strong></h5>
+                                    </div>
+                                    <!-- /.box-header -->
+                                    <div class="box-body">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th>Inspection Ref</th>
+                                                <th>Inspection Type</th>
+                                                <th>Inspected By</th>
+                                                <th>Date Inspected</th>
+                                                <th>Comment</th>
+                                                <th>Inspection Status</th>
+                                            </tr>
+                                            <tr>
+                                                <td>#NCS0388288</td>
+                                                <td>Form Inspection</td>
+                                                <td>R. J. Musah</td>
+                                                <td>Nov 4 2017</td>
+                                                <td>We inspected all the loopsholes in the factory</td>
+                                                <td><span class="badge bg-blue">Completed</span></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                    <!-- /.box-footer-->
+                                </div>
+
+                                <div class="box box-default direct-chat direct-chat-primary">
+                                    <div class="box-header with-border">
+                                        <h5><strong>Deputy Comptroller General's Board</strong></h5>
+                                    </div>
+                                    <!-- /.box-header -->
+                                    <div class="box-body">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th>Inspection Ref</th>
+                                                <th>Inspection Type</th>
+                                                <th>Assigned To</th>
+                                                <th>Date Inspected</th>
+                                                <th>Due Date</th>
+                                                <th>Comment</th>
+                                                <th>Inspection Status</th>
+                                            </tr>
+                                            <tr>
+                                                <td>#NCS0388288</td>
+                                                <td>Form Inspection</td>
+                                                <td>R. J. Musah</td>
+                                                <td>Nov 4 2017</td>
+                                                <td>Nov 3 2017</td>
+                                                <td>We inspected all the loopsholes in the factory</td>
+                                                <td><span class="badge bg-blue">Completed</span></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+
+                                    <!-- /.box-footer-->
+                                </div><!--/.direct-chat -->
                             </div>
-                           
 
                         </div>
                     </div>
 
 
                 </div>
-                <div class="col-md-6 height500">
-                    <!-- general form elements -->
-                    <div class="box box-primary">
-                        <div class="box-header with-border">
-                            <h5 class="box-title"><strong>Customs Area Comptroller Details</strong></h5>
-                        </div>
-                        <div class="box-body">
-                            <h3 class="text-center">Yet to be determined or</h3>
-                            <span><strong>Status</strong></span><br />
-                            <input type="text" class="form-control" placeholder="Provisional Approval" disabled>
-                            <br />
 
-                            <span><strong>Comment</strong></span><br />
-                            <textarea class="form-control" placeholder="I made an inpection on the document and we could tell that what was uploaded matches the site information" rows="3" disabled></textarea>
-
-                        </div>
-                    </div>
-
-
-                </div>
                 <!--<div class="col-md-6 height500">
 
                     <div class="box box-primary">
