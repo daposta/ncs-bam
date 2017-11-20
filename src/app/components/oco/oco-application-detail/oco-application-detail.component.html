@@ -8,7 +8,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Form #{{application.formref}}  Details
+                Form #{{entry_of_premise.formref}}  Details
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -28,16 +28,16 @@
                         </div>
                         <div class="box-body">
                             <span><strong>Company</strong></span><br />
-                            <input type="text" class="form-control" value="{{application.cname}}" disabled>
+                            <input type="text" class="form-control" value="{{entry_of_premise.cname}}" disabled>
                             <br />
                             <span><strong>Address</strong></span><br />
-                            <input type="text" class="form-control" value="{{application.registeredaddress}}" disabled>
+                            <input type="text" class="form-control" value="{{entry_of_premise.registeredaddress}}" disabled>
                             <br />
                             <span><strong>Description</strong></span><br />
-                            <textarea class="form-control" value="{{application.descriptionofbusiness}}" rows="2" disabled></textarea>
+                            <textarea class="form-control" value="{{entry_of_premise.descriptionofbusiness}}" rows="2" disabled></textarea>
                             <br />
                             <span><strong>Purpose of Business</strong></span><br />
-                            <textarea class="form-control" value="{{application.purposeofbusiness}}" rows="2" disabled></textarea>
+                            <textarea class="form-control" value="{{entry_of_premise.purposeofbusiness}}" rows="2" disabled></textarea>
 
                         </div>
 
@@ -52,6 +52,8 @@
                             <h5 class="box-title"><strong>Form Files</strong></h5>
                         </div>
                         <div class="box-body">
+
+
 
                             <div class="timeline-body">
                                 <img src="http://placehold.it/150x100" alt="..." class="margin">
@@ -75,15 +77,15 @@
 
                                 <div class="box box-warning direct-chat direct-chat-primary">
                                     <div class="box-header with-border">
-                                        <h5><strong>Your Board</strong></h5>
+                                        <h5><strong>Excise Trader's Board</strong></h5>
                                     </div>
                                     <!-- /.box-header -->
+                                    <div class="box-body">
+                                        <table class="table">
+                                            <tr><td><h5>Form Status: <span class="badge bg-blue">Completed</span></h5></td><td><h5>Site Status: <span class="badge bg-blue">Construction Completed</span></h5></td><td><h5>License Status: <span class="badge bg-blue">Not Issued</span></h5></td></tr>
+                                        </table>
 
-
-                                    <button class="btn btn-success">Provisional Approval</button>
-
-                                    <!-- (only visible when status is Provisional Approval )-->
-                                    <button class="btn btn-primary">Mark Construction Completed</button>
+                                    </div>
 
 
 
@@ -95,26 +97,60 @@
                                     </div>
                                     <!-- /.box-header -->
                                     <div class="box-body">
+
                                         <table class="table table-striped">
                                             <tr>
                                                 <th>Inspection Ref</th>
                                                 <th>Inspection Type</th>
-                                                <th>Inspected By</th>
+                                                <th>Assigned <br />By</th>
+                                                <th>Assigned To</th>
                                                 <th>Date Inspected</th>
+                                                <th>Due Date</th>
                                                 <th>Comment</th>
-                                                <th>Inspection Status</th>
+                                                <th>Status</th>
                                             </tr>
                                             <tr>
                                                 <td>#NCS0388288</td>
                                                 <td>Form Inspection</td>
-                                                <td>R. J. Musah</td>
+                                                <td>Shola Mohammed <span class="badge bg-red">CAC</span></td>
+                                                <td>R. J. Musah <span class="badge bg-red">OCO</span></td>
                                                 <td>Nov 4 2017</td>
+                                                <td>Nov 5 2017</td>
                                                 <td>We inspected all the loopsholes in the factory</td>
                                                 <td><span class="badge bg-blue">Completed</span></td>
+                                                <td><a data-toggle="modal" data-target="#oco-modal" href="/assignment/view">View Inspection</a></td>
+                                                <td><a data-toggle="modal" data-target="#oco-modal" href="/assignment/view">Write Inspection</a></td>
+
                                             </tr>
                                         </table>
+                                        <!--  Modal for viewing OCO's report on assignment-->
+                                        <!--<div class="example-modal">
+                                            <div class="modal fade modal-primary" id="oco-modal">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">Close</span>
+                                                            </button>
+                                                            <h4 class="modal-title">Primary Modal</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>One fine body…</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-outline">Save changes</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>-->
                                     </div>
 
+                                    <br />
                                     <!-- /.box-footer-->
                                 </div>
 
@@ -122,28 +158,17 @@
                                     <div class="box-header with-border">
                                         <h5><strong>Customs Area Comptroller's Board</strong></h5>
                                     </div>
+                                   
                                     <!-- /.box-header -->
                                     <div class="box-body">
+                                        <!--   If form status is Provisional Approval - Show this-->
                                         <table class="table table-striped">
-                                            <tr>
-                                                <th>Inspection Ref</th>
-                                                <th>Inspection Type</th>
-                                                <th>Inspected By</th>
-                                                <th>Date Inspected</th>
-                                                <th>Comment</th>
-                                                <th>Inspection Status</th>
-                                            </tr>
-                                            <tr>
-                                                <td>#NCS0388288</td>
-                                                <td>Form Inspection</td>
-                                                <td>R. J. Musah</td>
-                                                <td>Nov 4 2017</td>
-                                                <td>We inspected all the loopsholes in the factory</td>
-                                                <td><span class="badge bg-blue">Completed</span></td>
-                                            </tr>
+                                            <tr><td><h5>CAC Status: <span class="badge bg-blue">Provisional Approval</span></h5></td><td><h5>Comment: <span class="badge bg-blue">COmment comment commentdnmcdaidnnsnn icnnn</span></h5></td></tr>
                                         </table>
+                                        <!-- else-->
+                                  
                                     </div>
-
+                                    <br />
                                     <!-- /.box-footer-->
                                 </div>
 
@@ -152,26 +177,10 @@
                                         <h5><strong>Deputy Comptroller General's Board</strong></h5>
                                     </div>
                                     <!-- /.box-header -->
+
                                     <div class="box-body">
                                         <table class="table table-striped">
-                                            <tr>
-                                                <th>Inspection Ref</th>
-                                                <th>Inspection Type</th>
-                                                <th>Assigned To</th>
-                                                <th>Date Inspected</th>
-                                                <th>Due Date</th>
-                                                <th>Comment</th>
-                                                <th>Inspection Status</th>
-                                            </tr>
-                                            <tr>
-                                                <td>#NCS0388288</td>
-                                                <td>Form Inspection</td>
-                                                <td>R. J. Musah</td>
-                                                <td>Nov 4 2017</td>
-                                                <td>Nov 3 2017</td>
-                                                <td>We inspected all the loopsholes in the factory</td>
-                                                <td><span class="badge bg-blue">Completed</span></td>
-                                            </tr>
+                                            <tr><td><h5>DCG License: <span class="badge bg-red">Not Issued</span></h5></td></tr>
                                         </table>
                                     </div>
 
@@ -186,19 +195,6 @@
 
                 </div>
 
-                <!--<div class="col-md-6 height500">
-
-                    <div class="box box-primary">
-                        <div class="box-header with-border">
-                            <h5 class="box-title"><strong>License Details</strong></h5>
-                        </div>
-                        <div class="box-body">
-                            <h3 class="text-center">No license yet.</h3>
-                        </div>
-                    </div>
-
-
-                </div>-->
                 <!-- /.col -->
             </div>
             <!-- /.row -->
