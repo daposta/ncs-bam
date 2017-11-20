@@ -87,7 +87,6 @@ export class RegisterAsAdminComponent implements OnInit {
           console.log("=====Sent successfully to the database========");
           let  roleAccessUrl = "https://129.144.154.136/ords/pdb1/ncs/system/roleaccess/";
           //toastr.success("Success", 'Registration Successful');
-          console.log(v);
           let _formData = new FormData();
            _formData.append('userid' ,v.UserId);
             _formData.append('idrole', v.role );

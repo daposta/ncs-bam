@@ -60,10 +60,12 @@ export class CacNewAssignmentComponent implements OnInit {
     formData.append('Status', this.assignment['status'] );
 
     console.log(this.assignment);
+    var _assigment = this.assignment;
 
     let toastr = this.toastr;
 
     let assignmentsUrl = "https://129.144.154.136/ords/pdb1/ncs/system/assignment/";
+     // let formData = new FormData();
 
         $.ajax ( {
         type: 'POST',
@@ -77,12 +79,41 @@ export class CacNewAssignmentComponent implements OnInit {
         xhrFields: { withCredentials: true },
         beforeSend: function (xhr) { 
           console.log('setting credentials.......');
+
           
         },
         success: function(data) { 
           console.log("=====Sent successfully to the database========");
-          toastr.success("Success", 'Assignment saved successfully');
-          window.location.href= '/cac/manage-assignments';
+         
+          // update form 41 status
+          let formStatusUpdateUrl = 'https://129.144.154.136/ords/pdb1/ncs/system/form41/status/update/';
+          
+          $.ajax ( {
+            type: 'PUT',
+            url: formStatusUpdateUrl,
+            enctype: 'multipart/form-data',
+            //data: formData,
+            headers: { 'id': _assigment['idForm'],
+             'status': 'Inspection',
+             },
+            cache: false,
+            processData: false,
+            contentType: false,
+            crossDomain: true,
+            xhrFields: { withCredentials: true },
+            beforeSend: function (xhr) { 
+              console.log('setting credentials.......');
+           
+            },
+            success: function(data) { 
+              console.log("=====Sent updated form41 to the database========");
+              toastr.success("Success", 'Assignment saved successfully');
+              window.location.href= '/cac/entrys-of-premise/' + _assigment['idForm'] ;
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+              console.log("=====uploading system error ========");
+            }
+          } );
         },
         error: function(jqXHR, textStatus, errorThrown) {
           console.log("=====uploading system error ========");
