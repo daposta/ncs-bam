@@ -99,6 +99,9 @@ const appRoutes: Routes = [
        //OCO routes
        { path: 'oco/manage-applications', component: OcoManageApplicationsComponent , canActivate: [AuthGuard] },
         {path: 'oco/manage-applications/:id', component: OcoApplicationDetailComponent, canActivate: [AuthGuard] },
+         { path: 'oco/manage-applications', component: OcoManageApplicationsComponent , canActivate: [AuthGuard] },
+        {path: 'oco/assignments/:id', component: OcoApplicationDetailComponent, canActivate: [AuthGuard] },
+
 
           //DCG routes
        { path: 'dcg/manage-applications', component: DcgManageApplicationsComponent ,canActivate: [AuthGuard] },
