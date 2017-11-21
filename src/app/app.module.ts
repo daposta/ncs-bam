@@ -67,6 +67,7 @@ import { ProvisionalReportComponent } from './components/provisional-report/prov
 import { PaymentInvoiceComponent } from './components/payment-invoice/payment-invoice.component';
 import { ProvisionalApprovalComponent } from './components/provisional-approval/provisional-approval.component';
 import { DcgManageLicencesComponent } from './components/dcg/dcg-manage-licences/dcg-manage-licences.component';
+import { NewBankGuaranteeComponent } from './components/new-bank-guarantee/new-bank-guarantee.component';
 
 
 
@@ -100,6 +101,8 @@ const appRoutes: Routes = [
 
        { path: 'manage-register', component: RegistersListingComponent , canActivate: [AuthGuard] },
         { path: 'new-register', component: NewRegisterComponent ,canActivate: [AuthGuard]},
+
+        { path: 'new-bank-guarantee', component: NewBankGuaranteeComponent ,canActivate: [AuthGuard]},
 
        
 
@@ -185,6 +188,7 @@ const appRoutes: Routes = [
     PaymentInvoiceComponent,
     ProvisionalApprovalComponent,
     DcgManageLicencesComponent,
+    NewBankGuaranteeComponent,
  
   ],
   imports: [
