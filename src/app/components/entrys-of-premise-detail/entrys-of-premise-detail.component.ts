@@ -205,7 +205,9 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
               },
               success: function(data) { 
                 console.log("=====Sent successfully to the database========");
-                thumbnails.push(data);
+                //thumbnails.push(data);
+
+                $('#ppp').append('<img src="' + data + '"/>');
              
               },
               error: function(jqXHR, textStatus, errorThrown) {
