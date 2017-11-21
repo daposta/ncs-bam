@@ -47,7 +47,7 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
          this.entry_of_premise = data.items[0] ;
            console.log('======');
            console.log(this.entry_of_premise);
-           this.fetchImagesForForm41(this.entry_of_premise['idform']);
+           this.fetchImagesForForm41();
            console.log(this.form41Docs);
        });
 
@@ -175,18 +175,16 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
 
   }
 
-  fetchImagesForForm41(formID:any){
+  fetchImagesForForm41(){
     console.log('prrrrr');
-    this.uploadsSrv.findDocsbyFormID(formID).then(response => {
-      this.form41Docs = response.items;
-      console.log( this.form41Docs);
-   })
-    .catch(error => this.error = error);
+    //let imgs = this.entry_of_premise['ATTACHMENTS'];
+    this.fetchThumbnailsFromIDs(this.entry_of_premise['ATTACHMENTS']);
 
   }
 
   fetchThumbnailsFromIDs(imageIDs:any[]){
     let thumbnails:any[];
+    console.log(imageIDs);
     let thumbnailURL ='https://documents-gse00012792.documents.us2.oraclecloud.com/documents/api/1.2/files/DA5878F4B1A4FEE0DA334AE40CA5E537F54010EF7DE2/data/thumbnail';
     imageIDs.forEach(function(item){
      // thumbnails.push(item.);
@@ -206,7 +204,7 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
               },
               success: function(data) { 
                 console.log("=====Sent successfully to the database========");
-
+                thumbnails.push(data);
                 //toastr.success("Success", 'Upload Successful');
 
              
