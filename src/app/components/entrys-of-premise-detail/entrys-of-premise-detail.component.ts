@@ -188,25 +188,33 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
   fetchThumbnailsFromIDs(imageIDs:any[]){
     let thumbnails:any[];
     let thumbnailURL ='https://documents-gse00012792.documents.us2.oraclecloud.com/documents/api/1.2/files/DA5878F4B1A4FEE0DA334AE40CA5E537F54010EF7DE2/data/thumbnail';
-    let username ='bala.gupta';
-    let password ='LifeliKe@6Lamb';
     imageIDs.forEach(function(item){
      // thumbnails.push(item.);
-           $.ajax
-          ({
-            type: "GET",
-            url: thumbnailURL,
-            async: false,
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader ("Authorization", "Basic " + btoa(username + ":" + password));
-               xhr.setRequestHeader("Access-Control-Allow-Origin", "http://localhost:4200");
-            },
-            success: function (data, status){
+         $.ajax ( {
+              type: 'POST',
+              url: thumbnailURL,
+              enctype: ' multipart/form-data',
+              data: 'attachmentData',
+              cache: false,
+              processData: false,
+              contentType: false,
+              crossDomain: true,
+              xhrFields: { withCredentials: true },
+              beforeSend: function (xhr) { 
+                console.log('setting credentials.......');
+                
+              },
+              success: function(data) { 
+                console.log("=====Sent successfully to the database========");
 
-            },
-             error: function(jqXHR, textStatus, errorThrown) {
-                      console.log("=====uploading system error ========");
+                //toastr.success("Success", 'Upload Successful');
+
+             
+              },
+              error: function(jqXHR, textStatus, errorThrown) {
+                console.log("=====uploading system error ========");
               }
+            });
 
     });
   }
