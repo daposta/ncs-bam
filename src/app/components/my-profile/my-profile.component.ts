@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 declare var $: any;
 @Component({
@@ -10,7 +10,8 @@ export class MyProfileComponent implements OnInit {
   
    user: any= {};
    org:any= {};
-  constructor() { }
+  constructor(private toastr: ToastsManager, private _vcr: ViewContainerRef,) {
+   this.toastr.setRootViewContainerRef(_vcr); }
 
   ngOnInit() {
   	if(localStorage.getItem('user')){
@@ -21,9 +22,10 @@ export class MyProfileComponent implements OnInit {
   }
 
   companyInfo(){
-\
+
     let postInfoTOBCURL= "";
     let data = {"tin" : this.org.tin,"rcNumber": this.org.rcNumber};
+    var toastr = this.toastr;
 
     $.ajax ( {
               type: 'POST',
