@@ -45,8 +45,6 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
 		 .subscribe(
 		 	data =>{
          this.entry_of_premise = data.items[0] ;
-           console.log('======');
-           console.log(this.entry_of_premise);
            this.fetchImagesForForm41();
            console.log(this.form41Docs);
        });
@@ -117,7 +115,6 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
                       let imageID = response['id'];
                       let attachementURL ='https://129.144.154.136/ords/pdb1/ncs/system/form41attachment/';
                       let attachmentData = new FormData();
-                      console.log('===' + form41['idform']);
                       attachmentData.append('idForm', form41['idform']);
                       attachmentData.append('image',imageID);
                       attachmentData.append('title', "*****");
@@ -178,35 +175,37 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
   fetchImagesForForm41(){
     console.log('prrrrr');
     //let imgs = this.entry_of_premise['ATTACHMENTS'];
-    this.fetchThumbnailsFromIDs(this.entry_of_premise['ATTACHMENTS']);
+    if(this.entry_of_premise['ATTACHMENTS']){
+          this.fetchThumbnailsFromIDs(this.entry_of_premise['ATTACHMENTS']);
+    }
+  
 
   }
 
   fetchThumbnailsFromIDs(imageIDs:any[]){
-    let thumbnails:any[];
+    let thumbnails = [];
     console.log(imageIDs);
-    let thumbnailURL ='https://documents-gse00012792.documents.us2.oraclecloud.com/documents/api/1.2/files/DA5878F4B1A4FEE0DA334AE40CA5E537F54010EF7DE2/data/thumbnail';
+    let username ='bala.gupta';
+    let password ='LifeliKe@6Lamb';
     imageIDs.forEach(function(item){
      // thumbnails.push(item.);
+
+    let thumbnailURL ='https://documents-gse00012792.documents.us2.oraclecloud.com/documents/api/1.2/files/'+ item['IMAGE'] +'/data/thumbnail';
+
          $.ajax ( {
-              type: 'POST',
+              type: 'GET',
               url: thumbnailURL,
-              enctype: ' multipart/form-data',
-              data: 'attachmentData',
-              cache: false,
-              processData: false,
-              contentType: false,
-              crossDomain: true,
+               async: false,
               xhrFields: { withCredentials: true },
               beforeSend: function (xhr) { 
                 console.log('setting credentials.......');
+                  xhr.setRequestHeader ("Authorization", "Basic " + btoa(username + ":" + password));
+                  xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
                 
               },
               success: function(data) { 
                 console.log("=====Sent successfully to the database========");
                 thumbnails.push(data);
-                //toastr.success("Success", 'Upload Successful');
-
              
               },
               error: function(jqXHR, textStatus, errorThrown) {
@@ -215,6 +214,8 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
             });
 
     });
+
+    console.log(thumbnails);
   }
 
 }
