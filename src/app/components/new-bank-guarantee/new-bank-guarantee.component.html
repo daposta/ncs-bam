@@ -62,22 +62,20 @@
                                     <option value="ZENITH BANK PLC">ZENITH BANK PLC</option>
                                 </select>
                                 <br />
-                                <span><strong>Select Inspection Type</strong></span><br />
-                                <select class="form-control">
-                                    <option value="">Select Inspection Type</option>
-                                    <option value="Select Officer">Form Inspection</option>
-                                    <option value="R. J. Musah">Site Inspection</option>
-                                </select>
+                                <span><strong>Enter Ref Number</strong></span><br />
+                                <input type="text" class="form-control"/>
                                 <br />
-                                <span><strong>Enter Instruction</strong></span>
-                                <textarea class="form-control" rows="3" placeholder="Enter Instruction" [(ngModel)]="assignment.instruction" name="instruction" #name="ngModel"></textarea>
+                           
+                                <span><strong>Enter Beneficiary</strong></span><br />
+                                <input type="text" class="form-control" />
+                                <br />
+                                <span><strong>Enter Guarantee Amount</strong></span><br />
+                                <input type="text" class="form-control" />
+                                <br />
+                                <span><strong>Message</strong></span><br />
+                                <textarea class="form-control" rows="3"></textarea>
                                 <br />
 
-                                <span><strong>Choose Due Date</strong></span>
-                                <input type="date" class="form-control" [(ngModel)]="assignment.dueDate" name="dueDate" #dueDate="ngModel" />
-
-
-                                <br />
 
 
 

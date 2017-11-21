@@ -9,11 +9,11 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Assign Onsite Custom Officer
+                Create Bank Guarantee
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Assign OCO</li>
+                <li class="active">Create Bank Guarantee</li>
             </ol>
         </section>
 
@@ -27,39 +27,26 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Assign an Onsite Custom Officer to Form #NCS02029999</h3>
+                            <h3 class="box-title">Create Bank Guarantee</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
 
-                        <form (ngSubmit)="assignmentForm.form.valid &&  saveAssignment()" #assignmentForm="ngForm" novalidate>
+                        <form>
 
 
                             <div class="box-body">
 
-                                <span><strong>Select Officer</strong></span><br />
-                                <select class="form-control" [(ngModel)]="assignment.user" name="user" #user="ngModel" required>
-                                    <option [value]="-1" [disabled]="true" [selected]="true">Select Offier</option>
-                                    <option *ngFor="let user of users" [value]="user.userid">{{user.firstname + ' ' + user.lastname}}</option>
-                                </select>
-
-                                <br />
-                                <span><strong>Select Inspection Type</strong></span><br />
+                                <span><strong>Select Register</strong></span><br />
                                 <select class="form-control">
-                                    <option value="">Select Inspection Type</option>
-                                    <option value="Select Officer">Form Inspection</option>
-                                    <option value="R. J. Musah">Site Inspection</option>
+                                    <option>Select Register</option>
+                                    <option>Operational Register</option><option>Raw Material Register</option>
                                 </select>
                                 <br />
-                                <span><strong>Enter Instruction</strong></span>
-                                <textarea class="form-control" rows="3" placeholder="Enter Instruction" [(ngModel)]="assignment.instruction" name="instruction" #name="ngModel"></textarea>
+                                <span><strong>Choose File</strong></span><br />
+                                <input class="form-control" type="file"/>
                                 <br />
 
-                                <span><strong>Choose Due Date</strong></span>
-                                <input type="date" class="form-control" [(ngModel)]="assignment.dueDate" name="dueDate" #dueDate="ngModel" />
-
-
-                                <br />
 
 
 
@@ -67,7 +54,7 @@
                             <!-- /.box-body -->
 
                             <div class="box-footer">
-                                <button type="submit" class="btn btn-success">Submit</button>
+                                <button type="submit" class="btn btn-success">Upload</button>
                             </div>
                         </form>
                     </div>
