@@ -23,14 +23,22 @@ export class MyProfileComponent implements OnInit {
 
   companyInfo(){
 
-    let postInfoTOBCURL= "";
-    let data = {"tin" : this.org.tin,"rcNumber": this.org.rcNumber};
+    let postInfoTOBCURL= "http://129.157.177.159:3100/bcsgw/rest/v1/transaction/invocation";
+    let data = {
+        "channel":"testorderer",
+        "chaincode":"exciseprocess",
+        "method":"createTrader",
+        "args":[this.companyInfo['orgName'],this.org['rcNumber'], this.org['tin'],
+        "[48 70 48 16 6 7 42 134 72 206 61 2 1 6 5 43 129 4 0 33 3 58 0 4 21 162 242 81 40 78 13 26 160 33 97 191 210 22 152 134 162 66 12 77 221 129 138 60 74 243 198 34 102 209 14 48 16 2 20 96 172 47 170 216 228 169 103 121 153 100 84 111 33 13 106 42 46 227 52 91]"],
+        "chaincodeVer":"v1"
+     }
+     //{"tin" : this.org.tin,"rcNumber": this.org.rcNumber};
     var toastr = this.toastr;
 
     $.ajax ( {
               type: 'POST',
               url: postInfoTOBCURL,
-              enctype: ' multipart/form-data',
+              enctype: ' application/json',
               data: data,
               cache: false,
               processData: false,
@@ -43,7 +51,7 @@ export class MyProfileComponent implements OnInit {
               },
               success: function(data) { 
                 console.log("=====Sent successfully to the database========");
-
+                console.log(data);
                 toastr.success("Success", 'Upload Successful');
 
              

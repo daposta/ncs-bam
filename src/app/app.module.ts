@@ -66,6 +66,7 @@ import { DcgPaymentsListingComponent } from './components/oco/dcg-payments-listi
 import { ProvisionalReportComponent } from './components/provisional-report/provisional-report.component';
 import { PaymentInvoiceComponent } from './components/payment-invoice/payment-invoice.component';
 import { ProvisionalApprovalComponent } from './components/provisional-approval/provisional-approval.component';
+import { DcgManageLicencesComponent } from './components/dcg/dcg-manage-licences/dcg-manage-licences.component';
 
 
 
@@ -82,6 +83,7 @@ const appRoutes: Routes = [
        { path: 'entrys-of-premise', component: EntrysOfPremiseListingComponent ,canActivate: [AuthGuard] },
        { path: 'entrys-of-premise/:id', component: EntrysOfPremiseDetailComponent },
      { path: 'manage-licences', component: LicencesListingComponent,canActivate: [AuthGuard]  },
+     { path: 'licences/detail', component: LicencesListingComponent,canActivate: [AuthGuard]  },
     { path: 'payments', component: PaymentsListingComponent, canActivate: [AuthGuard]  },
     { path: 'duties', component: DutiesListingComponent,canActivate: [AuthGuard] },
      { path: 'manage-ucas', component: UcaListingComponent, canActivate: [AuthGuard] },
@@ -96,6 +98,8 @@ const appRoutes: Routes = [
 
        { path: 'provisional-approval', component: ProvisionalApprovalComponent ,canActivate: [AuthGuard]},
 
+       { path: 'manage-register', component: RegistersListingComponent , canActivate: [AuthGuard] },
+        { path: 'new-register', component: NewRegisterComponent ,canActivate: [AuthGuard]},
 
        
 
@@ -118,8 +122,9 @@ const appRoutes: Routes = [
        { path: 'dcg/manage-applications', component: DcgManageApplicationsComponent ,canActivate: [AuthGuard] },
         {path: 'dcg/manage-applications/:id', component: DcgApplicationDetailComponent ,canActivate: [AuthGuard]},
         { path: 'dcg/manage-payments', component: DcgPaymentsListingComponent ,canActivate: [AuthGuard] },
-       
-          //HQ routes
+        { path: 'dcg/manage-licences', component: DcgManageLicencesComponent ,canActivate: [AuthGuard] },
+     
+            //HQ routes
        { path: 'hq/manage-applications', component: HqManageApplicationsComponent ,canActivate: [AuthGuard] },
         {path: 'hq/manage-applications/:id', component: HqApplicationDetailComponent,canActivate: [AuthGuard] },
 
@@ -179,6 +184,7 @@ const appRoutes: Routes = [
     ProvisionalReportComponent,
     PaymentInvoiceComponent,
     ProvisionalApprovalComponent,
+    DcgManageLicencesComponent,
  
   ],
   imports: [

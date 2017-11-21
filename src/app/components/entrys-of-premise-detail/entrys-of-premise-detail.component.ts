@@ -2,6 +2,7 @@ import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import { Form41sService} from '../../services/form41s.service';
+import { UploadsService} from '../../services/uploads.service';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 declare var $: any;
@@ -10,7 +11,7 @@ declare var $: any;
   selector: 'app-entrys-of-premise-detail',
   templateUrl: './entrys-of-premise-detail.component.html',
   styleUrls: ['./entrys-of-premise-detail.component.css'],
-   providers : [Form41sService, ]
+   providers : [Form41sService, UploadsService]
 
 })
 export class EntrysOfPremiseDetailComponent implements OnInit {
@@ -21,16 +22,20 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
   supportingDoc: any= {};
   _doc :any;
 
+  form41Docs:any[] = [];
+
 
   
 
   constructor(private form41Srv: Form41sService, private route: ActivatedRoute,private toastr: ToastsManager, 
-    private _vcr: ViewContainerRef,) { 
+    private _vcr: ViewContainerRef, private uploadsSrv: UploadsService) { 
         this.toastr.setRootViewContainerRef(_vcr);
   }
 
   ngOnInit() {
   	this.getDetail()
+   
+
   }
 
 
@@ -38,8 +43,13 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
   	 this.route.params.switchMap((params: Params) => 
 		 	this.form41Srv.findForm41ByID(+ params['id']))
 		 .subscribe(
-		 	data =>this.entry_of_premise = data.items[0]	);
-
+		 	data =>{
+         this.entry_of_premise = data.items[0] ;
+           console.log('======');
+           console.log(this.entry_of_premise);
+           this.fetchImagesForForm41(this.entry_of_premise['idform']);
+           console.log(this.form41Docs);
+       });
 
   }
 
@@ -102,12 +112,14 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
                     },
                     success: function(response) { 
                       console.log("=====Sent successfully========");
+
+                      //send attachment to db
                       let imageID = response['id'];
                       let attachementURL ='https://129.144.154.136/ords/pdb1/ncs/system/form41attachment/';
                       let attachmentData = new FormData();
                       console.log('===' + form41['idform']);
                       attachmentData.append('idForm', form41['idform']);
-                      attachmentData.append('image',"*****");
+                      attachmentData.append('image',imageID);
                       attachmentData.append('title', "*****");
                       attachmentData.append('description' ,"*****");
                        attachmentData.append('Status' , "Done");
@@ -159,14 +171,44 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
     let  files = $event.target.files || $event.srcElement.files;
    //this.form41Uploads.push(files[0]);
    this._doc = files[0];
-   console.log( this._doc );
-
-   
+  
 
   }
 
-  uploadToform41Folder(){
+  fetchImagesForForm41(formID:any){
+    console.log('prrrrr');
+    this.uploadsSrv.findDocsbyFormID(formID).then(response => {
+      this.form41Docs = response.items;
+      console.log( this.form41Docs);
+   })
+    .catch(error => this.error = error);
 
+  }
+
+  fetchThumbnailsFromIDs(imageIDs:any[]){
+    let thumbnails:any[];
+    let thumbnailURL ='https://documents-gse00012792.documents.us2.oraclecloud.com/documents/api/1.2/files/DA5878F4B1A4FEE0DA334AE40CA5E537F54010EF7DE2/data/thumbnail';
+    let username ='bala.gupta';
+    let password ='LifeliKe@6Lamb';
+    imageIDs.forEach(function(item){
+     // thumbnails.push(item.);
+           $.ajax
+          ({
+            type: "GET",
+            url: thumbnailURL,
+            async: false,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader ("Authorization", "Basic " + btoa(username + ":" + password));
+               xhr.setRequestHeader("Access-Control-Allow-Origin", "http://localhost:4200");
+            },
+            success: function (data, status){
+
+            },
+             error: function(jqXHR, textStatus, errorThrown) {
+                      console.log("=====uploading system error ========");
+              }
+
+    });
   }
 
 }

@@ -15,9 +15,18 @@ export class UploadsService {
 
 
 
-  createForm41Folder(){
+  findDocsbyFormID(formID: any){
+  	console.log("inside service");
+  	 let docsURL = 'https://129.144.154.136/ords/pdb1/ncs/system/form41attachmentsbyform/';
+      let headers = new Headers();
+   		 headers.append('Content-Type','application/json');
+   		 headers.append('Allow-Cross-Origin','*');
 
-  }
+     return this.http.get(docsURL + formID , {headers: headers})
+              .toPromise()
+              .then(response => response.json())
+              .catch(error => console.log(error));
+  };
 
   uploadToform41Folder(){
 
