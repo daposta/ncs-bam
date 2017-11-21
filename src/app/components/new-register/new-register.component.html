@@ -1,3 +1,82 @@
-<p>
-  new-register works!
-</p>
+
+<div class="wrapper">
+    <app-header></app-header>
+
+    <app-sidebar></app-sidebar>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Assign Onsite Custom Officer
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Assign OCO</li>
+            </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+            <div class="row">
+
+                <!-- /.col -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Assign an Onsite Custom Officer to Form #NCS02029999</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <!-- form start -->
+
+                        <form (ngSubmit)="assignmentForm.form.valid &&  saveAssignment()" #assignmentForm="ngForm" novalidate>
+
+
+                            <div class="box-body">
+
+                                <span><strong>Select Officer</strong></span><br />
+                                <select class="form-control" [(ngModel)]="assignment.user" name="user" #user="ngModel" required>
+                                    <option [value]="-1" [disabled]="true" [selected]="true">Select Offier</option>
+                                    <option *ngFor="let user of users" [value]="user.userid">{{user.firstname + ' ' + user.lastname}}</option>
+                                </select>
+
+                                <br />
+                                <span><strong>Select Inspection Type</strong></span><br />
+                                <select class="form-control">
+                                    <option value="">Select Inspection Type</option>
+                                    <option value="Select Officer">Form Inspection</option>
+                                    <option value="R. J. Musah">Site Inspection</option>
+                                </select>
+                                <br />
+                                <span><strong>Enter Instruction</strong></span>
+                                <textarea class="form-control" rows="3" placeholder="Enter Instruction" [(ngModel)]="assignment.instruction" name="instruction" #name="ngModel"></textarea>
+                                <br />
+
+                                <span><strong>Choose Due Date</strong></span>
+                                <input type="date" class="form-control" [(ngModel)]="assignment.dueDate" name="dueDate" #dueDate="ngModel" />
+
+
+                                <br />
+
+
+
+                            </div>
+                            <!-- /.box-body -->
+
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.col -->
+        </section>
+    </div>
+</div>
+
+<app-footer></app-footer>
