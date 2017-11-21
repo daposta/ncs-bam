@@ -65,11 +65,13 @@
                             <div class="timeline-body">
                                 <div class="form-group">
                                     <label for="exampleInputFile">Site Plan</label>
-                                    <input type="file" id="exampleInputFile">
+                                    <input type="file" id="exampleInputFile" (change)="addDocument($event, supportingDoc.sitePlan)" [(ngModel)]="supportingDoc.sitePlan" name="name" #name="ngModel">
+                                
+                                     <input type="submit" id="exampleInputFile" (click)="uploadFile(supportingDoc.sitePlan)" value="Upload" class="btn btn-success">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputFile">Premises Plan</label>
-                                    <input type="file" id="exampleInputFile">
+                                    <input type="file" id="exampleInputFile"  (change)="addDocument($event)">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputFile">Machinery Layout</label>
@@ -85,7 +87,7 @@
                                 </div>
                                 <div class="form-group">
                                   
-                                    <input type="submit" id="exampleInputFile" value="Upload" class="btn btn-success">
+                                  <!--   <input type="submit" id="exampleInputFile" (click)="createForm41Folder()" value="Upload" class="btn btn-success"> -->
                                 </div>
                             </div>
                         </div>

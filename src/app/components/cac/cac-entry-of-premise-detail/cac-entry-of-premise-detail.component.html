@@ -181,13 +181,13 @@
                                             <table class="table table-striped">
                                                 <tr>
                                                     <td>
-                                                        <select class="form-control" [(ngModel)]="entry_of_premise.status" name="status" #status="ngModel">
+                                                        <select class="form-control" [(ngModel)]="entry_of_premise.formStatus" name="status" #formStatus="ngModel">
                                                             <option value="Provisional Approval">Provisional Approval</option>
                                                             <option value="Rejected">Reject</option>
                                                         </select>
                                                     </td>
                                                     <td>
-                                                        <textarea class="form-control" rows="4" placeholder="Enter comment" [(ngModel)]="entry_of_premise.comments" name="comments" #comments="ngModel"></textarea>
+                                                        <textarea class="form-control" rows="4" placeholder="Enter comment" [(ngModel)]="entry_of_premise.comms" name="comments" #comms="ngModel"></textarea>
                                                     </td>
 
                                                     <td>

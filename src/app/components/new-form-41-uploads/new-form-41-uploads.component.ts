@@ -19,6 +19,7 @@ export class NewForm41UploadsComponent implements OnInit {
 	}
 
   ngOnInit() {
+    //this.createForm41Folder();
   }
 
   addDocument($event){
@@ -31,6 +32,11 @@ export class NewForm41UploadsComponent implements OnInit {
    
 
   }
+
+
+  
+
+  
 
   upload(){
   	let formData = new FormData();

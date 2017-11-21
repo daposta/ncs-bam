@@ -26,8 +26,10 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
    
   }
+  //private toast = this.toastr;
 
   login(){
+    //headers.append('Accept', 'q=0.8;application/json;q=0.9');
 
   	this.userSrv.findUserByEmail(this.user['email'])
   	.then(result => {
@@ -42,17 +44,17 @@ export class LoginComponent implements OnInit {
             
            
            let msg = 'Login successful';
-          this.toastr.success("Success", msg);
+          //this.toastr.success("Success", msg);
   				window.location.href = '/';
   			}
   			else{
   				let msg = 'No user with matching credentials';
-          this.toastr.error("Error", msg);
+          //this.toastr.error("Error", msg);
   			}
 
   		}else{
   			 let msg = 'User with email does not exists'
-        this.toastr.error("Error", msg);
+        //this.toastr.error("Error", msg);
   		}
   		
 
@@ -74,8 +76,7 @@ export class LoginComponent implements OnInit {
      this.accessSrv.findAccessByUserID(localStorage.getItem('userid')).
     then(response=> {
       this.roleAccess = response.items[0];
-      console.log('++++++');
-      console.log( this.roleAccess);
+     
     })
     .catch(err => this.error = err )
   }

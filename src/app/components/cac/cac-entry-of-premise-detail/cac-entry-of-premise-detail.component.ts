@@ -53,9 +53,10 @@ export class CacEntryOfPremiseDetailComponent implements OnInit {
             url: formApprovalUrl,
             enctype: 'multipart/form-data',
             //data: formData,
-            headers: { 'idForm': this.entry_of_premise['idForm'],
-             'comments':  this.entry_of_premise['comments'],
-             'status': this.entry_of_premise['status'],
+            headers: { 
+              'idForm': this.entry_of_premise['idForm'],
+             'comments':  this.entry_of_premise['comms'],
+             'status': this.entry_of_premise['formStatus'],
               'cname': this.entry_of_premise['cname'] ,
                'registeredaddress':  this.entry_of_premise['registeredaddress'],
               'purposeofbusiness':  this.entry_of_premise['purposeofbusiness'],

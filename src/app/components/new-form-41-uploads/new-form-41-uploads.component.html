@@ -75,7 +75,7 @@
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form (ngSubmit)="Form41Attachment.form.valid &&  upload()"  #Form41Attachment="ngForm" novalidate>
+                        <form (ngSubmit)="Form41Attachment.form.valid &&  createForm41Folder()"  #Form41Attachment="ngForm" novalidate>
                             <div class="box-body">
                                 <span><strong>Title</strong></span><br />
                                 <input type="text" class="form-control" placeholder="Title of upload" required [(ngModel)]="attachment.title" name="title" #title="ngModel">
