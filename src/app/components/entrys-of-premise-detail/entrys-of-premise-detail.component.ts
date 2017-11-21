@@ -8,28 +8,29 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 declare var $: any;
 
 @Component({
-  selector: 'app-entrys-of-premise-detail',
-  templateUrl: './entrys-of-premise-detail.component.html',
-  styleUrls: ['./entrys-of-premise-detail.component.css'],
-   providers : [Form41sService, UploadsService]
+    selector: 'app-entrys-of-premise-detail',
+    templateUrl: './entrys-of-premise-detail.component.html',
+    styleUrls: ['./entrys-of-premise-detail.component.css'],
+    providers: [Form41sService, UploadsService]
 
 })
 export class EntrysOfPremiseDetailComponent implements OnInit {
 
-  entry_of_premise: Object= {};
- 	error: any;	
-  form41Uploads:any[] = [];
-  supportingDoc: any= {};
-  _doc :any;
+    entry_of_premise: Object = {};
+    error: any;
+    form41Uploads: any[] = [];
+    supportingDoc: any = {};
+    _doc: any;
 
-  form41Docs:any[] = [];
+    form41Docs: any[] = [];
 
 
-  
 
-  constructor(private form41Srv: Form41sService, private route: ActivatedRoute,private toastr: ToastsManager, 
-    private _vcr: ViewContainerRef, private uploadsSrv: UploadsService) { 
+
+    constructor(private form41Srv: Form41sService, private route: ActivatedRoute, private toastr: ToastsManager,
+        private _vcr: ViewContainerRef, private uploadsSrv: UploadsService) {
         this.toastr.setRootViewContainerRef(_vcr);
+
   }
 
   ngOnInit() {
@@ -51,113 +52,113 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
 
   }
 
-  uploadFile(){
-   //check if dir exists, if not create a new one
+  
     
-    let searchURL = 'https://documents-gse00012792.documents.us2.oraclecloud.com/documents/api/1.2/folders/search/items?fulltext=';
-    let folderName = 'Form 41';
-    let fullFolderSearchURL = searchURL + folderName;
 
-    var toastr = this.toastr;
-    var filesData = this.form41Uploads;
-   
-    //check if folder already exists
-    var doc = this._doc
-    var form41 = this.entry_of_premise;
-   
-    let username ='bala.gupta';
-    let password ='LifeliKe@6Lamb';
-    event.preventDefault();
-    $.ajax
-        ({
-          type: "GET",
-          url: fullFolderSearchURL,
-          async: false,
-          beforeSend: function (xhr) {
-              xhr.setRequestHeader ("Authorization", "Basic " + btoa(username + ":" + password));
-             xhr.setRequestHeader("Access-Control-Allow-Origin", "http://localhost:4200");
-          },
-          success: function (data, status){
-             
-             if(data.totalCount > 0 ){
-                 //upload files to directory
+    uploadFile() {
+        //check if dir exists, if not create a new one
 
-                 let parentFolderID = data.items[0]['id'];
-               
-                 let uploadDirURL = 'https://documents-gse00012792.documents.us2.oraclecloud.com/documents/api/1.2/files/data';
-                 //{"parentID": "FAB43E7945CD74F22A2A8D920CA5E537F54010EF7DE2"}
-                 let postData = new FormData();
-               
-                 postData.append('jsonInputParameters','{"parentID": "F0917D035B670E235B5C7BE50CA5E537F54010EF7DE2"}');
+        let searchURL = 'https://documents-gse00012792.documents.us2.oraclecloud.com/documents/api/1.2/folders/search/items?fulltext=';
+        let folderName = 'Form 41';
+        let fullFolderSearchURL = searchURL + folderName;
 
-                 postData.append('primaryFile', doc);
-              
-                 $.ajax ( {
-                    type: 'POST',
-                    url: uploadDirURL,
-                    enctype: ' multipart/form-data',
-                    data: postData,
-                    cache: false,
-                    processData: false,
-                    contentType: false,
-                    crossDomain: true,
-                    xhrFields: { withCredentials: true },
-                    beforeSend: function (xhr) { 
-                      console.log('setting credentials.......');
-                         xhr.setRequestHeader ("Authorization", "Basic " + btoa(username + ":" + password));
-                          xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-                          
-                    },
-                    success: function(response) { 
-                      console.log("=====Sent successfully========");
+        var toastr = this.toastr;
+        var filesData = this.form41Uploads;
 
-                      //send attachment to db
-                      let imageID = response['id'];
-                      let attachementURL ='https://129.144.154.136/ords/pdb1/ncs/system/form41attachment/';
-                      let attachmentData = new FormData();
-                      attachmentData.append('idForm', form41['idform']);
-                      attachmentData.append('image',imageID);
-                      attachmentData.append('title', "*****");
-                      attachmentData.append('description' ,"*****");
-                       attachmentData.append('Status' , "Done");
+        //check if folder already exists
+        var doc = this._doc
+        var form41 = this.entry_of_premise;
 
+        let username = 'bala.gupta';
+        let password = 'LifeliKe@6Lamb';
+        event.preventDefault();
+        $.ajax
+            ({
+                type: "GET",
+                url: fullFolderSearchURL,
+                async: false,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password));
+                    xhr.setRequestHeader("Access-Control-Allow-Origin", "http://localhost:4200");
+                },
+                success: function (data, status) {
 
-                         $.ajax ( {
-                              type: 'POST',
-                              url: attachementURL,
-                              enctype: ' multipart/form-data',
-                              data: attachmentData,
-                              cache: false,
-                              processData: false,
-                              contentType: false,
-                              crossDomain: true,
-                              xhrFields: { withCredentials: true },
-                              beforeSend: function (xhr) { 
+                    if (data.totalCount > 0) {
+                        //upload files to directory
+
+                        let parentFolderID = data.items[0]['id'];
+
+                        let uploadDirURL = 'https://documents-gse00012792.documents.us2.oraclecloud.com/documents/api/1.2/files/data';
+                        //{"parentID": "FAB43E7945CD74F22A2A8D920CA5E537F54010EF7DE2"}
+                        let postData = new FormData();
+
+                        postData.append('jsonInputParameters', '{"parentID": "F0917D035B670E235B5C7BE50CA5E537F54010EF7DE2"}');
+
+                        postData.append('primaryFile', doc);
+
+                        $.ajax({
+                            type: 'POST',
+                            url: uploadDirURL,
+                            enctype: ' multipart/form-data',
+                            data: postData,
+                            cache: false,
+                            processData: false,
+                            contentType: false,
+                            crossDomain: true,
+                            xhrFields: { withCredentials: true },
+                            beforeSend: function (xhr) {
                                 console.log('setting credentials.......');
-                                
-                              },
-                              success: function(data) { 
-                                console.log("=====Sent successfully to the database========");
+                                xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password));
+                                xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
 
-                                toastr.success("Success", 'Upload Successful');
+                            },
+                            success: function (response){
+                                console.log("=====Sent successfully========");
 
-                             
-                              },
-                              error: function(jqXHR, textStatus, errorThrown) {
-                                console.log("=====uploading system error ========");
-                              }
-                            } );
-                     
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                      console.log("=====uploading system error ========");
+                                //send attachment to db
+                                let imageID = response['id'];
+                                let attachementURL = 'https://129.144.154.136/ords/pdb1/ncs/system/form41attachment/';
+                                let attachmentData = new FormData();
+                                attachmentData.append('idForm', form41['idform']);
+                                attachmentData.append('image', imageID);
+                                attachmentData.append('title', "*****");
+                                attachmentData.append('description', "*****");
+                                attachmentData.append('Status', "Done");
+
+
+                                $.ajax({
+                                    type: 'POST',
+                                    url: attachementURL,
+                                    enctype: ' multipart/form-data',
+                                    data: attachmentData,
+                                    cache: false,
+                                    processData: false,
+                                    contentType: false,
+                                    crossDomain: true,
+                                    xhrFields: { withCredentials: true },
+                                    beforeSend: function (xhr) {
+                                        console.log('setting credentials.......');
+
+                                    },
+                                    success: function (data) {
+                                        console.log("=====Sent successfully to the database========");
+
+                                        toastr.success("Success", 'Upload Successful');
+
+
+                                    },
+                                    error: function (jqXHR, textStatus, errorThrown) {
+                                        console.log("=====uploading system error ========");
+                                    }
+                                });
+
+                            },
+                           
+                        });
+
+
                     }
-                  } );
 
-                
-             }
-          }
-      });
 
   };
 
@@ -173,14 +174,12 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
   }
 
   fetchImagesForForm41(){
-    console.log('prrrrr');
-    //let imgs = this.entry_of_premise['ATTACHMENTS'];
+   
     if(this.entry_of_premise['ATTACHMENTS']){
           this.fetchThumbnailsFromIDs(this.entry_of_premise['ATTACHMENTS']);
     }
-  
 
-  }
+  };
 
   fetchThumbnailsFromIDs(imageIDs:any[]){
     let thumbnails = [];
@@ -215,9 +214,14 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
               }
             });
 
-    });
+  
+       
+        });
 
-    console.log(thumbnails);
-  }
+    };
 
+
+
+
+   
 }

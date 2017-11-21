@@ -1,3 +1,98 @@
-<p>
-  new-bank-guarantee works!
-</p>
+
+<div class="wrapper">
+    <app-header></app-header>
+
+    <app-sidebar></app-sidebar>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Create Bank Guarantee
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Create Bank Guarantee</li>
+            </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+            <div class="row">
+
+                <!-- /.col -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Create Bank Guarantee</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <!-- form start -->
+
+                        <form>
+
+
+                            <div class="box-body">
+
+                                <span><strong>Select Bank</strong></span><br />
+                                <select name="user_bank" class="form-control">
+                                    <option value="ACCESS BANK PLC">ACCESS BANK PLC</option>
+                                    <option value="DIAMOND BANK PLC">DIAMOND BANK PLC</option>
+                                    <option value="ECOBANK NIGERIA PLC">ECOBANK NIGERIA PLC</option>
+                                    <option value="ENTERPRISE BANK">ENTERPRISE BANK</option>
+                                    <option value="FIDELITY BANK PLC">FIDELITY BANK PLC</option>
+                                    <option value="FIRST BANK PLC">FIRST BANK PLC</option>
+                                    <option value="FIRST CITY MONUMENT BANK PLC">FIRST CITY MONUMENT BANK PLC</option>
+                                    <option value="GTBANK PLC">GTBANK PLC</option>
+                                    <option value="KEYSTONE BANK">KEYSTONE BANK</option>
+                                    <option value="MAINSTREET BANK">MAINSTREET BANK</option>
+                                    <option value="NIGERIA INTERNATIONAL BANK LIMITED">NIGERIA INTERNATIONAL BANK LIMITED</option>
+                                    <option value="OCEANIC BANK INTERNATIONAL PLC">OCEANIC BANK INTERNATIONAL PLC</option>
+                                    <option value="SKYE BANK PLC">SKYE BANK PLC</option>
+                                    <option value="STANBIC IBTC BANK PLC">STANBIC IBTC BANK PLC</option>
+                                    <option value="STANDARD CHARTERED BANK NIGERIA LIMITED">STANDARD CHARTERED BANK NIGERIA LIMITED</option>
+                                    <option value="STERLING BANK PLC">STERLING BANK PLC</option>
+                                    <option value="UNITED BANK FOR AFRICA PLC">UNITED BANK FOR AFRICA PLC</option>
+                                    <option value="UNITY BANK PLC">UNITY BANK PLC</option>
+                                    <option value="UNION BANK PLC">UNION BANK PLC</option>
+                                    <option value="WEMA BANK PLC">WEMA BANK PLC</option>
+                                    <option value="ZENITH BANK PLC">ZENITH BANK PLC</option>
+                                </select>
+                                <br />
+                                <span><strong>Enter Ref Number</strong></span><br />
+                                <input type="text" class="form-control"/>
+                                <br />
+                           
+                                <span><strong>Enter Beneficiary</strong></span><br />
+                                <input type="text" class="form-control" />
+                                <br />
+                                <span><strong>Enter Guarantee Amount</strong></span><br />
+                                <input type="text" class="form-control" />
+                                <br />
+                                <span><strong>Message</strong></span><br />
+                                <textarea class="form-control" rows="3"></textarea>
+                                <br />
+
+
+
+
+                            </div>
+                            <!-- /.box-body -->
+
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.col -->
+        </section>
+    </div>
+</div>
+
+<app-footer></app-footer>
