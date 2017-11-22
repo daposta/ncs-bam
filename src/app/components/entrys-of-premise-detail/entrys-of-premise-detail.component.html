@@ -63,27 +63,61 @@
                         <div class="box-body">
 
                             <div class="timeline-body">
+
                                 <div class="form-group">
-                                    <label for="exampleInputFile">Site Plan</label>
-                                    <input type="file" id="exampleInputFile" (change)="addDocument($event, supportingDoc.sitePlan)" [(ngModel)]="supportingDoc.sitePlan" name="name" #name="ngModel">
-                                
-                                     <input type="submit" id="exampleInputFile" (click)="uploadFile(supportingDoc.sitePlan)" value="Upload" class="btn btn-success">
+                                    <table class="table">
+                                        <tr><td><label for="exampleInputFile">Site Plan</label></td></tr>
+                                        <tr><td><input type="file" id="exampleInputFile" (change)="addDocument($event, supportingDoc.sitePlan)" [(ngModel)]="supportingDoc.sitePlan" name="name" #name="ngModel">
+
+
+</td><td><input type="submit" id="exampleInputFile" (click)="uploadFile(supportingDoc.sitePlan)" value="Upload" class="btn btn-success"></td></tr>
+                                  
+                                       
+                                     </table>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputFile">Premises Plan</label>
-                                    <input type="file" id="exampleInputFile"  (change)="addDocument($event)">
+                                    <table class="table">
+                                        <tr><td><label for="exampleInputFile">Premises Plan</label></td></tr>
+                                        <tr>
+                                            <td>
+                                                <input type="file" id="exampleInputFile" (change)="addDocument($event, supportingDoc.sitePlan)" [(ngModel)]="supportingDoc.sitePlan" name="name" #name="ngModel">
+                                            </td>
+                                            <td><input type="submit" id="exampleInputFile" (click)="uploadFile(supportingDoc.sitePlan)" value="Upload" class="btn btn-success"></td>
+                                        </tr>
+                                    </table>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputFile">Machinery Layout</label>
-                                    <input type="file" id="exampleInputFile">
+                                    <table class="table">
+                                        <tr><td><label for="exampleInputFile">Machinery Layout</label></td></tr>
+                                        <tr>
+                                            <td>
+                                                <input type="file" id="exampleInputFile" (change)="addDocument($event, supportingDoc.sitePlan)" [(ngModel)]="supportingDoc.sitePlan" name="name" #name="ngModel">
+                                            </td>
+                                            <td><input type="submit" id="exampleInputFile" (click)="uploadFile(supportingDoc.sitePlan)" value="Upload" class="btn btn-success"></td>
+                                        </tr>
+                                    </table>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputFile">List of Directors</label>
-                                    <input type="file" id="exampleInputFile">
+                                    <table class="table">
+                                        <tr><td><label for="exampleInputFile">List of Directors</label></td></tr>
+                                        <tr>
+                                            <td>
+                                                <input type="file" id="exampleInputFile" (change)="addDocument($event, supportingDoc.sitePlan)" [(ngModel)]="supportingDoc.sitePlan" name="name" #name="ngModel">
+                                            </td>
+                                            <td><input type="submit" id="exampleInputFile" (click)="uploadFile(supportingDoc.sitePlan)" value="Upload" class="btn btn-success"></td>
+                                        </tr>
+                                    </table>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputFile">Certificate of Incorporation</label>
-                                    <input type="file" id="exampleInputFile">
+                                    <table class="table">
+                                        <tr><td><label for="exampleInputFile">Certificate of Incorporation</label></td></tr>
+                                        <tr>
+                                            <td>
+                                                <input type="file" id="exampleInputFile" (change)="addDocument($event, supportingDoc.sitePlan)" [(ngModel)]="supportingDoc.sitePlan" name="name" #name="ngModel">
+                                            </td>
+                                            <td><input type="submit" id="exampleInputFile" (click)="uploadFile(supportingDoc.sitePlan)" value="Upload" class="btn btn-success"></td>
+                                        </tr>
+                                    </table>
                                 </div>
                                 <div class="form-group">
                                   
@@ -91,7 +125,9 @@
                                 </div>
                             </div>
                         </div>
-                         <div id="ppp">tttttttttt</div>
+                         <div id="ppp">
+
+                         </div>
                     </div>
 
 
@@ -116,7 +152,7 @@
                                             <tr><td><h5>Form Status: <span class="badge bg-blue">Completed</span></h5></td><td><h5>Site Status: <span class="badge bg-blue">Construction Completed</span></h5></td><td><h5>License Status: <span class="badge bg-blue">Not Issued</span></h5></td></tr>
                                         </table>
                                         <br />
-                                        <a href="/provisional-approval" class="btn btn-warning">Provisional Approval</a>&nbsp;<a href="/new-payment" class="btn btn-primary">Make Payment</a>
+                                        <a href="#" class="btn btn-warning">Provisional Approval</a>&nbsp;<a href="/#/new-payment" class="btn btn-primary">Make Payment</a>
                                         <br />
                                     </div>
 
@@ -151,7 +187,7 @@
                                                 <td>Nov 5 2017</td>
                                                 <td>We inspected all the loopsholes in the factory</td>
                                                 <td><span class="badge bg-blue">Completed</span></td>
-                                                <td><a data-toggle="modal" data-target="#oco-modal" href="/assignment/view">View Inspection</a></td>
+                                                <td><a data-toggle="modal" data-target="#oco-modal" href="/#/assignment/view">View Inspection</a></td>
 
                                             </tr>
                                         </table>
