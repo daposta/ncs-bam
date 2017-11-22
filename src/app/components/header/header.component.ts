@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
   	if(localStorage.getItem('userid')){
   		localStorage.removeItem('userid');
   		localStorage.removeItem('user');
-  		window.location.href = '/login';
+  		window.location.href = '#/login';
   	}
   }
 
