@@ -50,8 +50,7 @@ export class NewPaymentComponent implements OnInit {
               },
               success: function(data) { 
               	if(data.returnCode="Success"){
-              		 console.log("=====Sent successfully to the database========");
-                	console.log(data);
+              		
                		 toastr.success("Success", 'Payment Successful');
                		 window.location.href="#/payment-invoice"
               	}

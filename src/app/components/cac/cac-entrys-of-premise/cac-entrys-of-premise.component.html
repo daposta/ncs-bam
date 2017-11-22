@@ -23,7 +23,7 @@
                     <!-- small box -->
                     <div class="small-box bg-aqua">
                         <div class="inner">
-                            <h3>1</h3>
+                            <h3>0</h3>
 
                             <p>Completed</p>
                         </div>
@@ -38,7 +38,7 @@
                     <!-- small box -->
                     <div class="small-box bg-yellow">
                         <div class="inner">
-                            <h3>33<sup style="font-size: 20px"></sup></h3>
+                            <h3>0<sup style="font-size: 20px"></sup></h3>
 
                             <p>Inspection Ongoing</p>
                         </div>
@@ -53,7 +53,7 @@
                     <!-- small box -->
                     <div class="small-box bg-green">
                         <div class="inner">
-                            <h3>44</h3>
+                            <h3>0</h3>
 
                             <p>Provisional Approval</p>
                         </div>
@@ -68,7 +68,7 @@
                     <!-- small box -->
                     <div class="small-box bg-red">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3>0</h3>
 
                             <p>Rejected</p>
                         </div>
@@ -85,7 +85,7 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">You have 1 form(s).</h3>
+                            <h3 class="box-title">You have {{forms?.length}} form(s).</h3>
 
                             <div class="mailbox-controls">
 
@@ -130,13 +130,13 @@
 
                                         <tr  *ngFor="let entry of forms;let i = index ">
 
-                                            <td><a href="/cac/entrys-of-premise/{{entry.idform}}">{{entry.formref}}</a></td>
-                                            <td>{{entry.cname}}</td>
-                                            <td>{{entry.descriptionofbusiness}}</td>
-                                            <td>{{entry.registeredaddress}}</td>
-                                            <td>{{entry.purposeofbusiness}}</td>
+                                            <td><a href="/#/cac/entrys-of-premise/{{entry.IDFORM}}">{{entry.FORMREF}}</a></td>
+                                            <td>{{entry.CNAME}}</td>
+                                            <td>{{entry.DESCRIPTIONOFBUSINESS}}</td>
+                                            <td>{{entry.REGISTEREDADDRESS}}</td>
+                                            <td>{{entry.PURPOSEOFBUSINESS}}</td>
                                             
-                                            <td><span class="badge bg-blue">{{entry.status}}</span></td>
+                                            <td><span class="badge bg-blue">{{entry.STATUS}}</span></td>
                                      
                
                                         </tr>
