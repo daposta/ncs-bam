@@ -72,7 +72,7 @@ export class RegisterComponent implements OnInit {
 
           toastr.success("Success", 'Registration Successful');
 
-          window.location.href= '/login';
+          window.location.href= '#/login';
         },
         error: function(jqXHR, textStatus, errorThrown) {
           console.log("=====uploading system error ========");

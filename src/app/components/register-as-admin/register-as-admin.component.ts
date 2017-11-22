@@ -106,7 +106,7 @@ export class RegisterAsAdminComponent implements OnInit {
             success: function(data){
                  console.log("=====Sent 2 successfully to the database========");
                  toastr.success("Success", 'Registration Successful');
-                 window.location.href="/login"
+                 window.location.href="#/login"
 
             },
              error: function(jqXHR, textStatus, errorThrown) {

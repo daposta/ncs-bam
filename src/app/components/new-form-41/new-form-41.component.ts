@@ -63,7 +63,7 @@ export class NewForm41Component implements OnInit {
         success: function(data) { 
           console.log("=====Sent successfully to the database========");
           toastr.success("Success", 'Form 41 saved successfully');
-          window.location.href= '/entrys-of-premise';
+          window.location.href= '#/entrys-of-premise';
         },
         error: function(jqXHR, textStatus, errorThrown) {
           console.log("=====uploading system error ========");
