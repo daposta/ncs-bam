@@ -5,6 +5,8 @@ import { Form41sService} from '../../services/form41s.service';
 import { UploadsService} from '../../services/uploads.service';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
+import {DomSanitizer} from '@angular/platform-browser';
+
 declare var $: any;
 
 @Component({
@@ -28,7 +30,7 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
 
 
     constructor(private form41Srv: Form41sService, private route: ActivatedRoute, private toastr: ToastsManager,
-        private _vcr: ViewContainerRef, private uploadsSrv: UploadsService) {
+        private _vcr: ViewContainerRef, private uploadsSrv: UploadsService, private _sanitizer: DomSanitizer) {
         this.toastr.setRootViewContainerRef(_vcr);
     }
 
@@ -84,9 +86,6 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
 
                         let parentFolderID = data.items[0]['id'];
 
-                        console.log('parentID---' + parentFolderID);
-                        console.log(doc);
-
                         let uploadDirURL = 'https://documents-gse00012792.documents.us2.oraclecloud.com/documents/api/1.2/files/data';
                         //{"parentID": "FAB43E7945CD74F22A2A8D920CA5E537F54010EF7DE2"}
                         let postData = new FormData();
@@ -120,9 +119,7 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
                                 let imageID = response['id'];
                                 let attachementURL = 'https://129.144.154.136/ords/pdb1/ncs/system/form41attachment/';
                                 let attachmentData = new FormData();
-                                console.log('image---' +imageID);
-                                console.log(typeof(imageID));
-                                console.log(form41);
+                               
                                 attachmentData.append('idForm', form41['IDFORM']);
                                 attachmentData.append('image', imageID);
                                 attachmentData.append('title', "*****");
@@ -193,18 +190,25 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
     fetchThumbnailsFromIDs(imageIDs: any[]) {
         let thumbnails = [];
         console.log(imageIDs);
+        var new_santizer = this._sanitizer;
         let username = 'bala.gupta';
         let password = 'LifeliKe@6Lamb';
+        console.log(this._sanitizer);
+        //let _santizer = this._sanitizer;
         imageIDs.forEach(function (item) {
             // thumbnails.push(item.);
+            
+            console.log(item['IMAGE']);
+            if(item['IMAGE'] !='*****'){
 
-            let thumbnailURL = 'https://documents-gse00012792.documents.us2.oraclecloud.com/documents/api/1.2/files/' + item['IMAGE'] + '/data/thumbnail';
+                   let thumbnailURL = 'https://documents-gse00012792.documents.us2.oraclecloud.com/documents/api/1.2/files/' + item['IMAGE'] + '/data/thumbnail';
 
-            $.ajax({
+                $.ajax({
                 type: 'GET',
                 url: thumbnailURL,
                 async: false,
-                responseType: "blob",
+                headers: {'Content-Type': 'image/jpg'},
+                 responseType: "blob",
                 xhrFields: { withCredentials: true },
                 beforeSend: function (xhr) {
                     console.log('setting credentials.......');
@@ -215,18 +219,22 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
                 success: function (data) {
                     console.log("=====Sent successfully to the database========");
                     //thumbnails.push(data);
+                    let  urlCreator = window.URL;
+                    console.log(new_santizer);
+                     
+                    //let imageURL = new_santizer.bypassSecurityTrustUrl(urlCreator.createObjectURL(data));
+                    let imageURL = new_santizer.bypassSecurityTrustUrl(urlCreator.createObjectURL(data));
 
-                     let i = new Image();
-                      i.src = (data.img);
-                      $("#ppp").append(i);
-
-                   // $('#ppp').prepend($('<img src="data:image/png;base64,' + data + '">'));
+                    $('#ppp').prepend($('<img src=",' + imageURL + '"/>'));
 
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     console.log("=====uploading system error ========");
                 }
             });
+            }
+
+            
 
         });
 

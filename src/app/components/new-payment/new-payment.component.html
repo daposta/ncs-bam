@@ -26,25 +26,26 @@
 
                         <div class="register-box-body">
                          
-                            <form>
+                            <form (ngSubmit)="paymentForm.form.valid &&  makePayment()" #paymentForm="ngForm" novalidate>
                                 <div class="form-group has-feedback">
-                                    <input type="text" class="form-control" placeholder="Card number" />
+                                    <input type="text" class="form-control" placeholder="Card number"  [(ngModel)]="payment.cardNumber" name="cardNumber" #cardNumber="ngModel" required />
                                     <span class="glyphicon glyphicon-subtitles form-control-feedback"></span>
 
                                 </div>
                                 <div class="form-group has-feedback">
-                                    <input type="text" class="form-control" placeholder="MM/YY" required>
+                                    <input type="text" class="form-control" placeholder="MM/YY"  [(ngModel)]="payment.expiration" name="expiration" #expiration="ngModel" required>
                                     <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
 
                                 </div>
 
                                 <div class="form-group has-feedback">
-                                    <input type="text" class="form-control" placeholder="CVV" required>
+                                    <input type="text" class="form-control" placeholder="CVV" required  [(ngModel)]="payment.cvv" name="cvv" #cvv="ngModel" required>
                                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 
                                 </div>
                                 <div class="form-group has-feedback">
-                                    <a href="/payment-invoice" class="btn btn-success btn-block btn-flat">Make Payment</a>
+                                    <!-- <a href="/payment-invoice" class="btn btn-success btn-block btn-flat">Make Payment</a> -->
+                                    <button type="submit" class="btn btn-success btn-block btn-flat">Make Payment</button>
                                 </div>
                               
                                     <!-- /.col -->
