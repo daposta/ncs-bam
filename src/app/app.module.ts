@@ -193,7 +193,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule, HttpModule, FormsModule,BrowserAnimationsModule,
-      RouterModule.forRoot(appRoutes, {}),
+      RouterModule.forRoot(appRoutes, { useHash: true }),
       ToastModule.forRoot()
 
 
