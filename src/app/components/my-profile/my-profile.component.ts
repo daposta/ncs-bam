@@ -10,7 +10,7 @@ export class MyProfileComponent implements OnInit {
   
    user: any= {};
    org:any= {};
-  constructor(private toastr: ToastsManager, private _vcr: ViewContainerRef,) {
+  constructor(private toastr: ToastsManager, private _vcr: ViewContainerRef) {
    this.toastr.setRootViewContainerRef(_vcr); }
 
   ngOnInit() {
@@ -24,7 +24,6 @@ export class MyProfileComponent implements OnInit {
   companyInfo(){
 
     let postInfoTOBCURL= "http://129.157.177.159:3100/bcsgw/rest/v1/transaction/invocation";
-    console.log(this.org['orgName']);
     let data = {
         "channel":"testorderer",
         "chaincode":"exciseprocess",
@@ -34,8 +33,7 @@ export class MyProfileComponent implements OnInit {
         "chaincodeVer":"v1"
      };
      let jsonData = JSON.stringify(data);
-     console.log(typeof(jsonData));
-     console.log(jsonData);
+     
      //{"tin" : this.org.tin,"rcNumber": this.org.rcNumber};
     var toastr = this.toastr;
 

@@ -32,13 +32,13 @@
                         <!-- /.box-header -->
                         <!-- form start -->
 
-                        <form>
+                        <form (ngSubmit)="orgForm.form.valid &&  sendBankGuarantee()"  #orgForm="ngForm" novalidate>
 
 
                             <div class="box-body">
 
                                 <span><strong>Select Bank</strong></span><br />
-                                <select name="user_bank" class="form-control">
+                                <select name="user_bank" class="form-control" placeholder="Bank" [(ngModel)]="guarantee.bank" name="bank" #bank="ngModel">
                                     <option value="ACCESS BANK PLC">ACCESS BANK PLC</option>
                                     <option value="DIAMOND BANK PLC">DIAMOND BANK PLC</option>
                                     <option value="ECOBANK NIGERIA PLC">ECOBANK NIGERIA PLC</option>
@@ -63,17 +63,25 @@
                                 </select>
                                 <br />
                                 <span><strong>Enter Ref Number</strong></span><br />
-                                <input type="text" class="form-control"/>
+                                <input type="text" class="form-control" placeholder="Ref Number" [(ngModel)]="guarantee.ref" name="ref" #ref="ngModel"/>
                                 <br />
                            
                                 <span><strong>Enter Beneficiary</strong></span><br />
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control"  placeholder="Beneficiary" [(ngModel)]="guarantee.beneficiary" name="beneficiary" #beneficiary="ngModel"/>
                                 <br />
+                                 <span><strong>Enter RC Number</strong></span><br />
+                                <input type="text" class="form-control"  placeholder="RC Number" [(ngModel)]="guarantee.rcNumber" name="rcNumber" #rcNumber="ngModel"/>
+                                <br />
+
+                                <span><strong>Enter TIN</strong></span><br />
+                                <input type="text" class="form-control"  placeholder="TIN" [(ngModel)]="guarantee.tin" name="tin" #tin="ngModel"/>
+                                <br />
+
                                 <span><strong>Enter Guarantee Amount</strong></span><br />
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control"  placeholder="Amount" [(ngModel)]="guarantee.amount" name="amount" #amount="ngModel"/>
                                 <br />
                                 <span><strong>Message</strong></span><br />
-                                <textarea class="form-control" rows="3"></textarea>
+                                <textarea class="form-control" rows="3" placeholder="Message" [(ngModel)]="guarantee.msg" name="msg" #msg="ngModel"></textarea>
                                 <br />
 
 

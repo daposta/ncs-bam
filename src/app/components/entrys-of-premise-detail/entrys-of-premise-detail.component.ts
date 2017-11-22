@@ -204,6 +204,7 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
                 type: 'GET',
                 url: thumbnailURL,
                 async: false,
+                responseType: "blob",
                 xhrFields: { withCredentials: true },
                 beforeSend: function (xhr) {
                     console.log('setting credentials.......');
@@ -215,7 +216,11 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
                     console.log("=====Sent successfully to the database========");
                     //thumbnails.push(data);
 
-                    $('#ppp').prepend($('<img src="' + data + '">'));
+                     let i = new Image();
+                      i.src = (data.img);
+                      $("#ppp").append(i);
+
+                   // $('#ppp').prepend($('<img src="data:image/png;base64,' + data + '">'));
 
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
