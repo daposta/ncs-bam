@@ -39,10 +39,8 @@ export class CacEntryOfPremiseDetailComponent implements OnInit {
   }
 
   saveApproval(){
-    console.log('=====');
-
+    
     // update form 41 status
-    console.log(this.entry_of_premise);
      let formApprovalUrl = 'https://129.144.154.136/ords/pdb1/ncs/system/form41/';
       let toastr = this.toastr; 
       var t = { 
@@ -69,7 +67,6 @@ export class CacEntryOfPremiseDetailComponent implements OnInit {
             xhrFields: { withCredentials: true },
             beforeSend: function (xhr) { 
               console.log('setting credentials.......');
-              console.log(this.headers);
            
             },
             success: function(data) { 

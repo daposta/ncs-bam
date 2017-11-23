@@ -45,10 +45,10 @@
 
                                 <br />
                                 <span><strong>Select Inspection Type</strong></span><br />
-                                <select class="form-control">
+                                <select class="form-control" [(ngModel)]="assignment.assignmentType" name="assignmentType" #assignmentType="ngModel">
                                     <option value="">Select Inspection Type</option>
-                                    <option value="Select Officer">Form Inspection</option>
-                                    <option value="R. J. Musah">Site Inspection</option>
+                                    <option value="Form Inspection">Form Inspection</option>
+                                    <option value="Site Inspection">Site Inspection</option>
                                 </select>
                                 <br />
                                 <span><strong>Enter Instruction</strong></span>

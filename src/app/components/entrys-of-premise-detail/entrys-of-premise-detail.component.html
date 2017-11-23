@@ -40,13 +40,13 @@
                             <textarea class="form-control"  value="{{entry_of_premise.PURPOSEOFBUSINESS}}" rows="2" disabled></textarea>
                             <br />
                             <span><strong>Estimate cost of building</strong></span><br />
-                            <textarea class="form-control" value="{{entry_of_premise.PURPOSEOFBUSINESS}}" rows="2" disabled></textarea>
+                            <textarea class="form-control" value="" rows="2" disabled></textarea>
                             <br />
                             <span><strong>Estimate cost of plant and machinery</strong></span><br />
-                            <textarea class="form-control" value="{{entry_of_premise.PURPOSEOFBUSINESS}}" rows="2" disabled></textarea>
+                            <textarea class="form-control" value="" rows="2" disabled></textarea>
                             <br />
                             <span><strong>Kind of goods to be produced</strong></span><br />
-                            <textarea class="form-control" value="{{entry_of_premise.PURPOSEOFBUSINESS}}" rows="2" disabled></textarea>
+                            <textarea class="form-control" value="" rows="2" disabled></textarea>
 
                         </div>
                       
@@ -126,7 +126,7 @@
                             </div>
                         </div>
                          <div id="ppp">
-                                    tttttt
+                                    
 
                                     <img id="photo"/>
                          </div>
@@ -151,10 +151,11 @@
                                     <div class="box-body">
                                        
                                         <table class="table">
-                                            <tr><td><h5>Form Status: <span class="badge bg-blue">Completed</span></h5></td><td><h5>Site Status: <span class="badge bg-blue">Construction Completed</span></h5></td><td><h5>License Status: <span class="badge bg-blue">Not Issued</span></h5></td></tr>
+                                            <tr><td><h5>Form Status: <span class="badge bg-blue">{{entry_of_premise.STATUS}}</span></h5></td><td><h5>Site Status: <span class="badge bg-blue">{{entry_of_premise.SITESTATUS}}</span></h5></td><td><h5>License Status: <span class="badge bg-blue">Not Issued</span></h5></td></tr>
                                         </table>
                                         <br />
-                                        <a href="#" class="btn btn-warning" >Provisional Approval</a>&nbsp;
+<!--                                         <a href="#" class="btn btn-warning" >Provisional Approval</a>&nbsp;
+ -->                                        <a (click)="siteCompleted()" class="btn btn-info" >Site Completed</a>&nbsp;
                                         <a href="/#/new-payment" class="btn btn-primary" >Make Payment</a>
                                         <br />
                                     </div>
@@ -181,7 +182,22 @@
                                                 <th>Comment</th>
                                                 <th>Status</th>
                                             </tr>
-                                            <tr>
+
+                                            <tr *ngFor="let item of entry_of_premise.ASSIGNMENTS;let i = index ">
+                                                <td>{{item.ASSIGNMENTREF}}</td>
+                                                <td>Form Inspection</td>
+                                                <td>Shola Mohammed <span class="badge bg-red">CAC</span></td>
+                                                <td>R. J. Musah <span class="badge bg-red">OCO</span></td>
+                                                <td>Nov 4 2017</td>
+                                                <td>Nov 5 2017</td>
+                                                <td>We inspected all the loopsholes in the factory</td>
+                                                <td><span class="badge bg-blue">Completed</span></td>
+                                                <td><a data-toggle="modal" data-target="#oco-modal" href="/#/assignment/view">View Inspection</a></td>
+
+                                            </tr> 
+
+
+                                            <!-- <tr>
                                                 <td>#NCS0388288</td>
                                                 <td>Form Inspection</td>
                                                 <td>Shola Mohammed <span class="badge bg-red">CAC</span></td>
@@ -192,7 +208,7 @@
                                                 <td><span class="badge bg-blue">Completed</span></td>
                                                 <td><a data-toggle="modal" data-target="#oco-modal" href="/#/assignment/view">View Inspection</a></td>
 
-                                            </tr>
+                                            </tr> -->
                                         </table>
                                         <!--  Modal for viewing OCO's report on assignment-->
                                         <!--<div class="example-modal">

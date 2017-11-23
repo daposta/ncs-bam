@@ -52,12 +52,13 @@ export class CacNewAssignmentComponent implements OnInit {
        this.assignment['dd'] = this.assignment['dueDate']  + ' 00:00:00';
     this.assignment['status'] = 'Inspection';
    formData.append('idForm',  this.assignment['idForm'] );
-   formData.append('idPrincipal',this.assignment['user']);
+   formData.append('idPrincipal',this.assignment['userid']);
    formData.append('AssignmentRef', this.assignment['AssignmentRef']);
    formData.append('Description', this.assignment['instruction']);
    formData.append('DateCreated', this.assignment['dateCreated']);
     formData.append('DueDate', this.assignment['dd']);
     formData.append('Status', this.assignment['status'] );
+    formData.append('assignmentType', this.assignment['assignmentType'] );
 
     console.log(this.assignment);
     var _assigment = this.assignment;
