@@ -42,40 +42,39 @@ export class CacEntryOfPremiseDetailComponent implements OnInit {
     console.log('=====');
 
     // update form 41 status
+    console.log(this.entry_of_premise);
      let formApprovalUrl = 'https://129.144.154.136/ords/pdb1/ncs/system/form41/';
       let toastr = this.toastr; 
-     console.log(this.approval);
-     console.log(this.entry_of_premise);
-     
-
+      var t = { 
+              'idForm': this.entry_of_premise['IDFORM'],
+             'comments':  this.entry_of_premise['comms'],
+             'status': this.entry_of_premise['formStatus'],
+              'cname': this.entry_of_premise['CNAME'] ,
+               'registeredaddress':  this.entry_of_premise['REGISTEREDADDRESS'],
+              'purposeofbusiness':  this.entry_of_premise['PURPOSEOFBUSINESS'],
+               'descriptionofbusiness':  this.entry_of_premise['DESCRIPTIONOFBUSINESS'],
+                'formref': this.entry_of_premise['FORMREF'],
+               'iduser':  this.entry_of_premise['IDUSER']
+             };
+  
     $.ajax ( {
             type: 'PUT',
             url: formApprovalUrl,
-            enctype: 'multipart/form-data',
-            //data: formData,
-            headers: { 
-              'idForm': this.entry_of_premise['idForm'],
-             'comments':  this.entry_of_premise['comms'],
-             'status': this.entry_of_premise['formStatus'],
-              'cname': this.entry_of_premise['cname'] ,
-               'registeredaddress':  this.entry_of_premise['registeredaddress'],
-              'purposeofbusiness':  this.entry_of_premise['purposeofbusiness'],
-               'descriptionofbusiness':  this.entry_of_premise['descriptionofbusiness'],
-                'formref': this.entry_of_premise['formref'],
-               'iduser':  this.entry_of_premise['iduser'],
-             },
+            //enctype: 'multipart/form-data',
+             headers:t ,
             cache: false,
             processData: false,
-            contentType: false,
+            contentType: 'application/json',
             crossDomain: true,
             xhrFields: { withCredentials: true },
             beforeSend: function (xhr) { 
               console.log('setting credentials.......');
+              console.log(this.headers);
            
             },
             success: function(data) { 
               console.log("=====Sent updated form41 to the database========");
-              toastr.success("Success", 'Assignment saved successfully');
+              toastr.success("Success", 'Approval submitted successfully');
              // window.location.href= '/cac/entrys-of-premise/' + this.entry_of_premise['idForm'] ;
             },
             error: function(jqXHR, textStatus, errorThrown) {
