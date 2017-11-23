@@ -84,7 +84,7 @@ const appRoutes: Routes = [
        { path: 'entrys-of-premise', component: EntrysOfPremiseListingComponent ,canActivate: [AuthGuard] },
        { path: 'entrys-of-premise/:id', component: EntrysOfPremiseDetailComponent },
      { path: 'manage-licences', component: LicencesListingComponent,canActivate: [AuthGuard]  },
-     { path: 'licences/detail', component: LicencesListingComponent,canActivate: [AuthGuard]  },
+     { path: 'licences/detail', component:  LicenceDetailComponent ,canActivate: [AuthGuard]  },
     { path: 'payments', component: PaymentsListingComponent, canActivate: [AuthGuard]  },
     { path: 'duties', component: DutiesListingComponent,canActivate: [AuthGuard] },
      { path: 'manage-ucas', component: UcaListingComponent, canActivate: [AuthGuard] },
