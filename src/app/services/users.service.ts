@@ -12,6 +12,7 @@ export class UsersService {
   // private loginUrl = this.globals.LOGIN_URL; 
   private usersUrl = "https://129.144.154.136/ords/pdb1/ncs/system/users/";
   private userEmailUrl = "https://129.144.154.136/ords/pdb1/ncs/system/user/email/";
+  private userInfoURL ="https://129.144.154.136/ords/pdb1/ncs/system/userinfo/";
   constructor(private http: Http, private router:Router, private toastr: ToastsManager, 
 		private vRef: ViewContainerRef) {
 		
@@ -47,7 +48,20 @@ export class UsersService {
 		              .toPromise()
 		              .then(response => response.json())
 		              .catch(this.handleError);
+	};
+
+
+
+	getUserInfoByID(userID:String){
+		let headers = new Headers();
+   		 headers.append('Content-Type','application/json');
+   		 headers.append('Allow-Cross-Origin','*');
+		   return this.http.get(this.userInfoURL + userID,  {headers: headers})
+		              .toPromise()
+		              .then(response => response.json())
+		              .catch(this.handleError);
 	}
+
 
 
 	
