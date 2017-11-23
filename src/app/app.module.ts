@@ -68,6 +68,7 @@ import { PaymentInvoiceComponent } from './components/payment-invoice/payment-in
 import { ProvisionalApprovalComponent } from './components/provisional-approval/provisional-approval.component';
 import { DcgManageLicencesComponent } from './components/dcg/dcg-manage-licences/dcg-manage-licences.component';
 import { NewBankGuaranteeComponent } from './components/new-bank-guarantee/new-bank-guarantee.component';
+import { DcgNewAssignmentComponent } from './components/dcg/dcg-new-assignment/dcg-new-assignment.component';
 
 
 
@@ -189,6 +190,7 @@ const appRoutes: Routes = [
     ProvisionalApprovalComponent,
     DcgManageLicencesComponent,
     NewBankGuaranteeComponent,
+    DcgNewAssignmentComponent,
  
   ],
   imports: [
