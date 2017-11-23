@@ -108,7 +108,7 @@ export class CacNewAssignmentComponent implements OnInit {
             success: function(data) { 
               console.log("=====Sent updated form41 to the database========");
               toastr.success("Success", 'Assignment saved successfully');
-              window.location.href= '/cac/entrys-of-premise/' + _assigment['idForm'] ;
+              window.location.href= '#/cac/entrys-of-premise/' + _assigment['idForm'] ;
             },
             error: function(jqXHR, textStatus, errorThrown) {
               console.log("=====uploading system error ========");
