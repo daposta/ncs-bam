@@ -1,28 +1,33 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { UsersService} from '../../services/users.service';
+import { RoleAccessService } from '../../services/role-access.service';
+
 
 declare var $: any;
 @Component({
   selector: 'app-my-profile',
   templateUrl: './my-profile.component.html',
   styleUrls: ['./my-profile.component.css'],
-   providers : [UsersService, ]
+   providers : [UsersService, RoleAccessService]
 })
 export class MyProfileComponent implements OnInit {
   
    user: any= {};
    org:any= {};
+   roleAccess: any= {};
    // userInfo: any= {};
    error :any;
 
-  constructor(private toastr: ToastsManager, private _vcr: ViewContainerRef, private userSrv: UsersService) {
+  constructor(private toastr: ToastsManager,  private accessSrv: RoleAccessService,
+   private _vcr: ViewContainerRef, private userSrv: UsersService) {
    this.toastr.setRootViewContainerRef(_vcr); }
 
   ngOnInit() {
   	if(localStorage.getItem('user')){
   		this.user = JSON.parse(localStorage.getItem('user'));
       this.getUserInfo();
+       this.fetchUserRoleAccess();
     
   	}
   	
@@ -111,6 +116,20 @@ export class MyProfileComponent implements OnInit {
               }
             } );
 
+  };
+
+
+
+  fetchUserRoleAccess(){
+     this.accessSrv.findAccessByUserID(localStorage.getItem('userid')).
+    then(response=> {
+      this.roleAccess = response.items[0];
+     
+       localStorage.setItem('userRoleId', this.roleAccess['idrole'])
+       //this.roleID = this
+
+    })
+    .catch(err => this.error = err )
   };
 
 

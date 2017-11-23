@@ -24,7 +24,7 @@ export class SidebarComponent implements OnInit {
       this.user = JSON.parse(tempUser);
     }
 	 this.fetchUserRoleAccess();
-	 this.fetchRoles();
+	 //this.fetchRoles();
   }
 
 

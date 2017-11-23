@@ -29,7 +29,20 @@
 
                         <h3 class="profile-username text-center">{{user.firstname +' ' + user.lastname}}</h3>
 
-                        <p class="text-muted text-center">Excise Trader</p>
+                        <p class="text-muted text-center">
+                         <span *ngIf="!roleAccess">Excise Trader</span>
+
+                            <span *ngIf="roleAccess?.idrole==2">Onsite Custom Officer</span>
+
+                            <span *ngIf="roleAccess?.idrole==3">Custom Area Comptroller</span>
+
+                            <span *ngIf="roleAccess?.idrole==21">HQ Team</span>
+
+                             <span *ngIf="roleAccess?.idrole==4">Deputy Comptroller General</span>
+
+
+
+                        </p>
 
                      
                     </div>
