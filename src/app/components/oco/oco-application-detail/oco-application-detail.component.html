@@ -8,7 +8,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Form #{{entry_of_premise.formref}}  Details
+                Form #{{application.FORMREF}}  Details
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -28,25 +28,25 @@
                         </div>
                         <div class="box-body">
                             <span><strong>Company</strong></span><br />
-                            <input type="text" class="form-control" value="{{entry_of_premise.cname}}" disabled>
+                            <input type="text" class="form-control" value="{{application.CNAME}}" disabled>
                             <br />
                             <span><strong>Address</strong></span><br />
-                            <input type="text" class="form-control" value="{{entry_of_premise.registeredaddress}}" disabled>
+                            <input type="text" class="form-control" value="{{application.REGISTEREDADDRESS}}" disabled>
                             <br />
                             <span><strong>Description</strong></span><br />
-                            <textarea class="form-control" value="{{entry_of_premise.descriptionofbusiness}}" rows="2" disabled></textarea>
+                            <textarea class="form-control" value="{{application.DESCRIPTIONOFBUSINESS}}" rows="2" disabled></textarea>
                             <br />
                             <span><strong>Purpose of business</strong></span><br />
-                            <textarea class="form-control" value="{{entry_of_premise.purposeofbusiness}}" rows="2" disabled></textarea>
+                            <textarea class="form-control" value="{{application.PURPOSEOFBUSINESS}}" rows="2" disabled></textarea>
                             <br />
                             <span><strong>Estimate cost of building</strong></span><br />
-                            <textarea class="form-control" value="{{entry_of_premise.purposeofbusiness}}" rows="2" disabled></textarea>
+                            <textarea class="form-control" value="{{application.PURPOSEOFBUSINESS}}" rows="2" disabled></textarea>
                             <br />
                             <span><strong>Estimate cost of plant and machinery</strong></span><br />
-                            <textarea class="form-control" value="{{entry_of_premise.purposeofbusiness}}" rows="2" disabled></textarea>
+                            <textarea class="form-control" value="{{application.PURPOSEOFBUSINESS}}" rows="2" disabled></textarea>
                             <br />
                             <span><strong>Kind of goods to be produced</strong></span><br />
-                            <textarea class="form-control" value="{{entry_of_premise.purposeofbusiness}}" rows="2" disabled></textarea>
+                            <textarea class="form-control" value="{{application.PURPOSEOFBUSINESS}}" rows="2" disabled></textarea>
 
                         </div>
 
@@ -91,7 +91,7 @@
                                     <!-- /.box-header -->
                                     <div class="box-body">
                                         <table class="table">
-                                            <tr><td><h5>Form Status: <span class="badge bg-blue">Completed</span></h5></td><td><h5>Site Status: <span class="badge bg-blue">Construction Completed</span></h5></td><td><h5>License Status: <span class="badge bg-blue">Not Issued</span></h5></td></tr>
+                                            <tr><td><h5>Form Status: <span class="badge bg-blue">{{application.STATUS}}</span></h5></td><td><h5>Site Status: <span class="badge bg-blue">Construction Completed</span></h5></td><td><h5>License Status: <span class="badge bg-blue">Not Issued</span></h5></td></tr>
                                         </table>
 
                                     </div>
