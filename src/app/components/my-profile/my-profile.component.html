@@ -58,8 +58,8 @@
                     <div class="box-body">
                         <strong><i class="fa fa-book margin-r-5"></i> Company's Info</strong>
 
-                        <p class="text-muted">
-                            We produce raw materials for buildings in Nigeria.
+                        <p class="text-muted" *ngIf="!roleAccess">
+                            {{org.descriptionofbusiness}}
                         </p>
 
                         <hr>
@@ -82,10 +82,10 @@
                 <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
                         <!--<li class="active"><a href="#activity" data-toggle="tab">Activity</a></li>-->
-                        <li class="active"><a href="#info" data-toggle="tab"><i class="fa fa-user"></i> Personal Information</a></li>
-                        <li><a href="#organization" data-toggle="tab"><i class="fa fa-university"></i> Organizational Info</a></li>
-                        <li><a href="#settings" data-toggle="tab"><i class="fa fa-cog"></i> Account Settings</a></li>
-                        <li><a href="#signature" data-toggle="tab"><i class="fa fa-cog"></i> Digital Signature</a></li> 
+                        <li class="active" ><a href="#info" data-toggle="tab"><i class="fa fa-user"></i> Personal Information</a></li>
+                        <li *ngIf="!roleAccess"><a href="#organization" data-toggle="tab"><i class="fa fa-university"></i> Organizational Info</a></li>
+                        <li ><a href="#settings" data-toggle="tab"><i class="fa fa-cog"></i> Account Settings</a></li>
+                        <li *ngIf="!roleAccess"><a href="#signature" data-toggle="tab"><i class="fa fa-cog"></i> Digital Signature</a></li> 
                     </ul>
                     <div class="tab-content">
 
@@ -223,7 +223,7 @@
                                     <label for="inputName" class="col-sm-2 control-label">FullName</label>
 
                                     <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="inputName" placeholder="Deji Soetan or D. Soetan">
+                                        <input type="text" class="form-control" id="inputName" placeholder="Deji Soetan or D. Soetan">
                                     </div>
                                 </div>
                                 <div class="form-group">

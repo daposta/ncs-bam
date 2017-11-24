@@ -91,7 +91,7 @@
                                     <!-- /.box-header -->
                                     <div class="box-body">
                                         <table class="table">
-                                            <tr><td><h5>Form Status: <span class="badge bg-blue">{{application.STATUS}}</span></h5></td><td><h5>Site Status: <span class="badge bg-blue">Construction Completed</span></h5></td><td><h5>License Status: <span class="badge bg-blue">Not Issued</span></h5></td></tr>
+                                            <tr><td><h5>Form Status: <span class="badge bg-blue">{{application.STATUS}}</span></h5></td><td><h5>Site Status: <span class="badge bg-blue">{{application.SITESTATUS}}</span></h5></td><td><h5>License Status: <span class="badge bg-blue">Not Issued</span></h5></td></tr>
                                         </table>
 
                                     </div>
@@ -111,26 +111,27 @@
                                             <tr>
                                                 <th>Inspection Ref</th>
                                                 <th>Inspection Type</th>
-                                                <th>Assigned <br />By</th>
                                                 <th>Assigned To</th>
-                                                <th>Date Inspected</th>
+                                               
                                                 <th>Due Date</th>
-                                                <th>Comment</th>
+                                                <th>Instruction</th>
                                                 <th>Status</th>
+                                                <th></th>
+                                                <th></th>
                                             </tr>
-                                            <tr>
-                                                <td>#NCS0388288</td>
-                                                <td>Form Inspection</td>
-                                                <td>Shola Mohammed <span class="badge bg-red">CAC</span></td>
+                                          
+                                            <tr *ngFor="let item of application.ASSIGNMENTS;let i = index ">
+                                                <td>{{item.ASSIGNMENTREF}}</td>
+                                                <td>{{item.ASSIGNMENTTYPE.TYPENAME}}</td>
+                                              
                                                 <td>R. J. Musah <span class="badge bg-red">OCO</span></td>
-                                                <td>Nov 4 2017</td>
-                                                <td>Nov 5 2017</td>
-                                                <td>We inspected all the loopsholes in the factory</td>
-                                                <td><span class="badge bg-blue">Completed</span></td>
-                                                <td><a data-toggle="modal" data-target="#oco-modal" href="/assignment/view">View Inspection</a></td>
-                                                <td><a data-toggle="modal" data-target="#oco-modal" href="/assignment/view">Write Inspection</a></td>
+                                               <td>Nov 5 2017</td>
+                                                <td>{{item.DESCRIPTION}} </td>
+                                                <td><span class="badge bg-blue">{{item.STATUS}}</span></td>
+                                               <!--  <td><a data-toggle="modal" data-target="#oco-modal" href="/#/assignment/view">View Inspection</a></td>
+                                                 <td><a data-toggle="modal" data-target="#oco-modal" href="/#/assignment/view">Write Report</a></td> -->
 
-                                            </tr>
+                                            </tr> 
                                         </table>
                                         <!--  Modal for viewing OCO's report on assignment-->
                                         <!--<div class="example-modal">

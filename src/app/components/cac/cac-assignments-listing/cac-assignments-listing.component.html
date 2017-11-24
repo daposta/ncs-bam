@@ -38,7 +38,7 @@
                     <!-- small box -->
                     <div class="small-box bg-yellow">
                         <div class="inner">
-                            <h3>33<sup style="font-size: 20px"></sup></h3>
+                            <h3>0<sup style="font-size: 20px"></sup></h3>
 
                             <p>Completed</p>
                         </div>
@@ -53,7 +53,7 @@
                     <!-- small box -->
                     <div class="small-box bg-green">
                         <div class="inner">
-                            <h3>44</h3>
+                            <h3>0</h3>
 
                             <p>Rejected</p>
                         </div>
@@ -68,7 +68,7 @@
                     <!-- small box -->
                     <div class="small-box bg-red">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3>0</h3>
 
                             <p>Pending</p>
                         </div>
@@ -117,6 +117,7 @@
                                         <tr>
                                             <th>Assignment Ref</th>
                                             <th>Description</th>
+                                            <th>Type</th>
                                             <th>Assigned to</th>
                                             <th>Due Date</th>
                                          
@@ -127,12 +128,13 @@
 
                                         <tr *ngFor="let entry of assignments;let i = index ">
 
-                                            <td><a href="/cac/entrys-of-premise/{{entry.idform}}">{{entry.assignmentref}}</a></td>
-                                            <td>{{entry.description}}</td>
-                                            <td>{{entry.idprincipal}}</td>
-                                            <td>{{entry.duedate |date}}</td>
+                                            <td><a href="/#/cac/entrys-of-premise/{{entry.idform}}">{{entry.ASSIGNMENTREF}}</a></td>
+                                            <td>{{entry.DESCRIPTION}}</td>
+                                             <td>{{entry.ASSIGNMENTTYPE?.TYPENAME}}</td>
+                                            <td>{{entry.IDPRINCIPAL}}</td>
+                                            <td>{{entry.DUEDATE |date}}</td>
 
-                                            <td><span class="badge bg-blue">{{entry.status}}</span></td>
+                                            <td><span class="badge bg-blue">{{entry.STATUS}}</span></td>
 
 
                                         </tr>

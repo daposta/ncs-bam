@@ -184,14 +184,13 @@
                                             </tr>
 
                                             <tr *ngFor="let item of entry_of_premise.ASSIGNMENTS;let i = index ">
-                                                <td>{{item.ASSIGNMENTREF}}</td>
-                                                <td>Form Inspection</td>
-                                                <td>Shola Mohammed <span class="badge bg-red">CAC</span></td>
-                                                <td>R. J. Musah <span class="badge bg-red">OCO</span></td>
-                                                <td>Nov 4 2017</td>
-                                                <td>Nov 5 2017</td>
-                                                <td>We inspected all the loopsholes in the factory</td>
-                                                <td><span class="badge bg-blue">Completed</span></td>
+                                                 <td>{{item.ASSIGNMENTREF}}</td>
+                                                <td>{{item.ASSIGNMENTTYPE[0]}}</td>
+                                              
+                                                <td>{{item.PRINCIPAL}} <span class="badge bg-red">OCO</span></td>
+                                               <td>{{item.DUEDATE |date}}</td>
+                                                <td>{{item.DESCRIPTION}} </td>
+                                                <td><span class="badge bg-blue">{{item.STATUS}}</span></td>
                                                 <!-- <td><a data-toggle="modal" data-target="#oco-modal" href="/#/assignment/view">View Inspection</a></td> -->
 
                                             </tr> 

@@ -127,7 +127,8 @@ const appRoutes: Routes = [
         {path: 'dcg/manage-applications/:id', component: DcgApplicationDetailComponent ,canActivate: [AuthGuard]},
         { path: 'dcg/manage-payments', component: DcgPaymentsListingComponent ,canActivate: [AuthGuard] },
         { path: 'dcg/manage-licences', component: DcgManageLicencesComponent ,canActivate: [AuthGuard] },
-     
+         { path: 'dcg/new-assignment/:formId', component: DcgNewAssignmentComponent, canActivate: [AuthGuard]  },
+
             //HQ routes
        { path: 'hq/manage-applications', component: HqManageApplicationsComponent ,canActivate: [AuthGuard] },
         {path: 'hq/manage-applications/:id', component: HqApplicationDetailComponent,canActivate: [AuthGuard] },

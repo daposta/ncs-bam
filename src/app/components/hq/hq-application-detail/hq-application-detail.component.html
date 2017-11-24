@@ -1,3 +1,258 @@
-<p>
-  hq-application-detail works!
-</p>
+
+<div class="wrapper">
+    <app-header></app-header>
+
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Form #{{application?.formref}}  Details
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Form Details</li>
+            </ol>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+
+                <!-- /.col -->
+                <div class="col-md-6 height500">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h5 class="box-title"><strong>Form Information</strong></h5>
+                        </div>
+                        <div class="box-body">
+                            <span><strong>Company</strong></span><br />
+                            <input type="text" class="form-control" value="{{application.CNAME}}" disabled>
+                            <br />
+                            <span><strong>Address</strong></span><br />
+                            <input type="text" class="form-control" value="{{application?.REGISTEREDADDRESS}}" disabled>
+                            <br />
+                            <span><strong>Description</strong></span><br />
+                            <textarea class="form-control" value="{{application?.DESCRIPTIONOFBUSINESS}}" rows="2" disabled></textarea>
+                            <br />
+                            <span><strong>Purpose of Business</strong></span><br />
+                            <textarea class="form-control" value="{{application.PURPOSEOFBUSINESS}}" rows="2" disabled></textarea>
+                            <br />
+                            <span><strong>Estimate cost of building</strong></span><br />
+                            <textarea class="form-control" value="" rows="2" disabled></textarea>
+                            <br />
+                            <span><strong>Estimate cost of plant and machinery</strong></span><br />
+                            <textarea class="form-control" value="" rows="2" disabled></textarea>
+                            <br />
+                            <span><strong>Kind of goods to be produced</strong></span><br />
+                            <textarea class="form-control" value="" rows="2" disabled></textarea>
+                         
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="col-md-6 height500">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h5 class="box-title"><strong>Form Files</strong></h5>
+                        </div>
+                        <div class="box-body">
+
+
+
+                            <div class="timeline-body">
+                                <img src="http://placehold.it/150x100" alt="..." class="margin">
+                                <img src="http://placehold.it/150x100" alt="..." class="margin">
+                                <img src="http://placehold.it/150x100" alt="..." class="margin">
+                                <img src="http://placehold.it/150x100" alt="..." class="margin">
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-12 height500">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h5 class="box-title"><strong>Form Dashboard</strong></h5>
+                        </div>
+                        <div class="box-body">
+                            <div class="col-md-12">
+
+                                <div class="box box-warning direct-chat direct-chat-primary">
+                                    <div class="box-header with-border">
+                                        <h5><strong>Excise Trader's Board</strong></h5>
+                                    </div>
+                                    <!-- /.box-header -->
+                                    <div class="box-body">
+                                        <table class="table">
+                                            <tr><td><h5>Form Status: <span class="badge bg-blue">{{application.STATUS}}</span></h5></td><td><h5>Site Status: <span class="badge bg-blue">{{application.SITESTATUS}}</span></h5></td><td><h5>License Status: <span class="badge bg-blue">Not Issued</span></h5></td></tr>
+                                        </table>
+
+                                    </div>
+
+
+
+                                    <!-- /.box-footer-->
+                                </div>
+                                <div class="box box-info direct-chat direct-chat-primary">
+                                    <div class="box-header with-border">
+                                        <h5><strong>Onsite Customs Officer's Board</strong></h5>
+                                    </div>
+                                    <!-- /.box-header -->
+                                    <div class="box-body">
+
+                                        <table class="table table-striped">
+                                            <tr>
+                                                 <th>Inspection Ref</th>
+                                                <th>Inspection Type</th>
+                                                <th>Assigned To</th>
+                                                <th>Due Date</th>
+                                                <th>Comment</th>
+                                                <th>Status</th>
+                                            </tr>
+                                            <tr *ngFor="let entry of application.ASSIGNMENTS;let i = index ">
+                                              <td>{{entry.ASSIGNMENTREF}}</td>
+                                                <td>{{entry.ASSIGNMENTTYPE[0]}}</td>
+                                              
+                                                <td>{{entry.PRINCIPAL}} <span class="badge bg-red">OCO</span></td>
+                                               <td>{{entry.DUEDATE|date}}</td>
+                                                <td>{{entry.DESCRIPTION}} </td>
+                                                <td><span class="badge bg-blue">{{entry.STATUS}}</span></td>
+                                               <!--  <td><a data-toggle="modal" data-target="#oco-modal" href="/#/assignment/view">View Inspection</a></td>
+                                                 <td><a data-toggle="modal" data-target="#oco-modal" href="/#/assignment/view">Write Report</a></td> -->
+
+
+                                            </tr>
+                                        </table>
+                                       
+                                    </div>
+
+                                    <br />
+                                    <!-- /.box-footer-->
+                                </div>
+
+                                <div class="box box-success direct-chat direct-chat-primary">
+                                    <div class="box-header with-border">
+                                        <h5><strong>Customs Area Comptroller's Board</strong></h5>
+                                    </div>
+                                   
+                                    <!-- /.box-header -->
+                                    <div class="box-body">
+                                        <!--   If form status is Provisional Approval - Show this-->
+                                        <table class="table table-striped">
+                                            <tr><td><h5>CAC Status: <span class="badge bg-blue">{{application.SITESTATUS}}</span></h5></td><td><h5>Comment: <span class="badge bg-blue">{{application.COMMENTS}}</span></h5></td></tr>
+                                        </table>
+                                        <!-- else-->
+                                  
+                                    </div>
+                                    <br />
+                                    <!-- /.box-footer-->
+                                </div>
+
+                                   <div class="box box-default direct-chat direct-chat-primary">
+                                    <div class="box-header with-border">
+                                        <h5><strong>HQ Team's Board</strong></h5>
+                                    </div>
+                                    <!-- /.box-header -->
+                                    <div class="box-body">
+
+                                        <table class="table table-striped">
+                                            <tr>
+                                                 <th>Inspection Ref</th>
+                                                <th>Inspection Type</th>
+                                                <th>Assigned To</th>
+                                                <th>Due Date</th>
+                                                <th>Comment</th>
+                                                <th>Status</th>
+                                            </tr>
+                                            <tr *ngFor="let entry of application.ASSIGNMENTS;let i = index ">
+                                              <td>{{entry.ASSIGNMENTREF}}</td>
+                                                <td>{{entry.ASSIGNMENTTYPE[0]}}</td>
+                                              
+                                                <td>{{entry.PRINCIPAL}} <span class="badge bg-red">OCO</span></td>
+                                               <td>{{entry.DUEDATE|date}}</td>
+                                                <td>{{entry.DESCRIPTION}} </td>
+                                                <td><span class="badge bg-blue">{{entry.STATUS}}</span></td>
+                                             
+
+                                            </tr>
+                                        </table>
+                                       
+                                    </div>
+                                <br />
+                                    
+                                    <div class="box-body">
+                                        <table class="table table-striped">
+                                            <tr><td><h5>DCG License: <span class="badge bg-blue">Not Issued</span></h5></td></tr>
+                                        </table>
+                                    </div>
+
+
+                                    <!-- /.box-footer-->
+                                </div><!--/.direct-chat -->
+
+
+                                <div class="box box-default direct-chat direct-chat-primary">
+                                    <div class="box-header with-border">
+                                        <h5><strong>Deputy Comptroller General's Board</strong></h5>
+                                    </div>
+                                    <!-- /.box-header -->
+                                    <a href="/#/dcg/new-assignment/{{application?.IDFORM}}" class="btn btn-primary">Create Inspection</a><!-- <a href="" class="btn btn-primary">Approve License</a>
+ -->
+                                    <form (ngSubmit)="approvalForm.form.valid &&  saveApproval()" #approvalForm="ngForm" novalidate>
+                                            <table class="table table-striped">
+                                                <tr>
+                                                    <td>
+                                                        <select class="form-control" [(ngModel)]="application.status" name="status" #formStatus="ngModel">
+                                                            <option value="Approved">Approve</option>
+                                                            <option value="Rejected">Reject</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <textarea class="form-control" rows="4" placeholder="Enter comment" [(ngModel)]="application.comms" name="comments" #comms="ngModel"></textarea>
+                                                    </td>
+
+                                                    <td>
+                                                        <input type="submit" class="btn btn-success" value="Submit" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </form>
+                                <br />
+                                    
+                                    <div class="box-body">
+                                        <table class="table table-striped">
+                                            <tr><td><h5>DCG License: <span class="badge bg-blue">Not Issued</span></h5></td></tr>
+                                        </table>
+                                    </div>
+
+
+                                    <!-- /.box-footer-->
+                                </div><!--/.direct-chat -->
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+</div>
+
+<app-footer></app-footer>
+

@@ -79,6 +79,45 @@ export class CacEntryOfPremiseDetailComponent implements OnInit {
             }
           } );
 
-  }
+  };
+
+
+  approveSite(){
+
+        // update form 41 status
+     let formApprovalUrl = 'https://129.144.154.136/ords/pdb1/ncs/system/form41/sitestatus/update';
+      let toastr = this.toastr; 
+      var t = { 
+              'id': this.entry_of_premise['IDFORM'],
+             // 
+               'Status':  "Construction Approved"
+             };
+  
+    $.ajax ( {
+            type: 'PUT',
+            url: formApprovalUrl,
+            //enctype: 'multipart/form-data',
+             headers:t ,
+            cache: false,
+            processData: false,
+            contentType: 'application/json',
+            crossDomain: true,
+            xhrFields: { withCredentials: true },
+            beforeSend: function (xhr) { 
+              console.log('setting credentials.......');
+              console.log(this.headers);
+           
+            },
+            success: function(data) { 
+              console.log("=====Sent updated form41 to the database========");
+              toastr.success("Success", 'Site status changed successfully');
+             // window.location.href= '/cac/entrys-of-premise/' + this.entry_of_premise['idForm'] ;
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+              console.log("=====uploading system error ========");
+            }
+          } );
+
+    }
 
 }

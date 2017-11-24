@@ -15,6 +15,7 @@ export class EntrysOfPremiseListingComponent implements OnInit {
 
   ngOnInit() {
   	this.fetch41ByUser()
+    console.log(this.forms);
   }
 
 
@@ -30,6 +31,9 @@ export class EntrysOfPremiseListingComponent implements OnInit {
     this.form41Srv.findForm41ByUserID(userID).then(result => this.forms = result.items)
     .catch(err => this.error = err)
   }
+
+
+
 
 
 }

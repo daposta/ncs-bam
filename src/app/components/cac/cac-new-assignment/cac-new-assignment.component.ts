@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { UsersService} from '../../../services/users.service';
+import { AssignmentTypeService} from '../../../services/assignment-type.service';
+
 import { ActivatedRoute } from '@angular/router';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 declare var $: any;
@@ -8,22 +10,24 @@ declare var $: any;
   selector: 'app-cac-new-assignment',
   templateUrl: './cac-new-assignment.component.html',
   styleUrls: ['./cac-new-assignment.component.css'],
-   providers : [UsersService, ]
+   providers : [UsersService, AssignmentTypeService ]
 })
 export class CacNewAssignmentComponent implements OnInit {
   
   users: any[];
+  assignmentTypes: any[];
   error: any;
   assignment: Object= {};
   formID :any;
   constructor(private route: ActivatedRoute, private userSrv: UsersService, private toastr: ToastsManager, 
-  private _vcr: ViewContainerRef) { 
+  private _vcr: ViewContainerRef, private assignmentTypeSrv: AssignmentTypeService) { 
    this.toastr.setRootViewContainerRef(_vcr);
  }
 
   ngOnInit() {
   	this.getFormID();
   	this.fetchOCOs();
+    this.fetchAssignmentTypes();
   }
 
   fetchOCOs(){
@@ -132,5 +136,10 @@ export class CacNewAssignmentComponent implements OnInit {
 
 		  return text;
 	}
+
+  fetchAssignmentTypes(){
+    this.assignmentTypeSrv.fetchAssignmentTypess().then(response => this.assignmentTypes = response.items)
+    .catch(error => this.error = error)
+  }
 
 }

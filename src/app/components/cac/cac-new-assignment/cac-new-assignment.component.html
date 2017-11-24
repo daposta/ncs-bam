@@ -47,8 +47,10 @@
                                 <span><strong>Select Inspection Type</strong></span><br />
                                 <select class="form-control" [(ngModel)]="assignment.assignmentType" name="assignmentType" #assignmentType="ngModel">
                                     <option value="">Select Inspection Type</option>
-                                    <option value="Form Inspection">Form Inspection</option>
-                                    <option value="Site Inspection">Site Inspection</option>
+                                   <!--  <option value="Form Inspection">Form Inspection</option>
+                                    <option value="Site Inspection">Site Inspection</option> -->
+
+                                    <option *ngFor="let item of assignmentTypes" [value]="item.idassignmenttype">{{item.typename}}</option>
                                 </select>
                                 <br />
                                 <span><strong>Enter Instruction</strong></span>

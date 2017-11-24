@@ -242,22 +242,14 @@ export class EntrysOfPremiseDetailComponent implements OnInit {
     }
 
     siteCompleted(){
-        alert("completed");
 
         // update form 41 status
-     let formApprovalUrl = 'https://129.144.154.136/ords/pdb1/ncs/system/form41/';
+     let formApprovalUrl = 'https://129.144.154.136/ords/pdb1/ncs/system/form41/sitestatus/update';
       let toastr = this.toastr; 
       var t = { 
-              'idForm': this.entry_of_premise['IDFORM'],
-             'comments':  this.entry_of_premise['COMMENTS'],
-             'status': this.entry_of_premise['STATUS'],
-              'cname': this.entry_of_premise['CNAME'] ,
-               'registeredaddress':  this.entry_of_premise['REGISTEREDADDRESS'],
-              'purposeofbusiness':  this.entry_of_premise['PURPOSEOFBUSINESS'],
-               'descriptionofbusiness':  this.entry_of_premise['DESCRIPTIONOFBUSINESS'],
-                'formref': this.entry_of_premise['FORMREF'],
-               'iduser':  this.entry_of_premise['IDUSER'],
-               'SITESTATUS':  "Construction Completed"
+              'id': this.entry_of_premise['IDFORM'],
+             // 
+               'Status':  "Construction Completed"
              };
   
     $.ajax ( {
